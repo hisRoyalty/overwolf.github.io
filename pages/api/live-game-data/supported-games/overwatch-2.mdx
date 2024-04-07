@@ -22,7 +22,7 @@ sidebar_custom_props:
 Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
 
 ## Sample Apps
-* [OVERWATCH game events sample app](https://github.com/overwolf/events-sample-app)
+* [OVERWATCH 2 game events sample app](https://github.com/overwolf/events-sample-app)
 
 ## Available Features
 
@@ -62,7 +62,7 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | -------------  |
-game_state   | game_info   | Current state of the game.|See [notes](#game_state-note)|   229.0       |
+game_state   | game_info   | The current state of the game.|See [notes](#game_state-note)|   229.0       |
 game_mode    | game_info   | Currently played game-mode.|See [notes](#game_mode-note)|   229.0       |
 battle_tag | game_info   | Player's battelnet tag  |  See [notes](#battle_tag-note) |   229.2 
 
@@ -138,7 +138,7 @@ Data Example:
 key               | Category    | Values                                                              | Notes                 | Since Version |
 ----------------- | ------------| ------------------------------------------------------------------- | --------------------- | ------------- |
 map       | match_info   | Name of currently played map.|See [notes](#map-note)   |   229.0       |
-pseudo_match_id| match_info  | Uniques mtch_id     |See [notes](#pseudo_match_id-note)|   237.0       |
+pseudo_match_id| match_info  | Unique mtch_id     |See [notes](#pseudo_match_id-note)|   237.0       |
 
 #### *map* note
 
@@ -184,7 +184,7 @@ Data Example:
 {"info":{"match_info":{"map":"357"}},"feature":"match_info"}
 ```
 
-Note that on the response the leading zeros are removed ("0030" => "30")
+Note that in the response the leading zeros are removed ("0030" => "30")
 
 
 #### *pseudo_match_id* note
