@@ -400,14 +400,17 @@ Each player joining the game will be reported in the following way:
 
 Backslashes omitted for legibility.
 ```json
-{"feature":"roster","category":"players","key":"roster_0","value":"{\"player\":\"Overwol\",\"is_anonymous\":false,\"team\":\"Blue\",\"kills\":0,\"deaths\":1,\"score\":-415,\"assists\":0,\"ping\":1, \"operator\":\"SLEDGE\"}"}
-```
+{"feature": "roster", "category": "players", "key": "roster_5", "data": "{\"player\":\"Overwolf355\",\"is_anonymous\":true,\"suffix\":355,\"player_id\":\"5115efd3-d131-818a-b04d-2cd694dd61a1\",\"is_local\":true,\"team\":\"Blue\",\"operator\":\"JACKAL\",\"kills\":3,\"deaths\":1,\"score\":435,\"assists\":0,\"ping\":32}"}
+
 
 This object includes:
 
 * player - player's name + suffix
 Important note - "name" is the player's username or nickname if enabled
 * is_anonymous - Boolean if the player's privacy it set to true or false
+* suffix - the player's suffix 
+* player_id - the player's ID
+* is_local - is the player the local player true or false
 * team - Blue/Orange
 * kills - Total amount of kills made by the player
 * deaths - Total amount of deaths
