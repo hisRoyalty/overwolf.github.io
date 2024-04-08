@@ -1015,8 +1015,8 @@ Data Example:
 
 Event      | Event Data  | Fired When          | Notes              | Since GEP Ver. |
 -----------| ------------| ------------------------------- | ------------------ | --------------|
-ability    | ability number | player has selected an ability	 |  <ul><li>abilities are numbered from 1-4 “ability”</li><li>event is fired when the player clicked an ability key (but he may cancel the ability action later)</li></ul>|   140.0       |
-usedAbility  | JSON containing: “type” with the ability number between 1-4. Example:<br></br> `{ type: "4" }` for ult        | player activated the ability	 |  “usedAbility” fired when the player actually activated the ability  |   0.31       |
+ability    | ability number | player has selected an ability	 |  <ul><li>abilities are numbered from 1-4 “ability”</li><li>event is fired when the player clicks an ability key (but he may cancel the ability action later)</li></ul>|   140.0       |
+usedAbility  | JSON containing: “type” with the ability number between 1-4. Example:<br></br> `{ type: "4" }` for ult        | player activated the ability	 |  “usedAbility” fired when the player activated the ability  |   0.31       |
 
 #### *ability* note
 
@@ -1246,9 +1246,9 @@ Data Example:
 
 key         | Category    | Values                                                                                | Notes                 | Since GEP Ver. |
 ----------- | ------------| --------------------------------------------------------------------------------------| --------------------- | ------------- |
-teams       | game_info   |  A URI – decoded string that represents a JSON object with the teams formation        |   Need to decodeURI() the value and then JSON.parse() the result. See example below.                    |   70.0        |
+teams       | game_info   |  A URI – a decoded string that represents a JSON object with the team's formation        |   Need to use decodeURI() the value and then JSON.parse() the result. See the example below.                    |   70.0        |
 
-Lets assume we save the data in a variable called `info`. It will be the equivalent of:
+Let's assume we save the data in a variable called `info`. It will be the equivalent of:
 
 ```javascript
 var info = {"info":[{"category":"game_info","key":"teams","value":
@@ -1285,7 +1285,7 @@ And get:
 {"team":"Chaos","champion":"Kayn","skinId":"0","summoner":"erikolo878"}]"}
 ```
 
-And finally, we parse the string and get a Json array with the teams:
+Finally, we parse the string and get a JSON array with the teams:
 
 ```javascript
 var teams = JSON.parse(decoded);
@@ -1297,7 +1297,7 @@ var teams = JSON.parse(decoded);
 
 key       | Category        | Values                                         | Notes                                                   | Since GEP Ver. |
 ----------| ----------------| -----------------------------------------------| ------------------------------------------------------- | ------------- |
-level     | level           | Current level of the player's champion                 |   Fired immediately when game starts, updates whenever the champion levels up                     |      0.19     |
+level     | level           | Current level of the player's champion                 |   Fired immediately when the game starts, updates whenever the champion levels up                     |      0.19     |
 
 ```json
 { "info": {
@@ -1591,14 +1591,14 @@ jungle_camp_xx | jungle_camps | Name of each camp. |See [notes](#jungle_camp-not
 
 Boolean values:
 
-* alive - true / false representing whether they are alive or dead (this information is true whether it is killed by an enemy or an ally).
-* vision - true / false representing whether we have vision on the camp in question (vision is being updated once the alive state changes).
+* alive - true/false representing whether they are alive or dead (this information is true whether it is killed by an enemy or an ally).
+* vision - true/false representing whether we have a vision on the camp in question (vision is being updated once the alive state changes).
 
 Icon values:
 
-* 0 - Means there is no icon indicator in the minimap for relevant camp.
-* 1 - Displaying silver icon (long respawn indicator) for relevant camp.
-* 2 - Displaying gold icon (short respawn indicator) for relevant camp.
+* 0 - This means there is no icon indicator in the minimap for the relevant camp.
+* 1 - Displaying silver icon (long respawn indicator) for the relevant camp.
+* 2 - Displaying gold icon (short respawn indicator) for the relevant camp.
 
 Possible Values:
 
@@ -1623,7 +1623,7 @@ Possible Values:
 
 :::tip
 
-Note that the jungle camps Id's are no longer static and can change from time to time. The field name is holding the actual camp name.
+Note that the jungle camps IDs are no longer static and can change from time to time. The field name is holding the actual camp name.
 
 :::
 
@@ -1646,7 +1646,7 @@ team_frames_x | game_info | Cooldown timer of the ultimate of the players in sec
 
 #### *team_frames* note:
 
-This info update is showing the cooldown timer of the ultimate ability of each player in seconds.<br></br>
+This info update shows the cooldown timer of the ultimate ability of each player in seconds.<br></br>
 Value in "team_frames_0" is the player to the left until "team_frames_3" to the last player to the right.<br></br>
 The value in ult_cd stands for ultimate cooldown in seconds.
 

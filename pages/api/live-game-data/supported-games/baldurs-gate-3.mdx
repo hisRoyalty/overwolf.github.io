@@ -36,7 +36,7 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -68,8 +68,8 @@ scene | game_info | The current scene during the game  |  List of values See [no
 Possible values:
 
 * Menu - Main lobby menu
-* Running - While in game
-* Save - After save during a match
+* Running - While in-game
+* Save - After saving during a match
 
 Data Example:
 
@@ -127,7 +127,7 @@ Data Example:
 
 Data Example:
 
-* This info-update includes the location of all the 4 possible players and will update only the characters that are moving 
+* This info-update includes the location of all 4 possible players and will update only the characters that are moving 
 
 ```json
 {"feature": "location", "category": "location", "key": "location_players", "data": "[{\"player_0\":{\"x\":-1086.69,\"y\":-224.49,\"z\":-0.595}},{\"player_1\":{\"x\":-1089.05,\"y\":-218.029,\"z\":-0.414}},{\"player_2\":{\"x\":-1077.75,\"y\":-229.75,\"z\":-0.507}},{\"player_3\":{\"x\":-1082.75,\"y\":-206.75,\"z\":0.168}}]"}

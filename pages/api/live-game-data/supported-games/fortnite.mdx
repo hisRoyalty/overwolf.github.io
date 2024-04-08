@@ -321,8 +321,8 @@ Data Example:
 
 The skirmish data array is the enemy gunfire indicator on the compass for each enemy and includes these parameters
   * time -  time in seconds since the beginning of the game
-  * strength strength of the gunfire from 1 the weakest to maximum 99
-  * compass_angle - the angle that the local player is looking on. 0 - 360 deg
+  * strength of the gunfire from 1 the weakest to a maximum of 99
+  * compass_angle - the angle that the local player is looking at. 0 - 360 deg
   * red_dot_angle - the angle where the gunfire came from. 0 - 360 deg
 
 Data Example:
@@ -336,7 +336,7 @@ Data Example:
 This feature provides the entire list of players
   * player -  the player name. If anonymous is activated the value will be anonymous
   * team_id - the ID of the player's team
-  * is_local - if the player is the local player the value will be true in not the value will be false
+  * is_local - if the player is the local player the value will be true if not the value will be false
 
 Data Example:
 
@@ -354,7 +354,7 @@ Possible values:
 * "kill"
 * "2kill" - double kill
 * "3kill" - triple kill
-* "mkill" - multi kill
+* "mkill" - multi-kill
 * "won"
 * "death"
 
@@ -385,11 +385,11 @@ Data Example:
   
 #### *total_teams* note
 
-This is a dynamic variable that is being updated every time a team joins, leaves or dies during the game
+This is a dynamic variable that is updated every time a team joins, leaves or dies during the game
 
 #### *total_players* note
 
-This is a dynamic variable that is being updated every time a player joins, leaves or dies during the game
+This is a dynamic variable that is updated every time a player joins, leaves or dies during the game
 
 ## `me`
 
@@ -401,7 +401,7 @@ name         | me          |   The player’s nickname.  | See [notes](#name-not
 health       | me  |The player’s current health % (100-0). |See [notes](#health-notes) |   110.0       |
 accuracy     | me  |The local player’s current accuracy (hits/total shots). |See [notes](#accuracy-note)   |   110.0       |
 shield       | me  |The amount of shield the local player currently has. | See [notes](#shield-notes)        |   110.0       |
-total_shots  | me  |The amount of times the local player shot (not including grenades). | See [notes](#total_shots-notes)        |   157.0       |
+total_shots  | me  |The number of times the local player shot (not including grenades). | See [notes](#total_shots-notes)        |   157.0       |
 
 #### *name* note
 
@@ -449,7 +449,7 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-phase        | game_info   |The game’s current state, can be one of the following:<ul><li>'lobby'</li><li>‘loading_screen’</li><li>‘airfield’</li><li>‘aircraft’</li><li>‘freefly’ </li><li>‘replay’ </li></ul>|    |   110.0       |
+phase        | game_info   |The game’s current state can be one of the following:<ul><li>'lobby'</li><li>‘loading_screen’</li><li>‘airfield’</li><li>‘aircraft’</li><li>‘freefly’ </li><li>‘replay’ </li></ul>|    |   110.0       |
   
 ## `location`
 
@@ -497,7 +497,7 @@ key          | Category    | Values                    | Notes                 |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
 item_X       | inventory   |Current inventory of the local player.  | See [notes](#item_x-note)   |   119.2       |
 selected_slot|selected_slot|Currently selected slot in the quickbar.  | See [notes](#selected_slot-note)   |   119.2       |
-quickbar_X   | quickbar    |Display names of the items in the primary quickbar.  | See [notes](#quickbar_x-note)   |   119.2       |
+quickbar_X   | quickbar    |Display the names of the items in the primary quick bar.  | See [notes](#quickbar_x-note)   |   119.2       |
 selected_material| selected_material  | The currently selected building material.  |See [notes](#selected_material-note)    |   119.2 |
 
 #### *item_X* note
@@ -531,7 +531,7 @@ Data Example:
 #### *selected_slot* note
 
 This info-update includes the  following properties:
-*  isPrimary – “true” when the selected slot is in the main quickbar (weapons), “false” when the selected slot is in the secondary quickbar (build options)
+*  isPrimary – “true” when the selected slot is in the main quick bar (weapons), “false” when the selected slot is in the secondary quickbar (build options)
 * slot – the selected slot (0-5)
 
 Data Example:
@@ -596,14 +596,14 @@ Data Example:
 #### *creative_map* note
 
 :::note Missing data
-`account_is` and `title` parameters are not working in creative maps 2.0
+`account_is` and `title` parameters are not working in Creative Maps 2.0
 :::
 
 List of parameters:
 
-* map_id - the current played map id
+* map_id - the current played map ID
 * title - the title of the current played map
-* account_id - the user's account Id
+* account_id - the user's account ID
 * creative_mode_version - for creative 1.0 the value will be 1, for creative 2.0 the value will be 2
 * version - the current map version
 

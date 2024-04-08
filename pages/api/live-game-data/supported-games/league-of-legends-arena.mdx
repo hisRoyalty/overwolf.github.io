@@ -51,7 +51,7 @@ Note that you can also use the LOL game launcher events. Read more [here](/api/l
 
 ## Game events status
 
-It's highly recommended to communicate errors and warnings to your app users. Check current game event status [here](/status/) or  easily check game event status from your app [using our API](/topics/using-events/how-to-check-events-status-from-app).
+It's highly recommended to communicate errors and warnings to your app users. Check current game event status [here](/status/) or easily check game event status from your app [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 :::important
 Because LOL and LOL Arena share the same GameID, when checking LOL Arenas game event status please use 21556 as the unique GameID for LOL Arena and 215561 for LOL Arena PBE.
@@ -1013,7 +1013,7 @@ The first 2 players are on the same team, the next 2 players are on another team
 
 key       | Category        | Values                                         | Notes                                                   | Since GEP Ver. |
 ----------| ----------------| -----------------------------------------------| ------------------------------------------------------- | ------------- |
-level     | level           | Current level of the player's champion                 |   Fired immediately when game starts, updates whenever the champion levels up                     |      0.19     |
+level     | level           | Current level of the player's champion                 |   Fired immediately when the game starts, updates whenever the champion levels up                     |      0.19     |
 
 ```json
 { "info": {"level": { "level": "1" }}, "feature": "level"}

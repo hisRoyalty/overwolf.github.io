@@ -36,7 +36,7 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 **GEP supports the following Minecraft versions:**
 * Supported vanila versions:
@@ -97,9 +97,9 @@ Data Example:
 
 #### *player_X* note
 
-* A full players list is sent each time a player get in or out from the game
+* A full players list is sent each time a player gets in or out of the game
 * The position of each player in the list can vary from time to time 
-* In case "players visibility toggle" is turned on, this info update will not send values
+* In case the "players visibility toggle" is turned on, this info update will not send values
 
 Data Example:
 
@@ -132,9 +132,9 @@ facing       | match_info  | The current direction the player is facing. |See [n
 
 Event        | Event Data        | Fired When        | Notes              | Since GEP Ver. |
 -------------| ------------------| ----------------- | ------------------ | ---------------|
-match_start  | null              | When loading into map.|See [notes](#match_start-note)|   153.0  |
+match_start  | null              | When loading into a map.|See [notes](#match_start-note)|   153.0  |
 match_end    | null              | When disconnecting from map. |See [notes](#match_end-note)|   153.0  |
-chat         | text              | When chat window is updated. |See [notes](#chat-note)|   187.0  |
+chat         | text              | When the chat window is updated. |See [notes](#chat-note)|   187.0  |
 
 
 #### *server* note

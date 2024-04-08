@@ -94,16 +94,16 @@ game_mode | match_info   | The current type of game mode. |See [notes](#game_mod
 match_id | match_info   | The current match's ID. |See [notes](#match_id-note) for possible values|   162.1  |
 map_id | match_info   | The currently played map. |See [notes](#map_id-note) for possible values|   162.1  |
 round_outcome_type | match_info   | The type of win/loss of the last-played round. |See [notes](#round_outcome_type-note) for possible values|   165.0  |
-general_log | match_info   | General information regarding current created-match. |See [notes](#general_log-note) for possible values|   186.0  |
-match_start_log | match_info   | Information regarding start of the match. |See [notes](#match_start_log-note) for possible values|   186.0  |
-round_start_log | match_info   | Information regarding start of the round. |See [notes](#round_start_log-note) for possible values|   186.0  |
-round_end_log | match_info   | Information regarding end of the round. |See [notes](#round_end_log-note) for possible values|   186.0  |
-move_log | match_info   | Information regarding movement. |See [notes](#move_log-note) for possible values|   186.0  |
-score_log | match_info   | Information regarding score. |See [notes](#score_log-note) for possible values|   186.0  |
+general_log | match_info   | General information regarding the current created match. |See [notes](#general_log-note) for possible values|   186.0  |
+match_start_log | match_info   | Information regarding the start of the match. |See [notes](#match_start_log-note) for possible values|   186.0  |
+round_start_log | match_info   | Information regarding the start of the round. |See [notes](#round_start_log-note) for possible values|   186.0  |
+round_end_log | match_info   | Information regarding the end of the round. |See [notes](#round_end_log-note) for possible values|   186.0  |
+move_log | match_info   | movement information. |See [notes](#move_log-note) for possible values|   186.0  |
+score_log | match_info   | score information. |See [notes](#score_log-note) for possible values|   186.0  |
 kill_log | match_info   | Information regarding kills. |See [notes](#kill_log-note) for possible values|   186.0  |
 ko_log | match_info   | Information regarding knockout. |See [notes](#ko_log-note) for possible values|   186.0  |
 death_log | match_info   | Information regarding death. |See [notes](#death_log-note) for possible values|   186.0  |
-match_end_log | match_info   | Information regarding end of match. |See [notes](#match_end_log-note) for possible values|   186.0  |
+match_end_log | match_info   | Information regarding the end of match. |See [notes](#match_end_log-note) for possible values|   186.0  |
 
 ### Events
 
@@ -145,7 +145,7 @@ While the possible values are:
 * Tutorials: It’s just a video tutorial, not a game mode.
 
 
-*Note that in Custom games, Training Grounds, or in Match Replay, there is no support for Overwolf real time game events*
+*Note that in Custom games, Training Grounds, or in Match Replay, there is no support for Overwolf real-time game events*
 
 
 #### *match_id* note
@@ -194,7 +194,7 @@ The possible values are:
 * `CONSULATE`
 * `LAIR`
 
-Full list of maps can be found [here](https://www.ubisoft.com/en-gb/game/rainbow-six/siege/game-info/maps)
+A full list of maps can be found [here](https://www.ubisoft.com/en-gb/game/rainbow-six/siege/game-info/maps)
 
 #### *round_outcome_type* note
 
@@ -339,7 +339,7 @@ Data Example:
 
 #### *match_score* note
 
-Match score info-update is presenting the score as it is in the game's UI, the local player is always in the blue team
+Match score info-update presents the score as it is in the game's UI, the local player is always in the blue team
 
 Data Example:
 
@@ -398,7 +398,7 @@ deaths | player | Total number of player's deaths or `null` | See [notes](#death
 
 Each player joining the game will be reported in the following way:
 
-Backslashes omitted for legibility.
+Backslashes were omitted for legibility.
 ```json
 {"feature": "roster", "category": "players", "key": "roster_5", "data": "{\"player\":\"Overwolf355\",\"is_anonymous\":true,\"suffix\":355,\"player_id\":\"5115efd3-d131-818a-b04d-2cd694dd61a1\",\"is_local\":true,\"team\":\"Blue\",\"operator\":\"JACKAL\",\"kills\":3,\"deaths\":1,\"score\":435,\"assists\":0,\"ping\":32}"}
 
@@ -407,7 +407,7 @@ This object includes:
 
 * player - player's name + suffix
 Important note - "name" is the player's username or nickname if enabled
-* is_anonymous - Boolean if the player's privacy it set to true or false
+* is_anonymous - Boolean if the player's privacy is set to true or false
 * suffix - the player's suffix 
 * player_id - the player's ID
 * is_local - is the player the local player true or false
@@ -439,7 +439,7 @@ If a new player replaces a leaver, a new “roster_XX” object will be assigned
 
 #### *health* note
 Current health of the player
-Important! - health always include 20 points for the knockout stage, so the event will always add 20 health points more then the game
+Important! - health always includes 20 points for the knockout stage, so the event will always add 20 health points more than the game
 
 ```json
 {"info":{"player":{"health":"41"}},"feature":"roster"}
@@ -549,7 +549,7 @@ Data Example:
 {"info":{"me":{"account_id_log":"{ "content": { "partyId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "groupId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "profileId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "obj": { "is_caster": false, "party_bans": "[]", "reservations": "[]", "clearance_level": 999, "two_factor_auth_enabled": true, "phone_number_verified": true, "rank": 30, "top_rank_pos": 0, "rank_mmr": 0, "last_hosted_rdv_session_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "online_player_id": "999999999999999999", "in_anti_addiction_state": false, "nickname": "", "nickname_enabled": false, "is_using_invalid_graphic_settings": false, "has_failed_binary_validation": false, "avatar_hidden": false }, "lastModifiedAt": "2023-02-20T20:42:28.955Z" }, "notificationType": "PARTY_MEMBER_UPDATED", "spaceId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "sourceApplicationId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "datePosted": "2023-02-20T20:42:29.105Z" }"}},"feature":"me"}
 ```
 
-Important note - If the local player is in a party/squad with friends, the account_id_log may sometimes contain information pertaining to the party members instead. It is not possible to differentiate, so suggest listening for the very first event upon game launch (before local player joins a squad), and then ignoring all future events.
+Important note - If the local player is in a party/squad with friends, the account_id_log may sometimes contain information about the party members instead. It is not possible to differentiate, so suggest listening for the very first event upon game launch (before local player joins a squad), and then ignoring all future events.
 
 Privacy mode:
 * nickname_enabled - 0/1 if nickname is disabled/enabled
