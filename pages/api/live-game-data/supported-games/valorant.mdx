@@ -167,6 +167,7 @@ roster    | match_info  | * Player Name<br></br>* Player ID<br></br>* Name of pi
 scoreboard    | match_info  | Scoreboard changes and updates during the game |See [notes](#scoreboard-note)|   151.0       |
 kill_feed    | match_info  | kill feed updates during the game |See [notes](#kill_feed-note)|   209.0       |
 map    | match_info  | Current played map name |See [notes](#map-note)|   217.0       |
+escalation_stage    | match_info  | Each team's currnt weapon stage in Escalation game mode. |See [notes](#escalation_stage-note)|   250.0       |
 
 #### *round_number* note
 
@@ -590,6 +591,11 @@ Data Example:
 
 ```json
 {"info":{"match_info":{"map":"Foxtrot"}},"feature":"match_info"}
+```
+#### *escalation_stage* note
+
+```json
+{"feature": "match_info", "category": "match_info", "key": "escalation_stage", "data": "{\"attacker\":1,\"defender\":2}"} 
 ```
 
 ### Events
