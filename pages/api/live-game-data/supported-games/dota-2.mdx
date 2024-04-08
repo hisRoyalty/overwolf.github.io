@@ -72,6 +72,7 @@ To know which user is already using this command line parameter, you should use 
 * [hero_pool](#hero_pool)
 * [me](#me)
 * [game](#game)
+* [damage](#damage)
 
 
 ## Game events status
@@ -951,4 +952,30 @@ Event data example:
 ```json
 {"info":{"game":{"game_state":"playing"}},"feature":"game"}
 {"info":{"game":{"match_state":"DOTA_GAMERULES_STATE_INIT"}},"feature":"game"}
+```
+
+## `damage`
+
+### Info Updates
+
+key               | Category    | Values                    | Notes                 | Since GEP Ver. |
+----------------- | ------------| ------------------------- | --------------------- | -------------- |
+damage_dealt_hero| damage        |   The total and current damage done to a hero by the local player|   See [notes](#damage_dealt_hero-note)|  250.0         |
+damage_dealt_tower| damage        |   The total and current damage done to a tower by the local player|   See [notes](#damage_dealt_tower-note)|  250.0         |
+
+
+#### *damage_dealt_hero* note
+
+Event data example:
+
+```json
+{"info":{"damage":{"damage_dealt_hero":{"total_damage": 922, "current_damage": 100}}},"feature":"damage"}
+```
+
+#### *damage_dealt_tower* note
+
+Event data example:
+
+```json
+{"info":{"damage":{"damage_dealt_tower":{"total_damage": 800, "current_damage": 50}}},"feature":"damage"}
 ```
