@@ -37,7 +37,7 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 ## Game event status
 
 It is highly recommended to communicate errors and warnings to app users. 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -84,9 +84,9 @@ List of possible values:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- | 
-local_player_stats | match_info  | A variety of in-game stats for local player. |See [notes](#local_player_stats-note)|   190.0       |
+local_player_stats | match_info  | A variety of in-game stats for the local player. |See [notes](#local_player_stats-note)|   190.0       |
 playlist | match_info  | The playlist the player selected. |See [notes](#playlist-note)|   191.0       |
-game_type | match_info  | The selected game type, important only for non custm games |See [notes](#game_type-note)|   191.0       |
+game_type | match_info  | The selected game type, important only for non-custom games |See [notes](#game_type-note)|   191.0       |
 game_mode | match_info  | The selected game mode |See [notes](#game_mode-note)|   191.0       |
 match_outcome | match_info  | The final march outcome victory / defeat |See [notes](#match_outcome-note)|   210.0       |
 
@@ -124,7 +124,7 @@ Data Example:
 ```
 {"feature":"match_info","category":"match_info","key":"playlist","value":"bot_bootcamp"}
 ```
-Important - This info-update change only if the user change playlist
+Important - This info-update changes only if the user changes the playlist
 
 #### *game_type*  note
 
@@ -139,12 +139,12 @@ Data Example:
 ```
 {"feature":"match_info","category":"match_info","key":"game_type","value":"arena"}
 ```
-Important - This info-update change only if the user change game type
+Important - This info-update changes only if the user changes game type
 
 #### *game_mode*  note
 
 If the player uses a non-custom game use game_type to understand what type of game the player has selected.
-In this case the possible values are:
+In this case, the possible values are:
 * oddball
 * ctf
 * btb
@@ -155,7 +155,7 @@ In this case the possible values are:
 * strongholds
 
 If the player created a custom game you will get one of the values in the list, it that case you can ignore game_type
-In this case the possible values are:
+In this case, the possible values are:
 * arena:ctf
 * arena:ffa 
 * arena:oddball
@@ -197,7 +197,7 @@ Data Example:
 
 Event        | Event Data        | Fired When        | Notes              | Since GEP Ver. |
 -------------| ------------------| ----------------- | ------------------ | ---------------|
-match_start  | null              | When loading into map.|See [notes](#match_start-note)|   190.0  |
+match_start  | null              | When loading into a map.|See [notes](#match_start-note)|   190.0  |
 match_end    | null              | When disconnecting from map. |See [notes](#match_end-note)|   190.0  |
 
 #### *match_start*  note
@@ -283,10 +283,11 @@ Data Example:
 As you can see, this object includes:
 * **name** – Player's name
 * **team** – The team of the player.
-* **local** - “true” when the player is the local player that play, "false” when it's another player in the game.
+* **local** - “true” when the player is the local player that plays, "false” when it's another player in the game.
  
 When a player “leaves” the match, the roster will be updated with another player that is in the match.
-When the match end, the roster value is returned empty, example: 
+When the match ends, the roster value is returned empty.
+For example: 
 
 Data Example:
 ```json

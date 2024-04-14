@@ -50,7 +50,7 @@ All events and info updates can be target to changes.
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -89,8 +89,8 @@ Data Example:
 ### Info Updates
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- | 
-team    | match_info          | ID of the team player in match.   |See [notes](#team-note)|   148.0       |
-roster | match_info | All other player info known to the local player.  |  See [notes](#roster-note)  |   159.0 |
+team    | match_info          | ID of the team player in the match.   |See [notes](#team-note)|   148.0       |
+roster | match_info | All other player info is known to the local player.  |  See [notes](#roster-note)  |   159.0 |
 match | match_info | ID of the match.  |  See [notes](#match-note)  |   159.0 |
 region | match_info | Starting location of all the users (if selected).  |  See [notes](#region-note)  |   159.0 |
 
@@ -104,9 +104,9 @@ Data Example:
 ```
 
 This distinction of ally1 and ally2 will be used as a reference point in later events.<br></br>
-team's info update does not work for premade teams.<br></br>
-User number will retrun 0 as value if there are none.<br></br>
-eg) In solo mode, both ally1 and ally2 will return 0. 
+The `team` info update does not work for premade teams.<br></br>
+The user number will return 0 as a value if there are none.<br></br>
+For example, in solo mode, both ally1 and ally2 will return 0. 
 
 
 #### *roster* note
@@ -116,7 +116,7 @@ Data Example:
 {"info":{"match_info" : {"roster" : [{"player_name" : "TestSubject1", "is_ally" : false, "player_character" : 12, "player_skin" : 1}]}},"feature":"me"}
 ```
 
-"roster" includes information of all 18 players in the game. <br></br>
+"roster" includes information on all 18 players in the game. <br></br>
 "is_ally" will specify whether the subject is an ally or not.<br></br>
 This info will contain the local player itself.
 
@@ -137,7 +137,7 @@ Data Example:
 ```
 
 The enemy array will be an array containing 16 integers. Each index number + 1 will represent the area code of [area_code](#area_code-note).<br></br>
-eg) index 0 of array represents the number of players selecting area code 1 as their starting point.
+eg) index 0 of the array represents the number of players selecting area code 1 as their starting point.
 
 
 ## `matching`
@@ -176,7 +176,7 @@ Data Example:
 {"event":"matching_standby","data":""}
 ```
 
-This is triggered when the local player is inquired whether to accept or decline the current matching.<br></br>
+This is triggered when the local player inquires whether to accept or decline the current matching.<br></br>
 It does not return the action of the local player.
 
 
@@ -196,12 +196,12 @@ Event       | Event Data   | Fired When    | Notes              | Since GEP Ver.
 ------------| -------------| --------------| ------------------ | --------------|
 select_character| Character code  | Local player selects character in character selection. | See [notes](#select_character-note) | 148.0  |
 select_weapon| Weapon code  | Local player selects weapon in character selection. | See [notes](#select_weapon-note) | 148.0  |
-team_character| Ally, Character code  | Ally player selects character in character selection. | See [notes](#team_character-note) | 148.0  |
+team_character| Ally, Character code  | Ally player selects a character in character selection. | See [notes](#team_character-note) | 148.0  |
 team_weapon| Weapon code  | Ally player selects weapon in character selection. | See [notes](#team_weapon-note) | 148.0  |
 select_route| Target items, Target regions  | Local player selects plan in character selection. | See [notes](#select_route-note) | 148.0  |
 select_trait| SelectedTraits  | Local player selects trait for the character. | See [notes](#select_trait-note) | 148.0  |
 select_starting_point| Area code  | Local player selects starting point in character selection. | See [notes](#select_starting_point-note) | 148.0  |
-ally_starting_point| Area code, Area code  | Ally player selects starting point in character selection. | See [notes](#ally_starting_point-note) | 148.0  |
+ally_starting_point| Area code, Area code  | Ally player selects the starting point in character selection. | See [notes](#ally_starting_point-note) | 148.0  |
 
 #### *select_character* note
 
@@ -254,12 +254,12 @@ See [weapon_code](#weapon_code-note) for more info on weapon number.
 Data Example:
 
 ```json
-{"event":"select_route","data":{"items" : [122232, 144244, ...], "regions" : [11, 3, 8 , 5]}}
+{"event":"select_route","data":{"items" : [122232, 144244, ...], "regions" : [11, 3, 8, 5]}}
 ```
 
 The 'items' array consists of 6 items, each representing the item code. See [item_code](#item_code-note) for more info.<br></br>
 The 'regions' array is the area code in order of index. See [area_code](#area_code-note) for more info.<br></br>
-eg) Local player's saved plan visits area 11, 3, 8, and 5 in written order.
+eg) Local player's saved plan visits area 11, 3, 8, and 5 in the written order.
 
 #### *select_trait* note
 
@@ -302,7 +302,7 @@ See [area_code](#area_code-note) for more info.
 ### Events
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-knock_down| Victim name, Current kill count  | Local player kills, or knocks down an enemy. | See [notes](#knock_down-note) | 148.0  |
+knock_down| Victim name, Current kill count  | Local player kills or knocks down an enemy. | See [notes](#knock_down-note) | 148.0  |
 downed| Victim name, Time left  | Ally player is downed. | See [notes](#downed-note) | 148.0  |
 down_count| Victim name, Time left  | Downed ally player has taken damag. | See [notes](#down_count-note) | 148.0  |
 get_up| Victim name, Healer name  | Downed ally player has recovered. | See [notes](#get_up-note) | 148.0  |
@@ -379,7 +379,7 @@ Data Example:
 {"event":"kill","data":{"killer" : "Test Subject 15", "victim" : "Someone", "total_kills" : 5}}
 ```
 
-Kill will return kill logs of all players. (Including the local player.)
+Kill will return the kill logs of all players. (Including the local player.)
 This will be triggered via announcements.
 
 
@@ -411,17 +411,17 @@ Data Example:
 ### Events
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-wickeline_prep| Boolean | 1 minute before Wickeline is about to spawn.(Announcement) | See [notes](#wickeline_prep-note) | 148.0  |
-wickeline_appear| Boolean | Wickeline has spawned.(System chat) | See [notes](#wickeline_appear-note) | 148.0  |
-wickeline_move| Area code | Wickeline has moved to another area.(System chat) | See [notes](#wickeline_move-note) | 148.0  |
+wickeline_prep| Boolean | 1 minute before Wickeline is about to spawn. (Announcement) | See [notes](#wickeline_prep-note) | 148.0  |
+wickeline_appear| Boolean | Wickeline has spawned. (System chat) | See [notes](#wickeline_appear-note) | 148.0  |
+wickeline_move| Area code | Wickeline has moved to another area. (System chat) | See [notes](#wickeline_move-note) | 148.0  |
 wickeline_dead| Killer name | Player kills Wickeline. (System chat) | See [notes](#wickeline_dead-note) | 148.0  |
-android_prep | Area code, Android name | 1 minute before Android Alpha/Omega is about to spawn.(Announcement) | See [notes](#android_prep-note) | 148.0  |
-android_appear| Android name | Android Alpha/Omega has spawned.(Announcement) | See [notes](#android_appear-note) | 148.0  |
-android_dead| Boolean | Android Alpha/Omega is dead.(Announcement) | See [notes](#android_dead-note) | 148.0  |
-meteorite_prep | Area code | 1 minute before meteorite is about to spawn.(Announcement) | See [notes](#meteorite_prep-note) | 148.0  |
-meteorite_appear| Boolean | Meteorite has spawned.(Announcement) | See [notes](#meteorite_appear-note) | 148.0  |
-tree_of_life_prep | Area code | 1 minute before tree of life is about to spawn.(Announcement) | See [notes](#tree_of_life_prep-note) | 148.0  |
-tree_of_life_appear| Boolean | Tree of life has spawned.(Announcement) | See [notes](#tree_of_life_appear-note) | 148.0  |
+android_prep | Area code, Android name | 1 minute before Android Alpha/Omega is about to spawn. (Announcement) | See [notes](#android_prep-note) | 148.0  |
+android_appear| Android name | Android Alpha/Omega has spawned. (Announcement) | See [notes](#android_appear-note) | 148.0  |
+android_dead| Boolean | Android Alpha/Omega is dead. (Announcement) | See [notes](#android_dead-note) | 148.0  |
+meteorite_prep | Area code | 1 minute before meteorite is about to spawn. (Announcement) | See [notes](#meteorite_prep-note) | 148.0  |
+meteorite_appear| Boolean | Meteorite has spawned. (Announcement) | See [notes](#meteorite_appear-note) | 148.0  |
+tree_of_life_prep | Area code | 1 minute before the tree of life is about to spawn. (Announcement) | See [notes](#tree_of_life_prep-note) | 148.0  |
+tree_of_life_appear| Boolean | Tree of life has spawned. (Announcement) | See [notes](#tree_of_life_appear-note) | 148.0  |
 
 
 #### *wickeline_prep* note
@@ -478,7 +478,7 @@ Data Example:
 Area code of androids's spawn location. <br></br>
 See [area_code](#area_code-note) for more info. <br></br>
 
-Possible android value :
+Possible Android value :
 * alpha
 * omega
 
@@ -493,7 +493,7 @@ Data Example:
 
 Note that android_appear will not specify the spawn area code. <br></br>
 
-Possible android value :
+Possible Android value :
 * alpha
 * omega
 
@@ -507,7 +507,7 @@ Data Example:
 {"event":"android_prep","data": "alpha"}
 ```
 
-Possible android value :
+Possible Android value :
 * alpha
 * omega
 
@@ -621,12 +621,12 @@ Data Example:
 ```
 
 This event is only called in Duo/Squad matching team mode. <br></br>
-This event cannot be used to find out the final safe area. Final safe area must be acquired by the "new_restriction" event. <br></br>
-The final_restriction will be called each step of the announcement. <br></br>
+This event cannot be used to find out the final safe area. The final safe area must be acquired by the "new_restriction" event. <br></br>
+The final restriction will be called each step of the announcement. <br></br>
 Possible steps
-* 1 : Final safe area is broadcasted.
-* 2 : Final safe area is active.
-* 3 : No more safe area.
+* 1 : The final safe area is broadcasted.
+* 2 : The final safe area is active.
+* 3 : No more safe areas.
 
 
 #### *competitive_restriction* note
@@ -638,14 +638,14 @@ Data Example:
 ```
 
 This event is only called in Solo matching team mode. <br></br>
-This event cannot be used to find out the final safe area. Final safe area must be acquired by the "new_restriction" event.<br></br>
+This event cannot be used to find out the final safe area. The final safe area must be acquired by the "new_restriction" event.<br></br>
 The competitive_restriction will be called each step of the announcement.<br></br>
 Possible steps
 * 1 : Temporary safe area is set.
 * 2 : Temporary safe area is active.
 * 3 : Final safe area is set
-* 4 : Final safe area is active.
-* 5 : No more safe area.
+* 4 : The final safe area is active.
+* 5 : No more safe areas.
 
 
 ## `move_regions`
@@ -702,8 +702,8 @@ Data Example:
 ```
 
 Eternal Return has many different damage types. However, "is_skill" distinguishes the damage type into two categories.
-* true : damage is given via character skill, item skill, or weapon skill.
-* false : damage is given via character's normal(auto) attack.
+* true: damage is given via character skill, item skill, or weapon skill.
+* false: damage is given via the character's normal(auto) attack.
 
 
 #### *take_damage* note
@@ -715,8 +715,8 @@ Data Example:
 ```
 
 Eternal Return has many different damage types. However, "is_skill" distinguishes the damage type into two categories.
-* true : damage is given via character skill, item skill, or weapon skill.
-* false : damage is given via character's normal(auto) attack.
+* true: damage is given via character skill, item skill, or weapon skill.
+* false: damage is given via the character's normal(auto) attack.
 
 
 ## `level_ups`
@@ -775,8 +775,8 @@ See [skill_group](#skill_group-note) for more info.
 ### Events
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-add_to_route | Item code | Local player adds an item to plan. | See [notes](#add_to_route-note) | 148.0  |
-delete_route | Item code | Local player removes an item from plan. | See [notes](#delete_route-note) | 148.0  |
+add_to_route | Item code | Local player adds an item to the plan. | See [notes](#add_to_route-note) | 148.0  |
+delete_route | Item code | Local player removes an item from the plan. | See [notes](#delete_route-note) | 148.0  |
 change_route | Target items, Target regions | Local player changes to another saved plan. | See [notes](#change_route-note) | 148.0  |
 
 
@@ -817,8 +817,8 @@ See [notes](#select_route-note) for more info.
 ### Events
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-equip_item | Item code | Local player adds an item to plan. | See [notes](#equip_item-note) | 148.0  |
-unequip_item | Item code | Local player removes an item from plan. | See [notes](#unequip_item-note) | 148.0  |
+equip_item | Item code | Local player adds an item to the plan. | See [notes](#equip_item-note) | 148.0  |
+unequip_item | Item code | Local player removes an item from the plan. | See [notes](#unequip_item-note) | 148.0  |
 
 
 #### *equip_item* note
@@ -881,7 +881,7 @@ Localized text can also be searched using the key "Character/Name/{character_cod
 
 
 #### *area_code* note
-Area codes are represented as following. (Note that changes can occur, and this should be double checked via ER Open API.)<br></br>
+Area codes are represented as the following. (Note that changes can occur, and this should be double-checked via ER Open API.)<br></br>
 Localized text can also be searched using the key "Area/Name/{area_code}" in the ER L10N file. (Available via ER Open API.)
 * 1 : Docks
 * 2 : Pond
@@ -903,7 +903,7 @@ Localized text can also be searched using the key "Area/Name/{area_code}" in the
 
 #### *mastery_code* note
 
-Mastery codes are represented as following.<br></br>
+Mastery codes are represented as the following.<br></br>
 Localized text can also be searched using the key "MasteryType/Name/{mastery_type}" in the ER L10N file. (Available via ER Open API.)
 * 0 : None
 * 1 : Glove
@@ -941,7 +941,7 @@ Localized text can also be searched using the key "MasteryType/Name/{mastery_typ
 
 #### *weapon_code* note
 
-Weapon codes are represented as following. (Mastery types share some common values.)<br></br>
+Weapon codes are represented as the following. (Mastery types share some common values.)<br></br>
 Localized text can also be searched using the key "WeaponType/Name/{weapon_type}" in the ER L10N file. (Available via ER Open API.)
 * 0 : None
 * 1 : Glove

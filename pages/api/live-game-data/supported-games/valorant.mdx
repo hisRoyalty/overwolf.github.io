@@ -38,7 +38,7 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -96,8 +96,8 @@ Data Example:
 
 #### *agent* note
 
-Not all agents have their game-name match their ID data, since this is an internal name, so take that into account.
-Furthermore, if a character has an ability that gives him different points of view (f.ex Sova with his drone), the ID will change accordingly to the drone.
+Not all agents have their game name match their ID data, since this is an internal name, so take that into account.
+Furthermore, if a character has an ability that gives him different points of view (e.g. Sova with his drone), the ID will change accordingly to the drone.
 
 Possible agent values:
 
@@ -160,13 +160,14 @@ round_number | match_info  | Number of current round.  |See [notes](#round_numbe
 score        | match_info  | Amount of rounds won/lost.|See [notes](#score-note)|   149.0       |
 round_phase  | match_info  | Current state of the round.|See [notes](#round_phase-note)|   149.0       |
 team         | match_info  | Attack / Defense.      |See [notes](#team-note)|   149.0       |
-match_outcome| match_info  | victory / defeat / draw.      |See [notes](#match_outcome-note)|   149.0       |
+match_outcome| match_info  | victory/defeat/draw.      |See [notes](#match_outcome-note)|   149.0       |
 round_report | match_info  | * Total Damage<br></br>* Total number of bullets hit.<br></br>* Number of bullets hit on head.<br></br>* Number of hit headshots that killed. |See [notes](#round_report-note)|   150.0       |
 game_mode    | match_info  |The current played mode and whether or not it is ranked/custom|See [notes](#game_mode-note)|   151.0       |
 roster    | match_info  | * Player Name<br></br>* Player ID<br></br>* Name of picked character<br></br>* Player's Rank<br></br>* Whether it is the local player<br></br>* If player is a teammate or not. |See [notes](#roster-note)|   151.0       |
 scoreboard    | match_info  | Scoreboard changes and updates during the game |See [notes](#scoreboard-note)|   151.0       |
 kill_feed    | match_info  | kill feed updates during the game |See [notes](#kill_feed-note)|   209.0       |
 map    | match_info  | Current played map name |See [notes](#map-note)|   217.0       |
+escalation_stage    | match_info  | Each team's currnt weapon stage in Escalation game mode. |See [notes](#escalation_stage-note)|   250.0       |
 
 #### *round_number* note
 
@@ -226,7 +227,7 @@ List of parameters:
 * headshot - number of headshots that did not kill an enemy
 * bodyshots - number of body shots
 * legshots - number of leg shots
-* final_headshot - number of head shots that did kill an enemy
+* final_headshot - number of headshots that did kill an enemy
 * damage_received - total damage the local player received
 * hits_received - total hits the local player received
 * ability_damage - total damage done by the use of an ability
@@ -243,7 +244,7 @@ List of parameters:
 
 **mode-** 
 
-* Bomb = Regular game (Unrated/Competitve)
+* Bomb = Regular game (Unrated/Competitive)
 * Quick Bomb = Spike Rush
 * Deathmatch = Deathmatch
 * Escalation = Escalation
@@ -267,13 +268,13 @@ Data Example:
 
 #### *roster* note
 
-<b>*Important:*</b> If players (or local player) in the match activate the option to hide their names from players outside their party, the output you will see will be the name of the agent (like `Jett` or in the case of the local player it will be `Me`) instead.
-It is language dependent, so that is also important to take into account.
+<b>*Important:*</b> If players (or the local player) in the match activate the option to hide their names from players outside their party, the output you will see will be the name of the agent (like `Jett` or in the case of the local player it will be `Me`) instead.
+It is language-dependent, so that is also important to take into account.
 
 <b>*Important:*</b> Roster is not supported in game mode "escalation" 
 
 <details open>
-<summary>Rank value in roster can be translated using this list (Apr. 2022)</summary>
+<summary>Rank value in the roster can be translated using this list (Apr. 2022)</summary>
 
 * 0 - Unranked
 * 3 - Iron_01
@@ -327,15 +328,15 @@ Data Example:
 
 List of parameters: 
 * player_id - the id of the player
-* name - the player name
-* character - the character name
+* name - the player's name
+* character - the character's name
 * teammate - is the player in my team or not
-* kills / deaths / assists - The number of kills, deaths and assists suring the game 
+* kills / deaths / assists - The number of kills, deaths and assists during the game 
 * money - the amount of money during the game for each player
 * is_local - local player or not (Boolean)
-* alive - if the player is alive true / false
-* shield - the current used shield for the local and teammate players. Possible values are 0 - no shield, 1 - light shield (25), 2 - heavy shield (50)
-* weapon - the current primary weapon (loadout) name used by the local and teammate players. Visible for all players in deathmatch like the behavior in the scoreboard during the game. 
+* alive - if the player is alive true/false
+* shield - the currently used shield for the local and teammate players. Possible values are 0 - no shield, 1 - light shield (25), 2 - heavy shield (50)
+* weapon - the current primary weapon (loadout) name used by the local and teammate players. Visible to all players in a deathmatch like the behavior in the scoreboard during the game. 
 * ult_points / ult_max - the current ultimate point out of the maximum ultimate points
 
 <details open>
@@ -404,10 +405,10 @@ Data Example:
 #### *kill_feed* note
 
 List of parameters: 
-* attacker - name of the killing player
-* victim  - name of the killed player
-* assist 1/2/3/4 - name of the characters who assisted in the kill  
-* ult - name of the ultimate used, reserved for a non lethal ultimate such as Sage's resurrection 
+* attacker - the name of the killing player
+* victim  - the name of the killed player
+* assist 1/2/3/4 - the name of the characters who assisted in the kill  
+* ult - name of the ultimate used, reserved for a nonlethal ultimate such as Sage's resurrection 
 * headshot - Boolean value if the kill was by headshot
 * weapon - name of the weapon/ability/ultimate used by the killing player or spike/fall damage
 * is_attacker_teammate - true/false if the attacker is a teammate 
@@ -591,6 +592,11 @@ Data Example:
 ```json
 {"info":{"match_info":{"map":"Foxtrot"}},"feature":"match_info"}
 ```
+#### *escalation_stage* note
+
+```json
+{"feature": "match_info", "category": "match_info", "key": "escalation_stage", "data": "{\"attacker\":1,\"defender\":2}"} 
+```
 
 ### Events
 
@@ -614,7 +620,7 @@ Data Example:
 
 #### *match_end* note
 
-Please note that `match_end` does not work on custom matches nor training.
+Please note that `match_end` does not work on custom matches or training.
 
 Data Example:
 
@@ -649,10 +655,10 @@ Data Example:
 #### *kill_feed* note
 
 List of parameters: 
-* attacker - name of the killing player
-* victim  - name of the killed player
-* assist 1/2/3/4 - name of the characters who assisted in the kill  
-* ult - name of the ultimate used, reserved for a non lethal ultimate such as Sage's resurrection 
+* attacker - the name of the killing player
+* victim  - the name of the killed player
+* assist 1/2/3/4 - the name of the characters who assisted in the kill  
+* ult - name of the ultimate used, reserved for a non-lethal ultimate such as Sage's resurrection 
 * headshot - Boolean value if the kill was by headshot
 * weapon - name of the weapon/ability/ultimate used by the killing player or spike/fall damage
 * is_attacker_teammate - true/false if the attacker is a teammate 
@@ -666,7 +672,7 @@ Data Example:
 
 #### *shop* note
 
-* This feature is not yet suported in TTM game mode
+* This feature is not yet supported in TTM game mode
 
 Data Example:
 

@@ -77,7 +77,7 @@ max_kill_distance   | match_info   | Max kill distance in CM| See [notes](#max_k
 
 #### `kills` notes:
 
-Currently there is a known issue where if a teammate knocks out an enemy and local player finishes him off, he will not get the kill event.
+Currently, there is a known issue where if a teammate knocks out an enemy and the local player finishes him off, he will not get the kill event.
 
 Data Example:
 
@@ -119,7 +119,7 @@ fire   | null        |  When local player attacks.  | Relevant also for fists. |
 
 #### `kill` note:
 
-Currently there is a known issue where if a teammate knocks out an enemy and local player finishes him off, he will not get the kill event.
+Currently, there is a known issue where if a teammate knocks out an enemy and the local player finishes him off, he will not get the kill event.
 
 Data Example:
 
@@ -144,7 +144,7 @@ Data Example:
 
 #### `damage_dealt` note:
 
-This event can not be used in real time, as it can give an un-fair advantage to the user. You can use it post-match.
+This event can not be used in real-time, as it can give an unfair advantage to the user. You can use it post-match.
 
 Data Example:
 
@@ -179,7 +179,7 @@ Data Example:
 
 #### `matchEnd` notes
 
-The  matchEnd event fired when your player is killed, and when you exit to the lobby. (which means that if you get killed and than you exit to the lobby, you will see two calls for this event).
+The `matchEnd` event is fired when your player is killed, and when you exit to the lobby. (which means that if you get killed and then you exit to the lobby, you will see two calls for this event).
 
 Data Example:
 
@@ -288,13 +288,13 @@ key          | Category    | Values                            | Notes          
 ------------ | ------------| --------------------------------- | --------------------- | ------------- |
 name       | me   | The player’s nickname<br></br>`{"name":"itayG"}` |                       |   90.0        |
 bodyPosition       | me   | The local player’s peek-position.<ul><li>‘leanLeft’</li><li>‘leanRight’</li><li>‘straight’ </li></ul>|                       |  128.0        |
-inVehicle       | me   | Whether local player is inside a vehicle or not.<ul><li>‘null’Bool - ‘True‘/‘False‘ </li></ul>| Valid for the airplane as well. |  128.0        |
+inVehicle       | me   | Whether the local player is inside a vehicle or not.<ul><li>‘null’Bool - ‘True‘/‘False‘ </li></ul>| Valid for the airplane as well. |  128.0        |
 aiming       | me   | The player’s different type of aim-focus usage.<ul><li>‘null’</li><li>‘focusedAim’</li><li>‘aimDownSight’</li><li>aimDownSight_holding_breath’ </li></ul>|                       |  128.0        |
 view       | me   | The player’s perspective (Third Person/First Person).<ul><li>‘TPP’</li><li>‘FPP’</li> </ul>|                       |  128.0        |
-freeView       | me   | When the local player uses ‘ALT’ feature to look around.<ul><li>Bool - ‘True‘/‘False‘</li> </ul>|                       |  128.0        |
+freeView       | me   | When the local player uses the ‘ALT’ feature to look around.<ul><li>Bool - ‘True‘/‘False‘</li> </ul>|                       |  128.0        |
 movement       | me   | The player’s type of movement speed.<ul><li>‘normal’</li><li>‘fast’</li><li>‘stealth’</li> </ul>|                       |  128.0        |
 inventory_XX       | inventory   | Info about the inventory of the local player. Each “inventory_XX” object <br></br>represents one item and is being cleared once this item is dropped/replaced <br></br>by the player.<br></br>This info-update provides:<ul><li>name (string) – name of the item</li><li>count (int) – number of items</li></ul>`{"feature":"me","category":"inventory","key":"inventory_1",`<br></br>`"value":"{"name" :"Item_Attach_Weapon_Muzzle_FlashHider`<br></br>`_Medium_C_2","count":"1"}"}`|                       |    130.0.9        |
-equipped_XX       | inventory   | Info about “equipable” items. Each “equipped_XX” object represents <br></br>one item and is being cleared once this item is dropped/replaced <br></br>by the player.<br></br>This info-update provides:<ul><li>name (string) – the name of the item</li><li>count (int) – number of items</li>`{"feature":"me","category":"inventory","key":"equipped_1",`<br></br>`"value":"{"name": "Item_Weapon_vz61Skorpion_C_1"`<br></br>`"count":"1"}"}` </ul>|                       |    130.0.9        |
+equipped_XX       | inventory   | Info about “equipable” items. Each “equipped_XX” object represents <br></br>one item and is being cleared once this item is dropped/replaced <br></br>by the player.<br></br>This info-update provides <ul><li>name (string) – the name of the item</li><li>count (int) – number of items</li>`{"feature":"me","category":"inventory","key":"equipped_1",`<br></br>`"value":"{"name": "Item_Weapon_vz61Skorpion_C_1"`<br></br>`"count":"1"}"}` </ul>|                       |    130.0.9        |
 weaponState       | inventory   | Info about the weapon and its state.<br></br>This info-update provides:<ul><li>name (string) – the name of the weapon used by the local player</li><li>equipped (bool) – in hand (true) or holstered (false)</li><li>count (int) – number of items </li></ul>|                       |    130.0.9        |
 health  | me   | The player’s current health |See [notes](#health-notes)|   135.0        |
 stance  | me   | The player’s current stance | Possible values are: stand, crouch and prone. |   135.0        |
@@ -320,13 +320,13 @@ Data Example:
 key         | Category    | Values                          | Notes                 | Since GEP Ver. |
 ----------- | ------------| --------------------------------| --------------------- | ------------- |
 nicknames       | match_info   | The names of players in the local players' squad.|See [notes](#nicknames-notes) |   90.0        |
-team_location| match_info  | The X,Y,Z location of your team members. |See [notes](#team_location-notes)|     134.0     |
+team_location| match_info  | The X, Y, and Z coordinates of your team members. |See [notes](#team_location-notes)|     134.0     |
 team_index| match_info  | The index number of every squad member position by order of appearance. |See [notes](#team_index-notes)|     134.0     |
 
 
 #### *nicknames* note
 
-Each member has an index number that indicates his position in the squad's roste by order of appearance (f.ex first position is index 0, 2nd position is index 1, 3rd position is index 2... etc.)
+Each member has an index number that indicates his position in the squad's roster by order of appearance (f.ex first position is index 0, 2nd position is index 1, 3rd position is index 2... etc.)
 
 Data Example:
 
@@ -460,7 +460,7 @@ killer | The killer’s nickname | The local player was killed by one of the pla
 
 #### `killer` notes:
 
-When one of local player’s squad members kill the local player, the provided data will be "self_kill”.
+When one of the local player’s squad members kills the local player, the provided data will be "self_kill”.
 
 Data Example:
 

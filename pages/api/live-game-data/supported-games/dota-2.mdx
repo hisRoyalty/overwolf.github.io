@@ -22,10 +22,10 @@ sidebar_custom_props:
 Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
 
 :::warning Game State Integration
-Due to a recent update in Dota 2 in order for Overwolf apps to work correctly you will need to inform your users to add under Launch Options the following command line: 
+Due to a recent update in Dota 2 for Overwolf apps to work correctly, you will need to inform your users to add under Launch Options the following command line: 
 
 `-gamestateintegration` - [More details here](https://support.overwolf.com/en/support/solutions/articles/9000212745-how-to-enable-game-state-integration-for-dota-2)  
-In order to know which user is already using this command line parameter, you should use the [`overwolf.games.getGameInfo()`](/api/games#getgameinfogameclassid-callback) API, where you will get this parameter in the response under gameInfo --> GameInfo --> ProcessCommandLine.
+To know which user is already using this command line parameter, you should use the [`overwolf.games.getGameInfo()`](/api/games#getgameinfogameclassid-callback) API, where you will get this parameter in the response under gameInfo --> GameInfo --> ProcessCommandLine.
 :::
 
 ## Sample Apps
@@ -72,6 +72,7 @@ In order to know which user is already using this command line parameter, you sh
 * [hero_pool](#hero_pool)
 * [me](#me)
 * [game](#game)
+* [damage](#damage)
 
 
 ## Game events status
@@ -229,13 +230,13 @@ daytime_changed   | Check notes |          |See [notes](#daytime_changed-note)| 
 
 Event Data:
 
-* <b>daytime</b> – True if it is current day time, false otherwise.
-* <b>clock_time</b> – The amount of seconds from when the game clocked shows (0:00). It can be negative during the Pre-Game phase.
+* <b>daytime</b> – True if it is current daytime, false otherwise.
+* <b>clock_time</b> – The number of seconds from when the game clocked shows (0:00). It can be negative during the Pre-Game phase.
 * <b>nightstalker_night</b> – True if it is currently a Night Stalker ultimate night. 
 
 Fired when:
 
-The game transitions between day time and night time. 
+The game transitions between daytime and night time. 
 
 Data Example:
 
@@ -492,7 +493,7 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-hero_health_mana_info | Check notes |Whenever either of the players mana, health, max mana or max health changes.|See [notes](#hero_health_mana_info-notes)|     77.3      |
+hero_health_mana_info | Check notes |Whenever either of the player's mana, health, max mana or max health changes.|See [notes](#hero_health_mana_info-notes)|     77.3      |
 
 #### *hero_health_mana_info* note
 
@@ -559,7 +560,7 @@ hero_ability_skilled | Check notes |Whenever the player skills up an ability.|Se
 * slot – The index of the ability slot (0 – 5, left to right)
 * name – The name of the ability.
 * level – The current level of the ability.
-* can_cast – True unless  the ability is not skilled, there’s not enough mana to cast it, the player is silenced, or is on cooldown.
+* can_cast – True unless the ability is not skilled, there’s not enough mana to cast it, the player is silenced, or is on cooldown.
 * passive – True if the ability is passive.
 * ability_active – Unknown, TBD.
 * cooldown – Remaining cooldown until the ability is ready to cast.
@@ -798,11 +799,11 @@ Pregame phase roster:
 Player object structure:
 
 * "steamId" - steamId string
-* "name" - player name in game
+* "name" - player name in-game
 * “teamId”
   * 2 – Radiant
   * 3 – Dire
-  * 0 – Not in team
+  * 0 – Not in a team
 * “heroId” – <a href="https://github.com/kronusme/dota2-api/blob/master/data/heroes.json" target="_blank">Heroes IDs</a> (0 if still not picked)
 * "role" - role type.
    (1 - Safelane, 2 - Offlane, 4 - Midlane, 8 - Other, 16 - HardSupport, 888\any other number - Can be received during bot matchups and should be ignored)
@@ -812,7 +813,7 @@ Player object structure:
 
 :::note
 
-In Immortal Draft use "team_slot" instead of "index" to detected the accurate slot of all players 
+In Immortal Draft use "team_slot" instead of "index" to detect the accurate slot of all players 
 
 :::
 
@@ -830,7 +831,7 @@ Bans object structure:
 * “teamId”
   * 2 – Radiant
   * 3 – Dire
-  * 0 – Not in team
+  * 0 – Not in a team
 
 #### *draft* note
 
@@ -846,7 +847,7 @@ Draft object structure:
 * “teamId”
   * 2 – Radiant
   * 3 – Dire
-  * 0 – Not in team
+  * 0 – Not in a team
 
 ## `party`
 
@@ -900,7 +901,7 @@ Data Example:
 
 key               | Category    | Values                    | Notes                 | Since GEP Ver. |
 ----------------- | ------------| ------------------------- | --------------------- | ------------- |
-hero_pool | game_info  |The numberical ID's of heroes that are available for picking. |See [notes](#hero_pool-note)|  139.0   |
+hero_pool | game_info  |The numerical ids of heroes that are available for picking. |See [notes](#hero_pool-note)|  139.0   |
 
 #### *hero_pool* note
 
@@ -951,4 +952,30 @@ Event data example:
 ```json
 {"info":{"game":{"game_state":"playing"}},"feature":"game"}
 {"info":{"game":{"match_state":"DOTA_GAMERULES_STATE_INIT"}},"feature":"game"}
+```
+
+## `damage`
+
+### Info Updates
+
+key               | Category    | Values                    | Notes                 | Since GEP Ver. |
+----------------- | ------------| ------------------------- | --------------------- | -------------- |
+damage_dealt_hero| damage        |   The total and current damage done to a hero by the local player|   See [notes](#damage_dealt_hero-note)|  250.0         |
+damage_dealt_tower| damage        |   The total and current damage done to a tower by the local player|   See [notes](#damage_dealt_tower-note)|  250.0         |
+
+
+#### *damage_dealt_hero* note
+
+Event data example:
+
+```json
+{"info":{"damage":{"damage_dealt_hero":{"total_damage": 922, "current_damage": 100}}},"feature":"damage"}
+```
+
+#### *damage_dealt_tower* note
+
+Event data example:
+
+```json
+{"info":{"damage":{"damage_dealt_tower":{"total_damage": 800, "current_damage": 50}}},"feature":"damage"}
 ```

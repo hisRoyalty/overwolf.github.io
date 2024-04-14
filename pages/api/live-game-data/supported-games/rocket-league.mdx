@@ -307,7 +307,7 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-action_points  | match_info| Name of action that granted a score to local player. |See [notes](#action_points-note)|    160.0   |
+action_points  | match_info| Name of action that granted a score to the local player. |See [notes](#action_points-note)|    160.0   |
 
 #### *action_points* note
 
@@ -333,7 +333,7 @@ Data Examples:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-player0 / player1 … palyerN(N = number of players in the match)| playersInfo| Check notes |See [notes](#player-note)|    14.0   |
+player0 / player1 … palyerN (N = number of players in the match)| playersInfo| Check notes |See [notes](#player-note)|    14.0   |
 team1 / team2| teamsInfo | Check notes |See [notes](#teamsInfo-note)|    24.0   |
 team1_score / team2_score| teamsScore|team1 / team2 score – integer|See [notes](#pseudo_match_id-note)|    86.0   |
 players_rank| playersInfo|The rank of each player at the end of a match |See [notes](#players_rank-note)|    237.0   |
@@ -346,9 +346,9 @@ players_rank| playersInfo|The rank of each player at the end of a match |See [no
   * goals – Goal count of the player
   * name –  Name of the player that died
   * team – Team number of the player (1 or 2)
-  * platform - The platform current platform name 
+  * platform - The platform's current platform name 
     * Available platforms: Steam, PS4 (PS5), PS3, Dingo, Epic, NNX (Nintendo)
-  * player_id - the current player id in the specific platform
+  * player_id - the current player ID in the specific platform
   * assists - Total assists of the player
   * saves - Total saves of the player
   * shots - Total shots of the player
@@ -370,7 +370,7 @@ Data Example:
 
 Value:
 
-Encoded stringified array of strings indicating the players IDs for each team. Each ID corresponds to an ID under the playersInfo category.
+An encoded stringified array of strings indicating the player's IDs for each team. Each ID corresponds to an ID under the playersInfo category.
 
 Data Example
 

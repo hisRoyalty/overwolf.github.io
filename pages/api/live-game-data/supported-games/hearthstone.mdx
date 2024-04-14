@@ -130,10 +130,10 @@ adventure_loot_options | decks | The currently offered 3-option draft (between b
 
 #### *deck_id* note
 
-The key is the deck's `deck_id` string. It is not the literal string "deck_id". See example below.
+The key is the deck's `deck_id` string. It is not the literal string "deck_id". See the example below.
 
 Decks are “visible” when the local player starts a new game, during the “deck selection” screen, or when the local player enters the “My Collection” menu. The following data is being provided for each deck:
-* Deck name / id
+* Deck name/id
 * Deck cards (array of cards)
 * Deck key
 
@@ -185,7 +185,7 @@ The following data is provided when the local player selects a deck:
 * “deck_name”
 * “class_skin” – Deck image name
 
-Example for a “selected deck” structure:
+Example of a “selected deck” structure:
 
 `{"feature":"decks","category":"selected_deck","key":"selected_deck","value":
 "{"deck_id":"706741699","deck_name":"Basic Shaman","class_skin":"Thrall" }`
@@ -293,7 +293,7 @@ adventure_stats   | match_info  | The stats of the current adventure run. | See 
 
 #### *match_type* note
 
-<b>Important:</b> There's a new game mode called "Duels". We do NOT support this mode at this time. We will update accordingly in the near future.
+<b>Important:</b> There's a new game mode called "Duels". We do NOT support this mode at this time. We will update accordingly soon.
 
 :::tip
 If you would like to know when the user is going to play the `battlegrounds` mode, you can listen to the match_type info update, and check If the value is `GT_BATTLEGROUNDS`.
@@ -396,7 +396,7 @@ pseudo_match_id   | match_info  | The ID of the current match. |See [notes](#pse
 
 #### *pseudo_match_id* note
 
-This is an Overwolf generated code for internal use, not issued by the game or by Blizzard.
+This is an Overwolf-generated code for internal use, not issued by the game or by Blizzard.
 
 Data Example:
 
