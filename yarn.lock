@@ -1642,11 +1642,11 @@ __metadata:
   linkType: hard
 
 "@csstools/css-parser-algorithms@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "@csstools/css-parser-algorithms@npm:2.5.0"
+  version: 2.6.0
+  resolution: "@csstools/css-parser-algorithms@npm:2.6.0"
   peerDependencies:
     "@csstools/css-tokenizer": ^2.2.3
-  checksum: 6bfbdb4052acca48de9db0806a1b18458709103390656634ebe3cf0390048a6e9b304b78173fbcd524e03669dacb5cc3bedbe8008c354ff9511aed4935dcfc6f
+  checksum: 06b48d5e59faec36f7491a6a1c495005878869971e850545a3dd9ee98e5a7c1c28e138137137e16b772e0aa23c29b9524a33e75be584ba3adcd1ef316e1753c0
   languageName: node
   linkType: hard
 
@@ -1658,21 +1658,21 @@ __metadata:
   linkType: hard
 
 "@csstools/media-query-list-parser@npm:^2.1.7":
-  version: 2.1.7
-  resolution: "@csstools/media-query-list-parser@npm:2.1.7"
+  version: 2.1.8
+  resolution: "@csstools/media-query-list-parser@npm:2.1.8"
   peerDependencies:
-    "@csstools/css-parser-algorithms": ^2.5.0
+    "@csstools/css-parser-algorithms": ^2.6.0
     "@csstools/css-tokenizer": ^2.2.3
-  checksum: f910d9c29c84e828d121f451607fe9c275297041f317075ede935ffacdd7fd53fcbc0dd4993585e405b5337b7f991b864d101dff3cb8fc400e8c32a9aedbfe69
+  checksum: a14d32092481743c51ac5279b4e486d4ae50c14331e01de01ea900ba51f6b79eadd36a1fd5be840ab6c8f2c5275f0bbe29f035844ba566edd84edf9ce5470a06
   languageName: node
   linkType: hard
 
 "@csstools/selector-specificity@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@csstools/selector-specificity@npm:3.0.1"
+  version: 3.0.2
+  resolution: "@csstools/selector-specificity@npm:3.0.2"
   peerDependencies:
     postcss-selector-parser: ^6.0.13
-  checksum: e4b5aac3bd3ca1f824cb9578f52b16046a519aa8050ce291da37e611976a83cd3b2b2f908d2678dd4cbbe00bbde8ec28c34fffc40dbbf9a13608dfcaf382ee80
+  checksum: af3cc9282b600170b7de0fed2106830ab353359bd11f66cf71259419c9bddf8f0773c3a6e513cd9f66fd7e4920a1786a7c288723cbb3ae207974c1e7de26293e
   languageName: node
   linkType: hard
 
@@ -6834,9 +6834,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.2.9":
-  version: 3.2.9
-  resolution: "flatted@npm:3.2.9"
-  checksum: f14167fbe26a9d20f6fca8d998e8f1f41df72c8e81f9f2c9d61ed2bea058248f5e1cbd05e7f88c0e5087a6a0b822a1e5e2b446e879f3cfbe0b07ba2d7f80b026
+  version: 3.3.1
+  resolution: "flatted@npm:3.3.1"
+  checksum: 85ae7181650bb728c221e7644cbc9f4bf28bc556f2fc89bb21266962bdf0ce1029cc7acc44bb646cd469d9baac7c317f64e841c4c4c00516afa97320cdac7f94
   languageName: node
   linkType: hard
 
@@ -9343,9 +9343,9 @@ __metadata:
   linkType: hard
 
 "meow@npm:^13.1.0":
-  version: 13.1.0
-  resolution: "meow@npm:13.1.0"
-  checksum: 78270d501c9f77c38c4d2b8d7a191396f4c4a9ea35710221f16cb21c30869f0c866a038b704fe0782d22ae2ca254cac159bc0c478b4c2f3dd72b26afc9ff2383
+  version: 13.2.0
+  resolution: "meow@npm:13.2.0"
+  checksum: 79c61dc02ad448ff5c29bbaf1ef42181f1eae9947112c0e23db93e84cbc2708ecda53e54bfc6689f1e55255b2cea26840ec76e57a5773a16ca45f4fe2163ec1c
   languageName: node
   linkType: hard
 
@@ -11157,13 +11157,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.4.33":
-  version: 8.4.33
-  resolution: "postcss@npm:8.4.33"
+  version: 8.4.35
+  resolution: "postcss@npm:8.4.35"
   dependencies:
     nanoid: ^3.3.7
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 6f98b2af4b76632a3de20c4f47bf0e984a1ce1a531cf11adcb0b1d63a6cbda0aae4165e578b66c32ca4879038e3eaad386a6be725a8fb4429c78e3c1ab858fe9
+  checksum: cf3c3124d3912a507603f6d9a49b3783f741075e9aa73eb592a6dd9194f9edab9d20a8875d16d137d4f779fe7b6fbd1f5727e39bfd1c3003724980ee4995e1da
   languageName: node
   linkType: hard
 
