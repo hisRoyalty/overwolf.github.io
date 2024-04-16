@@ -8,6 +8,7 @@ export default {
     date: 'March 2024',
     path: '2024/march',
     name: '248',
+    suffix: '.120',
   },
   dev: {
     date: 'March 2024',
@@ -22,8 +23,8 @@ export default {
   },
   'ow-electron-builder': {
     date: 'January 2024',
-    path: 'v24.7.0',
-    name: '24.7.0',
+    path: 'v24.13.3',
+    name: '24.13.3',
   },
   docs: {
     date: 'November 22nd 2023',
