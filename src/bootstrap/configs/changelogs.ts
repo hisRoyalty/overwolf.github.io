@@ -22,9 +22,9 @@ export default {
     name: '28.2.5',
   },
   'ow-electron-builder': {
-    date: 'January 2024',
+    date: 'April 2024',
     path: 'v24.13.3',
-    name: '24.13.3',
+    name: '24.13.4',
   },
   docs: {
     date: 'November 22nd 2023',
