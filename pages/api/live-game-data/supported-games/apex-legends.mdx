@@ -48,7 +48,7 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -113,7 +113,7 @@ Possible values:
 * italian - Italian
 * japanese - Japanese
 * korean - Korean
-* polish - ploish
+* polish - Polish
 * portuguese - Portuguese
 * russian - Russian
 * schinese - Simplified Chinese
@@ -142,7 +142,7 @@ If the local player has special characters in their name the game will display t
 
 player_name - local player name as displayed in the lobby  
 
-in_game_player_name - local player name as displayed inside a match, this parameter will update once the player entered a match.
+in_game_player_name - local player name as displayed inside a match, this parameter will update once the player enters a match.
 
 Data Example:
 ```json
@@ -183,7 +183,7 @@ key          | Category    | Values                    | Notes                 |
 --------------- | -----------| ------------------------------------------------------------------------------------ | ------------------------------------ | ------------- | 
 pseudo_match_id | match_info | The current match’s ID code.<br></br><br></br>Example:<br></br><br></br> `0c0ea3df-97ea-4d3a-b1f6-f8e34042251f`  |  This is an Overwolf-generated code, unrelated to Respawn.  |   130.0 |
 game_mode      | match_info | The currently selected game mode. | See [notes](#game_mode-note) |   158.0 |
-tabs            | match_info | The current amount of squads, players, cash, and kills of the match (in relation to local player).| See [notes](#tabs-note) |   158.0 |
+tabs            | match_info | The current amount of squads, players, cash, and kills of the match (about local player).| See [notes](#tabs-note) |   158.0 |
 map_id            | match_info | The current played map Id.| See [notes](#map_id-note) |   215.0 |
 arena_score         | match_info | The current match score.| See [notes](#arena_score-note) |   215.0 |
 mode_name         | match_info | The current mode name.| See [notes](#mode_name-note) |   241.0 |
@@ -345,8 +345,8 @@ Data Example:
 
 #### *match_end* note
 
-Currently we have a special case where if someone in your team got a yellow knockdown shield (the one that allows you to self-revive), and your entire team was knocked out, the match end will still fire despite no one reaching a death-state.
-This is a very rare case that does not commonly happen in the game, however we're still working on fixing it.
+Currently, we have a special case where if someone in your team got a yellow knockdown shield (the one that allows you to self-revive), and your entire team was knocked out, the match end will still fire despite no one reaching a death-state.
+This is a very rare case that does not commonly happen in the game, however, we're still working on fixing it.
 
 #### *round_start* note
 
@@ -371,7 +371,7 @@ Data Example:
 key          | Category    | Values                                       | Notes   | Since GEP Ver. |
 ------------ | ------------| -------------------------------------------- | ------- | ------------- | 
 teammate_X   | match_info  | This feature provides the list of your squad members.    | See [notes](#teammate_X-note)|  128.0  |
-legendSelect_X| match_info | The name of the legend & order of selection for every member in the team, including noting who the jump-master and local-player are. | See [notes](#legendSelect_X-note)|  128.0 |
+legendSelect_X| match_info | The name of the legend & order of selection for every member of the team, including noting who the jump-master and local player are. | See [notes](#legendSelect_X-note)|  128.0 |
 team_info | match_info | The current status of the local player’s team. | See [notes](#team_info-note)|  128.0 |
 
 #### *teammate_X* notes
@@ -389,7 +389,7 @@ Each squad member joining the game will be reported in the following way:
 
 #### *legendSelect_X* notes
 
-Every team member, including the jump-master will be reported in the following way:
+Every team member, including the jump-master, will be reported in the following way:
 
 ```json
 {"info":{"match_info":{"legendSelect_0":"{\"playerName\":\"MrPlayer\",\"legendName\":\"#character_lifeline_NAME\",\"selectionOrder\":\"0\",\"lead\":false,\"is_local\":false}"}},"feature":"team"}
@@ -405,7 +405,7 @@ The current status of the local player’s team ("active" or "eliminated").
 {"info":{"match_info":{"team_info":"{\"team_state\":\"active\"}"}},"feature":"team"}
 ```
 
-'team_info' object includes:
+The 'team_info' object includes:
 
 * Selection order
 * Legend name
@@ -435,8 +435,8 @@ Each player joining the game will be reported in the following way:
 * `platform_hw` / `platform_sw` - The platform which the player plays on currently.
 * `state` - the current state of the player - alive / knocked_out / death.
 * `is_local` - where 1 is the local player else 0.
-* `platform_id` - The player Id in the current used platform.
-* `origin_id` - The player origin / EA Id.
+* `platform_id` - The player ID in the current used platform.
+* `origin_id` - The player origin / EA ID.
 
 Possible platform values:
 
@@ -459,7 +459,7 @@ location  | match_info | The coordinates of the location for the local player   
 * Map Center is (0,0,z)
 * King's Canyon appears to be 1x1km
 * Location is polled up to two times in 1 second
-* Location is accurate to a 1 meter resolution, do not use fractions of meters
+* Location is accurate to a 1-meter resolution, do not use fractions of meters
 
 #### Event data example
 
@@ -511,7 +511,7 @@ After a match, this will return:
 
 key              | Category   | Values                                                                     | Notes   | Since GEP Ver. |
 ---------------- | -----------| -------------------------------------------------------------------------- | ------- | ------------- | 
-totalDamageDealt | me         | The total amount of damage inflicted in a match of Apex. See example below.|         |  130.0        |
+totalDamageDealt | me         | The total amount of damage inflicted in a match of Apex. See the example below.|         |  130.0        |
 
 #### *totalDamageDealt* notes
 
@@ -577,40 +577,36 @@ Data Example:
 
 Event        | Event Data                        | Fired When   | Notes              | Since GEP Ver. |
 -------------| ----------------------------------| ----------------------------- | ------------------ | --------------|
-kill | victimName   | Local player killed another player. |                    |     130.0      | 
-knockdown | victimName  | Local player knocked out another player.|                    |    130.0      | 
-assist | victimName  | Local player participated in a team member’s kill. |                    |    130.0      | 
+kill | total kills   | Local player killed another player. |                    |     130.0      | 
+knockdown | null  | Local player knocked out another player.|                    |    130.0      | 
+assist | total assists  | Local player participated in a team member’s kill. |                    |    130.0      | 
 
 #### *kill* note
 
-The data includes the victim name as parameter 
+The data includes the local player's total amount of kills
 
 Data Example:
 
 ```json
-{"events":[{"name":"kill","data":"{  "victimName": "`1[LuL] Sladdi #limbo"}"}]}
+{"events":[{"name":"kill","data":2}]}
 ```
 
 #### *knockdown* note
 
-The data includes the victim name as parameter 
-
 Data Example:
 
 ```json
-{"events":[{"name":"knockdown","data":"{  "victimName": "`1 Kixfoxn"}"}]}
+{"events":[{"name":"knockdown","data":null}]}
 ```
 
 #### *assist* note
 
-The data include values: 
-1. The vcictime name as victimName
-2. Assist type as type elimination
+The data includes the local player's total amount of assists
 
 Data Example:
 
 ```json
-{"events":[{"name":"assist","data":"{  "victimName": "kazikov.qwerty",  "type": "elimination"}"}]}
+{"events":[{"name":"assist","data":5}]}
 ```
 
 ## `revive`
@@ -645,7 +641,7 @@ Data Example:
 Event        | Event Data                        | Fired When   | Notes              | Since GEP Ver. |
 -------------| ----------------------------------| ----------------------------- | ------------------ | --------------|
 knocked_out | null                              | Local player’s health drops to zero.	 | See [notes](#knocked_out-note)|     128.0      | 
-death | null | Local player died during knocked out state. | There is another health bar during knocked out<br></br>state, it’s orange, above the player name. See [notes](#death-note) |     128.0      | 
+death | null | Local player died during knocked out state. | There is another health bar during the knocked out<br></br>state, it’s orange, above the player name. See [notes](#death-note) |     128.0      | 
 
 #### *knocked_out* note
 

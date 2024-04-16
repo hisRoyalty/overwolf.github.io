@@ -56,7 +56,7 @@ scene | game_info   | Current state (screen) of the game | See [notes](#scene-no
 sideboard_cards | game_info   | Cards that are currently held in the sideboard. | See [notes](#sideboard_cards-note) |     150.0      |
 main_deck_cards | game_info   | Cards that are currently in your main deck. | See [notes](#main_deck_cards-note) |     150.0      |
 inventory_cards | game_info | Card ID + Quantity. | See [notes](#inventory_cards-note) |     180.0      |
-inventory_stats | game_info | Current statistic and information of the local player's profile. | See [notes](#inventory_stats-note) |     180.0      |
+inventory_stats | game_info | Current statistics and information of the local player's profile. | See [notes](#inventory_stats-note) |     180.0      |
 
 #### *scene* note
 
@@ -124,7 +124,7 @@ Data Example:
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | -------------  | 
 draft_pack   | match_info  | Pack number you currently pick for, time left to pick and pick number. | See [notes](#draft_pack-note) |     150.0      |
-draft_cards  | match_info  | Name and ID of all picked cards during draft. | See [notes](#draft_cards-note) |     150.0      |
+draft_cards  | match_info  | Name and ID of all picked cards during the draft. | See [notes](#draft_cards-note) |     150.0      |
 draft_picked_card | match_info | Name and ID of currently picked card. | See [notes](#draft_picked_card-note) |     150.0      |
 
 #### *draft_pack* note
@@ -216,8 +216,8 @@ Data Example:
 
 Event  | Event Data        | Fired When (announcement)                                          | Notes      | Since GEP Ver. |
 -------| ------------------| -------------------------------------------------------------------| ---------- | --------------|
-draft_start | null   | When draft has started. |See [notes](#draft_start-note)|    150.0      |
-draft_end | null   | When draft has ended. |See [notes](#draft_end-note)|    150.0      |
+draft_start | null   | When a draft has started. |See [notes](#draft_start-note)|    150.0      |
+draft_end | null   | When a draft has ended. |See [notes](#draft_end-note)|    150.0      |
 
 #### *draft_start* note
 

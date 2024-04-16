@@ -51,7 +51,7 @@ If you would like to know when the user is going to play TFT (hit the "Play" but
 It's highly recommended to communicate errors to your users. Check game event status [here](/status/) or easily verify event status directly from your app [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 :::important
-Because LOL and TFT share the same GameID, when checking TFTs game event status please use 21570 as the unique GameID for TFT and 215701 for TFT PBE.
+Because LOL and TFT share the same GameID, when checking TFT game event status please use 21570 as the unique GameID for TFT and 215701 for TFT PBE.
 :::
 
 ## `gep_internal`
@@ -215,7 +215,7 @@ Data example:
 
 Meaning 1st place/8th place, etc.
 
-("Index" <b>rank</b> data in roster is not accurate in real-time - only once the local player had died or won).
+("Index" <b>rank</b> data in the roster is not accurate in real-time - only once the local player had died or won).
 
 #### *gold* notes
 
@@ -258,7 +258,7 @@ Data example:
 
 #### *match_state* notes
 
-Returns 'True' when match starts. Returns 'False' once local player dies or wins the match.
+Returns 'True' when the match starts. Returns 'False' once the local player dies or wins the match.
 
 Data example:
 
@@ -272,11 +272,11 @@ Data example:
 Data examples:
 
 ```json
-{"info":{"match_info":{"round_type":"{\"stage\":\"1-1\",\"name\":\"Portal\",\"type\":\"Portal\"}"}},"feature":"match_info"}
-{"info":{"match_info":{"round_type":"{\"stage\":\"1-2\",\"name\":\"PVE\",\"type\":\"Minions_1\"}"}},"feature":"match_info"}
-{"info":{"match_info":{"round_type":"{\"stage\":\"2-1\",\"name\":\"PVP\",\"type\":\"Augment_1\"}"}},"feature":"match_info"}
-{"info":{"match_info":{"round_type":"{\"stage\":\"2-2\",\"name\":\"PVP\",\"type\":\"PVP\"}"}},"feature":"match_info"}
-{"info":{"match_info":{"round_type":"{\"stage\":\"2-4\",\"name\":\"Carousel\",\"type\":\"Carousel\"}"}},"feature":"match_info"}
+{"feature": "match_info", "category": "match_info", "key": "round_type", "data": "{\"stage\":\"1-1\",\"name\":\"PVP\",\"type\":\"Carousel\",\"native_name\":\"Encounter_Group\"}"}
+{"feature": "match_info", "category": "match_info", "key": "round_type", "data": "{\"stage\":\"1-2\",\"name\":\"PVE\",\"type\":\"Minions_1\",\"native_name\":\"Intro1\"}"}
+{"feature": "match_info", "category": "match_info", "key": "round_type", "data": "{\"stage\":\"2-1\",\"name\":\"PVP\",\"type\":\"Augment_1\",\"native_name\":\"Combat_Set6_Standard_AugmentEarly\"}"}
+{"feature": "match_info", "category": "match_info", "key": "round_type", "data": "{\"stage\":\"3-3\",\"name\":\"PVP\",\"type\":\"PVP\",\"native_name\":\"Combat\"}"}
+{"feature": "match_info", "category": "match_info", "key": "round_type", "data": "{\"stage\":\"3-4\",\"name\":\"Carousel\",\"type\":\"Carousel\",\"native_name\":\"Carousel\"}"}
 ```
 
 #### *round_outcome* notes
@@ -384,11 +384,11 @@ Each player object includes the following data:
 * localplayer
 * rank
 
-Aside from summoner name which is received during the loading screen, the rest of the data mentioned above will be delivered once the actual game has begun.
+Aside from the summoner name which is received during the loading screen, the rest of the data mentioned above will be delivered once the actual game has begun.
 
 #### Important note regarding "index" data
 
-The final & accurate rank position of each player in the match will be given only at the end of the match when the local player had died or won.
+The final & accurate rank position of each player in the match will be given only at the end of the match when the local player has died or won.
 
 Data example:
 
@@ -463,7 +463,7 @@ shop_pieces    |    store    | Available champions for purchase | [See notes](#s
 
 #### *shop_pieces* note
 
-Once you purchase a champion, there will be a new update which indicates "Sold" for a purchased slot.
+Once you purchase a champion, there will be a new update that indicates "Sold" for a purchased slot.
 
 Data Example:
 
@@ -538,7 +538,7 @@ Data Example:
 
 key            | Category    | Values                           | Notes                    | Since GEP Ver. |
 -------------- | ------------| ---------------------------------|--------------------------|---------------|
-bench_pieces   |    bench    | Exact position of each chess-piece on the bench including their current level and items they possess (inventory) | [See notes](#bench_pieces-note) |  134.0  |
+bench_pieces   |    bench    | Exact position of each chess piece on the bench including their current level and items they possess (inventory) | [See notes](#bench_pieces-note) |  134.0  |
 
 #### *bench_pieces* note
 

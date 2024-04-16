@@ -38,7 +38,7 @@ When running this game in trusted mode (without any launch parameters), OW can't
 
 It is highly recommended to communicate errors and warnings to app users. 
 
-Check the current game event status [here](/status/). Alternately, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
 
 ## `gep_internal`
 
@@ -71,62 +71,85 @@ player | live_data| In-game data received by the client.|See [notes](#player-not
 <summary>Click to see some data example</summary>
 
 ```json
-{
-  "provider": {
-    "name": "Counter-Strike: Global Offensive",
-    "appid": 730,
-    "version": 13960,
-    "steamid": "7656119923158",
-    "timestamp": 1697027690
-  },
-  "map": {
-    "mode": "casual",
-    "name": "de_dust2",
-    "phase": "warmup",
-    "round": 0,
-    "team_ct": {
-      "score": 0,
-      "consecutive_round_losses": 0,
-      "timeouts_remaining": 1,
-      "matches_won_this_series": 0
+ {
+    "provider": {
+      "name": "Counter-Strike: Global Offensive",
+      "appid": 730,
+      "version": 13985,
+      "steamid": "76561199232414254",
+      "timestamp": 1706188414
     },
-    "team_t": {
-      "score": 0,
-      "consecutive_round_losses": 0,
-      "timeouts_remaining": 1,
-      "matches_won_this_series": 0
+    "map": {
+      "mode": "casual",
+      "name": "de_dust2",
+      "phase": "live",
+      "round": 1,
+      "team_ct": {
+        "score": 0,
+        "consecutive_round_losses": 1,
+        "timeouts_remaining": 1,
+        "matches_won_this_series": 0
+      },
+      "team_t": {
+        "score": 1,
+        "consecutive_round_losses": 0,
+        "timeouts_remaining": 1,
+        "matches_won_this_series": 0
+      },
+      "num_matches_to_win_series": 0
     },
-    "num_matches_to_win_series": 0
-  },
-  "player": {
-    "steamid": "7656119923158",
-    "name": "Naco",
-    "activity": "playing",
-    "weapons": {
-      "weapon_0": {
-        "name": "weapon_knife_t",
-        "paintkit": "default",
-        "type": "Knife",
-        "state": "holstered"
+    "round": {
+      "phase": "over",
+      "win_team": "T"
+    },
+    "player": {
+      "steamid": "76561199232414254",
+      "name": "JacksAtWork",
+      "observer_slot": 7,
+      "team": "CT",
+      "activity": "playing",
+      "weapons": {}
+    },
+    "previously": {
+      "map": {
+        "round": 0,
+        "team_ct": {
+          "consecutive_round_losses": 0
+        },
+        "team_t": {
+          "score": 0
+        }
       },
-      "weapon_1": {
-        "name": "weapon_glock",
-        "paintkit": "default",
-        "type": "Pistol",
-        "ammo_clip": 20,
-        "ammo_clip_max": 20,
-        "ammo_reserve": 120,
-        "state": "holstered"
+      "round": {
+        "phase": "live",
+        "bomb": "planted"
       },
-      "weapon_2": {
-        "name": "weapon_c4",
-        "paintkit": "default",
-        "type": "C4",
-        "state": "active"
+      "player": {
+        "weapons": {
+          "weapon_0": {
+            "name": "weapon_knife",
+            "paintkit": "default",
+            "type": "Knife",
+            "state": "holstered"
+          },
+          "weapon_1": {
+            "name": "weapon_fiveseven",
+            "paintkit": "default",
+            "type": "Pistol",
+            "ammo_clip": 20,
+            "ammo_clip_max": 20,
+            "ammo_reserve": 100,
+            "state": "active"
+          }
+        }
+      }
+    },
+    "added": {
+      "round": {
+        "win_team": true
       }
     }
   }
-}
 ```
 </details>
 
@@ -182,7 +205,7 @@ key          | Category    | Values                    | Notes                 |
 ------------ | ------------| ------------------------- | --------------------- | ------------- | 
 roster_ | match_info| Data about all the players in the roster|See [notes](#roster-note)|   236.0       |
 game_mode | match_info| The current played game mode and the map name|See [notes](#game_mode-note)|   236.0       |
-match_outcome| match_info  | victory / defeat / tie      |See [notes](#match_outcome-note)|   236.0       |
+match_outcome| match_info  | win / lose / tie      |See [notes](#match_outcome-note)|   236.0       |
 steam_id| live_data  | local player steam Id     |See [notes](#steam_id-note)|   237.0       |
 game_phase| live_data  | list of phases during a game     |See [notes](#game_phase-note)|   237.0       |
 round_phase| live_data  | list of phases during a round     |See [notes](#round_phase-note)|   237.0       |
@@ -203,12 +226,12 @@ is_ranked| match_info  | Flag if the game is ranked or not     |See [notes](#is_
 List of possible values: 
 
 * nickname - The nickname of the player
-* steamid - The player's steam Id
+* steamid - The player's Steam Id
 * money - current money owned by the player
 * kills - current player's kills
 * assists - current player's assists
 * deaths - current player's deaths
-* mvps - current player's mvps number 
+* mvps - current player's MVPs number 
 * score - current player's score
 * is_local - If the player is the local player the value will be true, if not it will be false
 * ping - the ping of the player
@@ -258,8 +281,8 @@ Spectating "Casual" mode on "Dust II" map
 Data Example:
 
 ```json
-{"info":{"match_info":{"match_outcome":"victory"}},"feature":"match_info"}
-{"info":{"match_info":{"match_outcome":"defeat"}},"feature":"match_info"}
+{"info":{"match_info":{"match_outcome":"win"}},"feature":"match_info"}
+{"info":{"match_info":{"match_outcome":"lose"}},"feature":"match_info"}
 ```
 
 #### *steam_id* note
@@ -392,8 +415,8 @@ match_start |              | In the beginning of each match| See [notes](#match_
 match_end   |              | At the end of each match| See [notes](#match_end-note) |228.0|
 kill        | total kills  | When the player kill another player| See [notes](#kill-note) |235.0|
 death       | total deaths | When the player dies| See [notes](#death-note) |235.0|
-assist      | total assists| When the player assist a team member to kill an enemy| See [notes](#assist-note) |235.0|
-kill_feed   | Kills & assists information| Anytime a player dies in match. | See [notes](#kill_feed-note)|     236.0      |
+assist      | total assists| When the player assists a team member to kill an enemy| See [notes](#assist-note) |235.0|
+kill_feed   | Kills & assists information| Anytime a player dies in the match. | See [notes](#kill_feed-note)|     236.0      |
 round_start |              | In the beginning of each round| See [notes](#round_start-note) |237.0|
 round_end   |              | At the end of each round| See [notes](#round_end-note) |237.0|
 
@@ -446,7 +469,7 @@ List of possible values:
 * assister - assister name
 * victim - victim name
 * weapon - used weapon name
-* list of metadata with true / false data
+* list of metadata with true/false data
   * headshot
   * suicide
   * wallbang

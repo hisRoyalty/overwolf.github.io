@@ -1,0 +1,22 @@
+---
+id: 242
+image: "/img/embed/changelogs.jpg"
+title: "Version 0.242"
+sidebar_label: "0.242"
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: false
+---
+
+
+<SkipMe type="TEMPLATE">
+### Platform
+</SkipMe>
+
+### API
+- Added the `SystemLanguage` property to [`overwolf.utils.getSystemInformation`](/api/utils#getsysteminformationcallback), for getting the user's system UI language.
+
+### Bug Fixes
+- Fixed a bug where [`overwolf.media.takeScreenshotEx`](/api/media#takescreenshotextargetpath-options-callback) would sometimes ignore the preferred file format.
+- Fixed a bug where UTM parameters could be parsed incorrectly when using certain encodings.

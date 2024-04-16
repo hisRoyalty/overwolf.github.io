@@ -4,10 +4,6 @@ export default [
     from: '/docs/api/auto-highlights',
   },
   {
-    to: '/api/changelogs',
-    from: '/docs/api/changelog',
-  },
-  {
     to: '/api/games/external-apis',
     from: '/docs/api/games-external-apis',
   },
@@ -732,6 +728,10 @@ export default [
       '/docs/status/past-incidents',
       '/docs/status/underlords',
       '/status/dota-underlords',
+      '/status/leap',
+      '/status/axie-infinity-origins',
+      '/api/live-game-data/leap',
+      '/api/live-game-data/axie-infinity-origins',
       '/status/football-manager-2021',
       '/docs/status/fm2021',
       '/status/football-manager-2022',
@@ -858,7 +858,11 @@ export default [
   },
   {
     to: '/topics/request-a-service/app-marketing-promotions',
-    from: '/docs/topics/app-marketing-promotions',
+    from: [
+      '/docs/topics/promoting-your-app',
+      '/topics/request-a-service/promoting-your-app',
+      '/docs/topics/app-marketing-promotions',
+    ],
   },
   {
     to: '/topics/request-a-service/app-recommendations',
@@ -965,16 +969,16 @@ export default [
     from: '/docs/topics/launch-time-performance',
   },
   {
-    to: '/topics/legal/legal-app-terms',
-    from: '/docs/topics/legal-app-terms',
-  },
-  {
-    to: '/topics/legal/legal-developers-terms',
-    from: '/docs/topics/legal-developers-terms',
-  },
-  {
-    to: '/topics/legal/legal-overview',
-    from: '/docs/topics/legal-overview',
+    to: '/legal/developer-terms',
+    from: [
+      '/docs/topics/legal-developers-terms',
+      '/topics/legal/legal-developers-terms',
+      '/topics/legal/legal-app-terms',
+      '/docs/topics/legal-app-terms',
+
+      '/docs/topics/legal-overview',
+      '/topics/legal/legal-overview',
+    ],
   },
   {
     to: '/topics/integrations/login-with-overwolf',
@@ -1038,10 +1042,6 @@ export default [
   {
     to: '/topics/using-plugins/process-manager-plugin',
     from: '/docs/topics/process-manager-plugin',
-  },
-  {
-    to: '/topics/request-a-service/promoting-your-app',
-    from: '/docs/topics/promoting-your-app',
   },
   {
     to: '/tools/developers-console/all-applications/user-feedback/reviews',
@@ -1141,6 +1141,8 @@ export default [
     from: [
       '/api/changelogs/ow-electron/electron',
       '/api/changelogs/documentation/2022/november',
+      '/api/changelogs/developers-console/2023/march',
+      '/docs/api/changelog',
     ],
   },
   {

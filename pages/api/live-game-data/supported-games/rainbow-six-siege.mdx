@@ -94,16 +94,16 @@ game_mode | match_info   | The current type of game mode. |See [notes](#game_mod
 match_id | match_info   | The current match's ID. |See [notes](#match_id-note) for possible values|   162.1  |
 map_id | match_info   | The currently played map. |See [notes](#map_id-note) for possible values|   162.1  |
 round_outcome_type | match_info   | The type of win/loss of the last-played round. |See [notes](#round_outcome_type-note) for possible values|   165.0  |
-general_log | match_info   | General information regarding current created-match. |See [notes](#general_log-note) for possible values|   186.0  |
-match_start_log | match_info   | Information regarding start of the match. |See [notes](#match_start_log-note) for possible values|   186.0  |
-round_start_log | match_info   | Information regarding start of the round. |See [notes](#round_start_log-note) for possible values|   186.0  |
-round_end_log | match_info   | Information regarding end of the round. |See [notes](#round_end_log-note) for possible values|   186.0  |
-move_log | match_info   | Information regarding movement. |See [notes](#move_log-note) for possible values|   186.0  |
-score_log | match_info   | Information regarding score. |See [notes](#score_log-note) for possible values|   186.0  |
+general_log | match_info   | General information regarding the current created match. |See [notes](#general_log-note) for possible values|   186.0  |
+match_start_log | match_info   | Information regarding the start of the match. |See [notes](#match_start_log-note) for possible values|   186.0  |
+round_start_log | match_info   | Information regarding the start of the round. |See [notes](#round_start_log-note) for possible values|   186.0  |
+round_end_log | match_info   | Information regarding the end of the round. |See [notes](#round_end_log-note) for possible values|   186.0  |
+move_log | match_info   | movement information. |See [notes](#move_log-note) for possible values|   186.0  |
+score_log | match_info   | score information. |See [notes](#score_log-note) for possible values|   186.0  |
 kill_log | match_info   | Information regarding kills. |See [notes](#kill_log-note) for possible values|   186.0  |
 ko_log | match_info   | Information regarding knockout. |See [notes](#ko_log-note) for possible values|   186.0  |
 death_log | match_info   | Information regarding death. |See [notes](#death_log-note) for possible values|   186.0  |
-match_end_log | match_info   | Information regarding end of match. |See [notes](#match_end_log-note) for possible values|   186.0  |
+match_end_log | match_info   | Information regarding the end of match. |See [notes](#match_end_log-note) for possible values|   186.0  |
 
 ### Events
 
@@ -145,7 +145,7 @@ While the possible values are:
 * Tutorials: It’s just a video tutorial, not a game mode.
 
 
-*Note that in Custom games, Training Grounds, or in Match Replay, there is no support for Overwolf real time game events*
+*Note that in Custom games, Training Grounds, or in Match Replay, there is no support for Overwolf real-time game events*
 
 
 #### *match_id* note
@@ -194,7 +194,7 @@ The possible values are:
 * `CONSULATE`
 * `LAIR`
 
-Full list of maps can be found [here](https://www.ubisoft.com/en-gb/game/rainbow-six/siege/game-info/maps)
+A full list of maps can be found [here](https://www.ubisoft.com/en-gb/game/rainbow-six/siege/game-info/maps)
 
 #### *round_outcome_type* note
 
@@ -339,7 +339,7 @@ Data Example:
 
 #### *match_score* note
 
-Match score info-update is presenting the score as it is in the game's UI, the local player is always in the blue team
+Match score info-update presents the score as it is in the game's UI, the local player is always in the blue team
 
 Data Example:
 
@@ -386,6 +386,7 @@ Data Example:
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 --------------- | -----------| ------------------------------------------------------------------------------------ | ------------------------------------ | ------------- |
 roster_XX | players | Provides info for the currently active players (10 players). |  See [notes](#roster_xx-notes) |   123.0 |
+players_list_log| players | Provides a list of the active players and teams. |  See [notes](#players_list_log-notes) |   245.0 |
 team | player | Player’s current team – Orange/Blue/Spectator  | See [notes](#team-notes)  |   123.0 |
 health | player| Player’s current health | See [notes](#health-notes)  |   123.0 |
 score | player | Player’s current score or `null` | See [notes](#score-notes) |   123.0 |
@@ -397,53 +398,38 @@ deaths | player | Total number of player's deaths or `null` | See [notes](#death
 
 Each player joining the game will be reported in the following way:
 
-Backslashes omitted for legibility.
+Backslashes were omitted for legibility.
 ```json
-{
-  "info": {
-    "players":{
-      "roster_0": "{
-        "name": "WolfOnTop.top",
-        "player_id": "1b810848-34df-4834-aa26-61c838059a37",
-        "is_local": true,
-        "team": 1,
-        "operator": 0,
-        "kills": 0,
-        "headshots": 0,
-        "deaths": 0,
-        "score": 0,
-        "defuser": 0,
-        "health": 0,
-        "suffix": 123
-      }"
-    }
-  },
-  "feature": "roster"}
-```
+{"feature": "roster", "category": "players", "key": "roster_5", "data": "{\"player\":\"Overwolf355\",\"is_anonymous\":true,\"suffix\":355,\"player_id\":\"5115efd3-d131-818a-b04d-2cd694dd61a1\",\"is_local\":true,\"team\":\"Blue\",\"operator\":\"JACKAL\",\"kills\":3,\"deaths\":1,\"score\":435,\"assists\":0,\"ping\":32}"}
 
-As you can see, this object includes:
 
-* name - player's name <br></br>
+This object includes:
+
+* player - player's name + suffix
 Important note - "name" is the player's username or nickname if enabled
-
-* team - Blue/Orange/Spectator <br></br>
-As of version 159, you may detect the local player as a spectator when creating a custom match (Example: `{"info":{"player":{"team":"Spectator"}},"feature":"roster"}`).
-* is_local - local player or not (Boolean)
-* [operator](https://github.com/overwolf/community-gists/blob/master/siege_operator_ids.json) - The ID of the selected operator (available for team members only)
-* kills - Total amount of kills made by the player (<b>Important</b>: Kill score is being reset between rounds).
-* deaths - Total amount of deaths (<b>Important</b>: Death score is being reset between rounds).
-* score - Player score in the current round (<b>Important</b>: Score is being reset between rounds).
-* health - Current health of the player (available for team members only). 
-  Important! - health always include 20 points for the knockout stage, so the event will always add 20 health points more then the game
-* player_id - each player in the roster will have his unique player_id <br></br>
-As of version 191 the Ubisoft user ID is provided. This may not be used to circumvent Nicknames set through Privacy Mode.
-* suffix - If the user uses a nickname (from the privacy menu), this field will include a number between 2-5 digits. According to Ubisoft privacy rules, in case there is a value in this field it must be linked to the name field wherever it appears during the match. The suffix will be reset at the end of each match and regenerate a new one at the beginning of the next match.
+* is_anonymous - Boolean if the player's privacy is set to true or false
+* suffix - the player's suffix 
+* player_id - the player's ID
+* is_local - is the player the local player true or false
+* team - Blue/Orange
+* kills - Total amount of kills made by the player
+* deaths - Total amount of deaths
+* assists - Total amount of assists
+* score - Player score in the current round
+* ping - the ping of the player
+* operator - the name of the current operator
 
 When one of the players leaves the match, the relevant “roster_ XX” object will be updated to:
 
 `{"players":{"roster_3":null}}`
 
 If a new player replaces a leaver, a new “roster_XX” object will be assigned to the new player who joined.
+
+#### `players_list_log` notes
+
+```json
+{"feature":"roster","category":"players","key":"players_list_log","value":"[{"profile_id":"e558fedb-ed64-4d8f-9758-c1bffca8abd8","team_id":0},{"profile_id":"525bb9ad-fb47-4aa3-89b4-86e2ae6429c3","team_id":1},{"profile_id":"f408a2a8-b435-47dd-a4e2-502ef7935476","team_id":0},{"profile_id":"90e878a5-0425-403c-9539-aab93abf281b","team_id":0},{"profile_id":"5267e074-7b05-445f-9c8d-41f795782277","team_id":0},{"profile_id":"dd956873-42d0-4156-b2a5-127b09772636","team_id":0},{"profile_id":"9593a6fd-ea4f-4f7b-8d72-2adf6029e493","team_id":1},{"profile_id":"d8883aa8-18b8-43de-9841-2f65c48a4008","team_id":1},{"profile_id":"77e58667-18f8-488a-a9e5-53710c4c0065","team_id":1},{"profile_id":"6805161b-436b-40bd-84b0-f44a0661d135","team_id":1}]"}
+```
 
 #### `team` notes
 
@@ -453,7 +439,7 @@ If a new player replaces a leaver, a new “roster_XX” object will be assigned
 
 #### *health* note
 Current health of the player
-Important! - health always include 20 points for the knockout stage, so the event will always add 20 health points more then the game
+Important! - health always includes 20 points for the knockout stage, so the event will always add 20 health points more than the game
 
 ```json
 {"info":{"player":{"health":"41"}},"feature":"roster"}
@@ -506,7 +492,7 @@ Event  | Event Data                                       |               Fired 
 -------| -------------------------------------------------| ----------------------------------------- | --------- | --------------|
 knockedout | null | Local player is knockedout | See [notes](#knockedout-notes) |   123.0     |
 death | null |  Local player dies |  See [notes](#death-notes) |   123.0     |
-killer | Killer name|  The local player was killed by an enemy | See [notes](#killer-notes)                 |   123.0     |
+killer | Killer id|  The local player was killed by an enemy | See [notes](#killer-notes)                 |   123.0     |
 
 #### *knockedout* note
 
@@ -527,7 +513,7 @@ Data Example:
 Data Example:
 
 ```json
-{"name":"killer","data":"Pickyuser18857"}
+{"name":"killer","data":"eb96475f-cc15-4b5e-a0d5-b5c927bf1d4d"}
 ```
 
 ## `me`
@@ -563,7 +549,7 @@ Data Example:
 {"info":{"me":{"account_id_log":"{ "content": { "partyId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "groupId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "profileId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "obj": { "is_caster": false, "party_bans": "[]", "reservations": "[]", "clearance_level": 999, "two_factor_auth_enabled": true, "phone_number_verified": true, "rank": 30, "top_rank_pos": 0, "rank_mmr": 0, "last_hosted_rdv_session_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "online_player_id": "999999999999999999", "in_anti_addiction_state": false, "nickname": "", "nickname_enabled": false, "is_using_invalid_graphic_settings": false, "has_failed_binary_validation": false, "avatar_hidden": false }, "lastModifiedAt": "2023-02-20T20:42:28.955Z" }, "notificationType": "PARTY_MEMBER_UPDATED", "spaceId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "sourceApplicationId": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "datePosted": "2023-02-20T20:42:29.105Z" }"}},"feature":"me"}
 ```
 
-Important note - If the local player is in a party/squad with friends, the account_id_log may sometimes contain information pertaining to the party members instead. It is not possible to differentiate, so suggest listening for the very first event upon game launch (before local player joins a squad), and then ignoring all future events.
+Important note - If the local player is in a party/squad with friends, the account_id_log may sometimes contain information about the party members instead. It is not possible to differentiate, so suggest listening for the very first event upon game launch (before local player joins a squad), and then ignoring all future events.
 
 Privacy mode:
 * nickname_enabled - 0/1 if nickname is disabled/enabled

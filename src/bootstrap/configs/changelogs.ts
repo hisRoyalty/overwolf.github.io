@@ -1,28 +1,30 @@
 export default {
   latest: {
-    date: 'November 2023',
-    path: '2023/november',
-    name: '236',
+    date: 'February 2024',
+    path: '2024/february',
+    name: '242',
   },
   deploying: {
-    date: 'December 2023',
-    path: '2023/december',
-    name: '240',
+    date: 'March 2024',
+    path: '2024/march',
+    name: '248',
+    suffix: '.120',
   },
   dev: {
-    date: 'December 2023',
-    path: '2023/december',
-    name: '240',
+    date: 'March 2024',
+    path: '2024/march',
+    name: '248',
+    suffix: '.120',
   },
   'ow-electron': {
-    date: 'September 2023',
-    path: 'v22.3.25',
-    name: '22.3.25',
+    date: 'March 2024',
+    path: 'v28.2.5',
+    name: '28.2.5',
   },
   'ow-electron-builder': {
-    date: 'January 2024',
-    path: 'v24.7.0',
-    name: '24.7.0',
+    date: 'April 2024',
+    path: 'v24.13.3',
+    name: '24.13.4',
   },
   docs: {
     date: 'November 22nd 2023',
@@ -30,9 +32,9 @@ export default {
     name: 'Discord Rich Presence',
   },
   console: {
-    date: 'March 9th 2023',
-    path: '2023/march#march-9th-2023---user-logs-tab',
-    name: 'User logs tab',
+    date: 'March 26th 2024',
+    path: '2024/march#march-27th-2024---users-and-permissions-bite-2',
+    name: 'Users and Permissions Bite 2',
   },
 } as {
   latest: Changelog;
