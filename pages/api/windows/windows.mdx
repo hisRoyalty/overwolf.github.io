@@ -50,6 +50,8 @@ Please make sure to read our guide on [how to use Overwolf windows](/topics/usin
 * [overwolf.windows.muteAll()](#muteallcallback)
 * [overwolf.windows.isMuted()](#ismutedcallback)
 * [overwolf.windows.isWindowVisibleToUser()](#iswindowvisibletousercallback)
+* [overwolf.windows.requestOverlayFocus()](#requestoverlayfocuscallback)
+* [overwolf.windows.requestOverlayFocus()](#requestoverlayfocuswindowid-callback)
 * [overwolf.windows.bringToFront()](#bringtofrontwindowid-callback)
 * [overwolf.windows.bringToFront()](#bringtofrontcallback)
 * [overwolf.windows.bringToFront()](#bringtofrontgrabfocus-callback)
@@ -575,6 +577,43 @@ callback               | [(Result: IsMutedResult)](#ismutedresult-object) => voi
 Parameter              | Type                                  | Description                                                                                       |
 -----------------------| --------------------------------------| --------------------------------------------------------------------------------------------------|
 callback               | [(Result: IsWindowVisibleToUserResult)](#iswindowvisibletouserresult-object) => void  | Called with the result of the request `{"visible": hidden/fully/partial}`    |
+
+## requestOverlayFocus(callback)
+#### Version added: 0.250
+
+> Attempts to grab focus from the game to the current window
+
+Parameter              | Type                                  | Description                                                               |
+-----------------------| --------------------------------------| --------------------------------------------------------------------------|
+callback               | (Result) => void                      | Called with the result of the request                                     |
+
+#### Notes 
+
+* This method must be called on an Overlay window (`native_window=false`).
+* The target window must be visible (not minimized/hidden/closed).
+* The game must currently have the system's focus.
+* This method behaves differently depending on the Overlay type:
+  * Standard Overlay - This method will simply grab focus from the game.
+  * Exclusive Mode Overlay - This method will only work while Exclusive mode is active.
+
+## requestOverlayFocus(windowId, callback)
+#### Version added: 0.250
+
+> Attempts to grab focus from the game to the specified window window
+
+Parameter              | Type                                  | Description                                                               |
+-----------------------| --------------------------------------| --------------------------------------------------------------------------|
+windowId	             | string                                | The name of the window                                              |
+callback               | (Result) => void                      | Called with the result of the request                                     |
+
+#### Notes 
+
+* This method must be called on an Overlay window (`native_window=false`).
+* The target window must be visible (not minimized/hidden/closed).
+* The game must currently have the system's focus.
+* This method behaves differently depending on the Overlay type:
+  * Standard Overlay - This method will simply grab focus from the game.
+  * Exclusive Mode Overlay - This method will only work while Exclusive mode is active.
 
 ## bringToFront(windowId, callback)
 #### Version added: 0.119
