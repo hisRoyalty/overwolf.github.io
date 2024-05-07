@@ -24,5 +24,6 @@ jobs:
       run: |
         echo "GIT_USER=DevPlatBot" >> "$GITHUB_ENV"
         echo "CURRENT_BRANCH=source" >> "$GITHUB_ENV"
+        echo "GIT_PASS={{ env.GITHUB_TOKEN }}"
     - name: Deploying to GitHub Pages
       run: yarn install --immutable && yarn deploy
