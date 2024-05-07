@@ -20,12 +20,11 @@ jobs:
       run: |
         git submodule sync
         git submodule update --init
-    - name: Set Environment Variables
-      run: |
-        echo "GIT_USER=DevPlatBot" >> "$GITHUB_ENV"
-        echo "CURRENT_BRANCH=source" >> "$GITHUB_ENV"
-        echo "USE_SSH=true" >> "$GITHUB_ENV"
     - name: Deploying to GitHub Pages
+      env:
+        GIT_USER: DevPlatBot
+        CURRENT_BRANCH: source
+        GIT_PASS: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.email "devplatformbots@overwolf.com"
         git config --global user.name "DevPlatBot"
