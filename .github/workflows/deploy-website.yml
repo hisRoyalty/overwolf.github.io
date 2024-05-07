@@ -20,8 +20,12 @@ jobs:
       run: |
         git submodule sync
         git submodule update --init
+    - name: Set Environment Variables
+      run: |
+        echo "GIT_USER=DevPlatBot" >> "$GITHUB_ENV"
+        echo "CURRENT_BRANCH=source" >> "$GITHUB_ENV"
     - name: Deploying to GitHub Pages
       run: |
         git config --global user.email "devplatformbots@overwolf.com"
         git config --global user.name "DevPlatBot"
-        yarn install --frozen-lockfile && GIT_USER=DevPlatBot CURRENT_BRANCH=source && yarn deploy
+        yarn install --immutable && yarn deploy
