@@ -15,11 +15,11 @@ jobs:
       - image: cimg/node:16.15.0
 
     steps:
+      - checkout
+
       - add_ssh_keys:
           fingerprints:
             - "SHA256:59Wt5grAnDu/AtntrJKEDYpQ0LTJs9sqttLARI0X0iM"
-
-      - checkout
       - run: git submodule sync
       - run: git submodule update --init
       - run:
