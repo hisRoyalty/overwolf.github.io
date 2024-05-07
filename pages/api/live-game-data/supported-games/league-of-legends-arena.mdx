@@ -988,23 +988,29 @@ Data Example:
 
 key         | Category    | Values                                                                                | Notes                 | Since GEP Ver. |
 ----------- | ------------| --------------------------------------------------------------------------------------| --------------------- | ------------- |
-teams       | game_info   |  A JSON object with the teams formation        |   See [notes](#teams-note)                  |   70.0        |
+teams       | game_info   |  Deprecated        |   See [notes](#teams-note)                  |   70.0        |
+arena_teams       | game_info   |  A JSON object with the teams formation        |   See [notes](#arena_teams-note)                  |   70.0        |
 
 
 #### *teams* note
 
-Arena is a 2 Vs 2 VS 2 Vs 2 game mode, the JSON response is ordered in the same way. 
-The first 2 players are on the same team, the next 2 players are on another team, and so on. 
+:::caution
+
+teams is deprecated and will be replaced by arena_teams - See [notes](#arena_teams-note)
+
+:::
+
+#### *arena_teams* note
+
+The info-update JSON response will return the following parameters:
+
+* team - a random team number
+* players - an array of players
+  * name - the player name with tagline
+  * is_local - true/false to identify the local player
 
 ```json
-"[{"team":"Order","champion":"Azir","skinId":"0","summoner":"'Nano888' **local**"},
-{"team":"Order","champion":"Brand","skinId":"0","summoner":"'assemblyus'"},
-{"team":"Order","champion":"MissFortune","skinId":"40","summoner":"'omobogoshipoop'"},
-{"team":"Order","champion":"Yone","skinId":"0","summoner":"'goingb'"},
-{"team":"Order","champion":"Naafiri","skinId":"0","summoner":"'zé fodinha'"},
-{"team":"Order","champion":"Taric","skinId":"4","summoner":"'ikunheihei'"},
-{"team":"Order","champion":"Teemo","skinId":"4","summoner":"'we all smell'"},
-{"team":"Order","champion":"Samira","skinId":"30","summoner":"'dirkbeefhammer'"}]"
+{"feature":"teams","category":"game_info","key":"arena_teams","value":"[{\"team\":\"0\",\"players\":[{\"name\":\"Rosenkeskole8#EUW\"},{\"is_local\":false},{\"name\":\"Rosenkikole9#EUW\"},{\"is_local\":false}]},{\"team\":\"1\",\"players\":[{\"name\":\"Atgucuu#EUW\"},{\"is_local\":false},{\"name\":\"Maks#EUW\"},{\"is_local\":false}]},{\"team\":\"2\",\"players\":[{\"name\":\"Nanoco#6874\"},{\"is_local\":true},{\"name\":\"iamigMac#EUW\"},{\"is_local\":false}]},{\"team\":\"3\",\"players\":[{\"name\":\"ProusRex#EUW\"},{\"is_local\":false},{\"name\":\"Vipel60#EUW\"},{\"is_local\":false}]},{\"team\":\"4\",\"players\":[{\"name\":\"Shâ#EUW\"},{\"is_local\":false},{\"name\":\"Stgaim#EUW\"},{\"is_local\":false}]},{\"team\":\"5\",\"players\":[{\"name\":\"7mdo#EUW\"},{\"is_local\":false},{\"name\":\"Pacan#EUW\"},{\"is_local\":false}]},{\"team\":\"6\",\"players\":[{\"name\":\"Tamaotau#Mommy\"},{\"is_local\":false},{\"name\":\"xM4#EUW\"},{\"is_local\":false}]},{\"team\":\"7\",\"players\":[{\"name\":\"Rosenkild3#EUW\"},{\"is_local\":false},{\"name\":\"skoleX#EUW\"},{\"is_local\":false}]}]"}
 ```
 
 ## `level`
