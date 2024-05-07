@@ -15,16 +15,20 @@ jobs:
       - image: cimg/node:16.15.0
 
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:59Wt5grAnDu/AtntrJKEDYpQ0LTJs9sqttLARI0X0iM"
+
       - checkout
       - run: git submodule sync
       - run: git submodule update --init
       - run:
           name: Deploying to GitHub Pages
           command: |
-            git config --global user.email "OdedItkinOW@overwolf.com"
-            git config --global user.name "Oded Itkin"
+            git config --global user.email "devplatformbots@overwolf.com"
+            git config --global user.name "DevPlatBot"
             
-            yarn install && GIT_USER=OdedItkinOW CURRENT_BRANCH=source && yarn deploy
+            yarn install && GIT_USER=DevPlatBot CURRENT_BRANCH=source && yarn deploy
 workflows:
   version: 2
   build_and_deploy:
