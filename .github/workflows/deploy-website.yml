@@ -24,4 +24,4 @@ jobs:
       run: |
         git config --global user.email "devplatformbots@overwolf.com"
         git config --global user.name "DevPlatBot"
-        yarn install && GIT_USER=DevPlatBot CURRENT_BRANCH=source && yarn deploy
+        yarn install --frozen-lockfile && GIT_USER=DevPlatBot CURRENT_BRANCH=source && yarn deploy
