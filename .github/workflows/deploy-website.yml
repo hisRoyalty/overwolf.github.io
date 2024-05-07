@@ -25,7 +25,4 @@ jobs:
         echo "GIT_USER=DevPlatBot" >> "$GITHUB_ENV"
         echo "CURRENT_BRANCH=source" >> "$GITHUB_ENV"
     - name: Deploying to GitHub Pages
-      run: |
-        git config --global user.email "devplatformbots@overwolf.com"
-        git config --global user.name "DevPlatBot"
-        yarn install --immutable && yarn deploy
+      run: yarn install --immutable && yarn deploy
