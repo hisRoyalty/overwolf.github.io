@@ -161,6 +161,29 @@ const OBS.Latest.Encoders = [
         ],
     },
     {
+        "name": "NVIDIA_NVENC_AV1",
+        "display_name": "NVIDIA® NVENC AV1 (uses GPU)",
+        "presets": [
+            "AUTOMATIC",
+            "DEFAULT",
+            "HIGH_QUALITY",
+            "HIGH_PERFORMANCE",
+            "LOW_LATENCY",
+            "HIGH_PERFORMANCE_LOW_LATENCY",
+            "HIGH_QUALITY_LOW_LATENCY",
+            "LOSSLESS",
+            "PRESET_MAX_QUALITY"
+        ],
+        "rateControls": [
+            "RC_CBR",
+            "RC_CQP",
+            "RC_VBR",
+            "RC_VBR_MINQP",
+            "RC_2_PASS_QUALITY",
+            "RC_LOSSLESS"
+        ],
+    },
+    {
         "name": "AMD_AMF",
         "display_name": "AMD® HW H.264 (uses GPU)",
         "presets": [
@@ -182,6 +205,25 @@ const OBS.Latest.Encoders = [
     {
         "name": "AMD_AMF_HEVC",
         "display_name": "AMD® HW H.265 (uses GPU)",
+        "presets": [
+            "BALANCED",
+            "SPEED",
+            "QUALITY"
+        ],
+        "rateControls": [
+            "RC_CBR",
+            "RC_CQP",
+            "RC_VBR",
+            "RC_VBR_MINQP",
+            "RC_VBR_LAT",
+            "RC_QVBR",
+            "RC_HQVBR",
+            "RC_HQCBR"
+        ],
+    },
+    {
+        "name": "AMD_AMF_AV1",
+        "display_name": "AMD HW AV1 (uses GPU)",
         "presets": [
             "BALANCED",
             "SPEED",

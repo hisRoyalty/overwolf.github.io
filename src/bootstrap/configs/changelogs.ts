@@ -1,19 +1,20 @@
 export default {
   latest: {
-    date: 'February 2024',
-    path: '2024/february',
-    name: '242',
+    date: 'March 2024',
+    path: '2024/march',
+    name: '248',
+    suffix: '.120',
   },
   deploying: {
     date: 'March 2024',
     path: '2024/march',
     name: '248',
+    suffix: '.120',
   },
   dev: {
-    date: 'March 2024',
-    path: '2024/march',
-    name: '248',
-    suffix: '.120',
+    date: 'April 2024',
+    path: '2024/april',
+    name: '250',
   },
   'ow-electron': {
     date: 'March 2024',
@@ -21,9 +22,9 @@ export default {
     name: '28.2.5',
   },
   'ow-electron-builder': {
-    date: 'January 2024',
-    path: 'v24.7.0',
-    name: '24.7.0',
+    date: 'April 2024',
+    path: 'v24.13.3',
+    name: '24.13.4',
   },
   docs: {
     date: 'November 22nd 2023',

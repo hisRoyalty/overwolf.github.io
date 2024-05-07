@@ -139,6 +139,7 @@ key               | Category    | Values                                        
 ----------------- | ------------| ------------------------------------------------------------------- | --------------------- | ------------- |
 map       | match_info   | Name of currently played map.|See [notes](#map-note)   |   229.0       |
 pseudo_match_id| match_info  | Unique mtch_id     |See [notes](#pseudo_match_id-note)|   237.0       |
+match_outcome| match_info  | Outcome of the current match    |See [notes](#match_outcome-note)|   250.1       |
 
 #### *map* note
 
@@ -195,6 +196,19 @@ Data Example:
 
 ```json
 {"info":{"match_info":{"pseudo_match_id":"5a7e3729-993c-414d-8e3f-592faeef81e7"}},"feature":"match_info"}
+```
+
+#### *match_outcome* note
+
+Possible values:
+
+* victory
+* defeat
+
+Data Example:
+
+```json
+{"info":{"match_info":{"match_outcome":"victory"}},"feature":"match_info"}
 ```
 
 ### Events

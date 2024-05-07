@@ -9,30 +9,94 @@ sidebar_custom_props:
 ---
 
 Instream Advertising is the practice of playing video Ads **within** actual content,
-**in response to a direct user action**, rather than just passively/outside of/next to the content (which is known as **"Outstream Advertising"**).
+**in response to a direct user action**, rather than just passively/outside of/next
+to the content (which is known as **"Outstream Advertising"**).
 
-In the context of Overwolf, we have recently began testing of a new, Instream advertising format,
-which will show a video (with sound) directly within **existing video players\*** in your App, before the video content itself (also known as **"Preroll Advertisements"**).
+In the context of Overwolf, we have recently began testing of a new, Instream
+advertising format, which will show a video (with sound) directly within
+**existing video players\*** in your App, before the video content itself
+(also known as **"[Preroll][preroll] Advertisements"**).
 
-*\* Any video player **within the App** that is fully controlled by the App (does not include any external video players embedded in the App, like Youtube, Twitch.tv, or existing video Ad Containers).*
+*\* Any video player **within the App** that is fully controlled by the App
+(does not include any external video players embedded in the App, like Youtube,
+Twitch.tv, or existing video Ad Containers).*
+
+Below is a demonstration:
+
+<OWLottie width='50%' height='50%' data={require('/assets/start/monetize-your-app/experimental/instream-ads/instream-ads.json')} />
 
 ## Technical Specification
 
+<Tabs groupId="specifications">
+<TabItem value="product-specification" label="Product Specification">
+
 The Overwolf [Ads SDK](/start/monetize-your-app/advertising/ads-sdk) allows you to easily create
-instream Ads, by utilizing a container element. This container, MUST fit the following criteria:
-- The container MUST be transparent, and pass input through (except when an Ad is showing)
-- The container (and video player) MUST ALWAYS be bigger than 640x480 pixels (width/height respectively)
-- The container MUST ALWAYS be of the same size/location as the video player it is "related" to (even if the player is resized/moved)
+instream Ads for your App's video content, utilizing a container element.
 
-The video itself MUST:
-- Be longer than 5 seconds
-- Be started as a result of the user clicking a "Play" button
+**\*This container\*** !MUST fit the following criteria:
+- !MUST be transparent, and pass user input through (except when an Ad is showing)
+- !MUST ALWAYS be bigger than 640x480 pixels (width/height respectively)
+- !MUST ALWAYS have the same size/location as the video player it is "related" to
+(even if the player is resized/moved)
 
-Finally, the Instream Ad itself will:
-- ALWAYS act as a Preroll Ad to any individual video
-- ALWAYS have sound turned on at the start
-- SOMETIMES be skippable (with full lengths usually ranging between 15-30 seconds)
-- SOMETIMES be unskippable (with lengths usually ranging between 5-30 seconds)
+**\*The App's video\*** (being played within the container) !MUST fit the following criteria:
+- !MUST be longer than 5 seconds
+- !MUST ONLY start playing as a result of the user clicking a clearly defined "Play" button
+
+Finally, the **\*Instream Ad\*** itself will !ALWAYS comply with the following:
+- !ALWAYS acts as a [Preroll][preroll] Ad to any individual video content
+- !ALWAYS starts with sound turned on (users can mute it while it plays)
+- !SOMETIMES is skippable (with full lengths usually ranging between 15-30 seconds)
+- !SOMETIMES is unskippable (with lengths usually ranging between 5-30 seconds)
+
+</TabItem>
+
+<TabItem value="code-specification" label="Code Specification">
+
+!JSON OwAdInstream
+/** The properties used for Instream Ads */
+type InstreamAdProperties = {
+  /** Is this an instream Ad. Set to true for this set of properties */
+  instream: true;
+
+  /** The duration of the video this instream Ad will be played in */
+  streamDurationMs: number;
+
+  /**
+   * The number of the video this instream Ad will be played in in the current session
+   * 
+   * For example:
+   * - The first video in a session will be `1`.
+   * - The second video in a session will be `2`.
+   * - The `n`th video in a session will be `n`.
+   */
+  streamVideoCount: number;
+
+  /**
+   * The volume that should be used for the instream Ad (between 0 and 1, defaults to 1) 
+   * 
+   * Note - If the volume is set to 0, no Ad will be played
+   */
+  volume?: number;
+}
+
+// The type of an Overwolf Instream Ad
+type OwAdInstream = {
+  /** The OwAd constructor */
+  constructor: (options: InstreamAdProperties) => OwAdInstream,
+
+  /* Whenever one of these events is fired, it indicates that the Video Ad is done,
+  and the underlying video should start playing */
+  /** Event fired when a video Ad is skipped before completion */
+  video_ad_skipped: () => void,
+  /** Event fired when a video Ad is fully completed */
+  complete: () => void,
+}
+
+/JSON
+
+</TabItem>
+</Tabs>
 
 ### Example Implementation
 
@@ -46,29 +110,6 @@ video-content # Controlling the size of all children, who are overlaid on top of
 The following code should work:
 
 ```ts title="Example Implementation"
-/** The properties used for Instream Ads */
-type InstreamAdProperties = {
-  /** Is this an instream Ad. Set to true for this set of properties */
-  instream: true;
-  /** The duration of the video this instream Ad will be played in */
-  streamDurationMs: number;
-  /**
-   * The number of the video this instream Ad will be played in in the current session
-   * 
-   * For example:
-   * - The first video in a session will be `1`.
-   * - The second video in a session will be `2`.
-   * - The `n`th video in a session will be `n`.
-   */
-  streamVideoCount: number;
-  /**
-   * The volume that should be used for the instream Ad (between 0 and 1, defaults to 1) 
-   * 
-   * Note - If the volume is set to 0, no Ad will be played
-   */
-  volume?: number;
-}
-
 // Get the container for the Instream Ad Container
 const containerElement = document.getElementById(/* 'instream-container' */);
 
@@ -97,3 +138,7 @@ const shutdown = () => instream.shutdown();
 ## Further Reading
 
 Instream Ads, as well as all other Overwolf Ads, are based on [IAB](https://www.iab.com/) standards, which you can read more about [here](https://iabtechlab.com/industry-adoption-of-amended-iab-tech-lab-guidelines-is-vital-to-drive-change/)
+
+
+
+[preroll]: https://iabtechlab.com/industry-adoption-of-amended-iab-tech-lab-guidelines-is-vital-to-drive-change/

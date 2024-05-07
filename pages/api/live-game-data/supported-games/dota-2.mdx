@@ -68,7 +68,6 @@ To know which user is already using this command line parameter, you should use 
 * [match_info](#match_info)
 * [roster](#roster)
 * [party](#party)
-* [error](#error)
 * [hero_pool](#hero_pool)
 * [me](#me)
 * [game](#game)
@@ -148,6 +147,12 @@ Data Example:
 
 ## `match_state_changed`
 
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- | 
+match_state_changed | game| Current match state |See [notes](#match_state-note)|   77.3        |
+
 ### Events
 
 Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
@@ -156,21 +161,27 @@ match_state_changed | Check notes  |               | See [notes](#match_state-no
 
 #### *match_state* note
 
-Event Data:
+List of possible values:
 
 match_state – One of the following:
 
 * DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD
 * DOTA_GAMERULES_STATE_HERO_SELECTION
+* DOTA_GAMERULES_STATE_STRATEGY_TIME
 * DOTA_GAMERULES_STATE_PRE_GAME
 * DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
 * DOTA_GAMERULES_STATE_POST_GAME
 * DOTA_GAMERULES_STATE_TEAM_SHOWCASE
 
-Event data example:
+Event example:
 
 ```json
 {"events":[{"name":"match_state_changed","data":"{  "match_state": "DOTA_GAMERULES_STATE_HERO_SELECTION"}"}]}
+```
+Info example:
+
+```json
+{"feature":"match_state_changed","category":"game","key":"match_state","value":"DOTA_GAMERULES_STATE_HERO_SELECTION"}
 ```
 
 Fired when:
@@ -874,26 +885,6 @@ Important note:
 * There’s exactly one leader
 * There’s at most one coach (it’s optional)
 * This info-update is being updated for every party change
-
-## `error`
-
-### Info Updates
-
-key               | Category    | Values                    | Notes                 | Since GEP Ver. |
------------------ | ------------| ------------------------- | --------------------- | ------------- |
-plugin_error   | error  |This info update fires when the plugin is not initializing for some reason.|See [notes](#plugin_error-note)|  133.8   |
-
-#### *plugin_error* note
-
-:::warning OBSOLETE
-This event is currently NOT supported.
-:::
-
-Data Example:
-
-```json
-{"feature":"error","category":"error","key":"plugin_error","value":"failed_initializing_monitor"}
-```
 
 ## `hero_pool`
 

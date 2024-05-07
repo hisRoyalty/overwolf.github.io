@@ -27,6 +27,7 @@ You can also use the following helpful URLs to open the relevant Overwolf game s
 ## Methods Reference
 
 * [overwolf.settings.games.getOverlayEnabled()](#getoverlayenabledgameclassid-callback)
+* [overwolf.settings.games.enableOverlay()](#enableoverlayclassid-callback)
 * [overwolf.settings.games.getAutoLaunchEnabled()](#getautolaunchenabledgameclassid-callback)
 * [overwolf.settings.games.setAutoLaunchEnabled()](#setautolaunchenabledgameclassid-enabled-callback)
 
@@ -51,6 +52,21 @@ Parameter   | Type      | Description                                           
 ----------- | ----------| ----------------------------------------------------------------------- |
 gameClassId | int       | The game ID for which the flag is retrieved for                         |
 callback    | ([Result: OverlayEnabledResult](#overlayenabledresult-object)) => void  |  A callback function which will be called with the status of the request |
+
+## enableOverlay(gameClassId, callback)
+#### Version added: 0.250
+
+> Enables game overlay for the specified game
+
+Parameter   | Type      | Description                                                             |
+----------- | ----------| ----------------------------------------------------------------------- |
+gameClassId | int       | The game ID to enable Overlay for                                       |
+callback    | (Result) => void  | The result of the operation |
+
+#### Notes
+
+* This method can only be called as a result of a direct user gesture (i.e. mouse click)
+* This method can only be called for games this App is targeting in the manifest (or all games if it is targeting `all`)
 
 ## getAutoLaunchEnabled(gameClassId, callback)
 #### Version added: 0.112
