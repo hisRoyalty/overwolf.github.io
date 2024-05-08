@@ -266,11 +266,12 @@ export default [
     ],
   },
   {
-    to: '/api/live-game-data/supported-games/valheim',
+    to: '/api/live-game-data/deprecated/valheim',
     from: [
       '/docs/api/overwolf-games-events-valheim',
       '/api/games/events/valheim',
       '/api/game-data/supported-games/valheim',
+      '/api/live-game-data/supported-games/valheim'
     ],
   },
   {

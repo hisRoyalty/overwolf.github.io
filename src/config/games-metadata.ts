@@ -163,11 +163,6 @@ const metaData: GameMetaData[] = [
     variant: 'PBE',
   },
   {
-    id: 21668,
-    path: 'valheim',
-    name: 'Valheim',
-  },
-  {
     id: 21640,
     path: 'valorant',
     name: 'Valorant',
