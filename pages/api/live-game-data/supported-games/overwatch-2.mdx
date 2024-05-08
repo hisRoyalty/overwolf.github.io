@@ -64,7 +64,8 @@ key          | Category    | Values                    | Notes                 |
 ------------ | ------------| ------------------------- | --------------------- | -------------  |
 game_state   | game_info   | The current state of the game.|See [notes](#game_state-note)|   229.0       |
 game_mode    | game_info   | Currently played game-mode.|See [notes](#game_mode-note)|   229.0       |
-battle_tag | game_info   | Player's battelnet tag  |  See [notes](#battle_tag-note) |   229.2 
+battle_tag | game_info   | Player's battelnet tag  |  See [notes](#battle_tag-note) |   229.2 |
+game_type | game_info   | The type of the current played game  |  See [notes](#game_type-note) |   252.0 |
 
 #### *game_state* note:
 
@@ -130,6 +131,27 @@ Data Example:
 {"feature":"game_info","category":"game_info","key":"battle_tag","value":"OverTheTop#2100"}
 ```
 
+#### *game_type* note:
+
+List of possible values:
+
+* UNKNOWN
+* UNRANKED
+* CUSTOM_GAME
+* PRACTICE
+* ARCADE
+* TUTORIAL
+* SKIRMISH
+* VS_AI
+* DEATHMATCH
+* RANKED
+* HERO_MASTERY
+
+Data Example:
+
+```json
+{"feature":"game_info","category":"match_info","key":"game_type","value":"SKIRMISH"}
+```
 
 ## `match_info`
 
@@ -217,6 +239,8 @@ Event  | Event Data        | Fired When (announcement)           | Notes      | 
 -------| ------------------| -------------------------------------| ---------- | --------------|
 match_start | null      | Match started. |See [notes](#match_start-note)|    229.0      |
 match_end   | null      | Match ended.   |See [notes](#match_end-note)|    229.0      |
+round_start | null      | Round started. |See [notes](#round_start-note)|    252.0      |
+round_end   | null      | Round ended.   |See [notes](#round_end-note)|    252.0      |
 
 #### *match_start* note
 
@@ -232,6 +256,22 @@ Data Example:
 
 ```json
 {"name":"match_end","data":""}
+```
+
+#### *round_start* note
+
+Data Example:
+
+```json
+{"name":"round_start","data":""}
+```
+
+#### *round_end* note
+
+Data Example:
+
+```json
+{"name":"round_end","data":""}
 ```
 
 ## `kill`

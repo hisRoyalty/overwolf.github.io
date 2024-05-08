@@ -738,6 +738,8 @@ export default [
       '/docs/status/fm2022',
       '/status/hunt-showdown',
       '/docs/status/hunt-showdown',
+      '/status/valheim',
+      '/docs/status/valheim',
     ],
   },
   {
