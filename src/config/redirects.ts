@@ -266,11 +266,12 @@ export default [
     ],
   },
   {
-    to: '/api/live-game-data/supported-games/valheim',
+    to: '/api/live-game-data/deprecated/valheim',
     from: [
       '/docs/api/overwolf-games-events-valheim',
       '/api/games/events/valheim',
       '/api/game-data/supported-games/valheim',
+      '/api/live-game-data/supported-games/valheim'
     ],
   },
   {
@@ -769,10 +770,6 @@ export default [
   {
     to: '/status/teamfight-tactics',
     from: '/docs/status/teamfight-tactics',
-  },
-  {
-    to: '/status/valheim',
-    from: '/docs/status/valheim',
   },
   {
     to: '/status/valorant',
