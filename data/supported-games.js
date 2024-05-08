@@ -287,16 +287,6 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/genshin-impact.png",
     "iconLargeUrl": "/img/game-logos/large/genshin-impact.png"
   },
-  "21668": {
-    "id": 21668,
-    "path": "/status/valheim",
-    "name": "Valheim",
-    "rawPath": "valheim",
-    "standardPath": "valheim",
-    "docs": "/api/live-game-data/supported-games/valheim",
-    "iconUrl": "/img/game-logos/valheim.png",
-    "iconLargeUrl": "/img/game-logos/large/valheim.png"
-  },
   "21672": {
     "id": 21672,
     "path": "/status/eternal-return",
