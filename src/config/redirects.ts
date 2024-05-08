@@ -772,10 +772,6 @@ export default [
     from: '/docs/status/teamfight-tactics',
   },
   {
-    to: '/status/valheim',
-    from: '/docs/status/valheim',
-  },
-  {
     to: '/status/valorant',
     from: '/docs/status/valorant',
   },
