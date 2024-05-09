@@ -4,7 +4,7 @@ import OWClassNames from '@site/src/theme/OverwolfClassNames';
 import ImageToggle from '../image-toggle/image-toggle';
 import { ComparisonTableItem } from './scheme';
 import { ActiveViewContext } from './contexts/active-view-context';
-import { IsMobileContext } from '../contexts/is-mobile-context';
+import { IsMobileContext } from '../root-contexts/is-mobile-context';
 
 type ComparisonTableHeaderProps = {
   setActive: ReturnType<typeof useState>[1];

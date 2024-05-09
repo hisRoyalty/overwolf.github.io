@@ -1,5 +1,5 @@
 import React from 'react';
-import { stateToTxt } from '../game-events-status/events-utils';
+import { stateToTxt } from '../live-game-data/utils/status';
 
 
 

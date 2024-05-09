@@ -65,16 +65,31 @@ const metaData = [
         id: 5426,
         launcher: 10902,
         path: "league-of-legends",
-        name: "League of Legends"
+        name: "League of Legends",
+        mainMode: "Summoner's Rift",
+        extraModes: {
+            "arena": "Arena"
+        }
+    },
+    {
+        id: 22848,
+        launcher: 10902,
+        mainVariant: 5426,
+        name: "League of Legends PBE",
+        docs: "league-of-legends",
+        path: "league-of-legends-public-beta",
+        variant: "PBE",
+        extraModes: {
+            "arena": "Arena"
+        }
     },
     {
         id: 10902,
         games: [
             5426,
+            22848,
             21570,
             215701,
-            21556,
-            215561
         ],
         path: "league-of-legends",
         name: "League of Legends Launcher"
@@ -150,24 +165,6 @@ const metaData = [
         docs: "teamfight-tactics",
         path: "teamfight-tactics-public-beta",
         name: "Teamfight Tactics PBE",
-        variant: "PBE"
-    },
-    {
-        id: 21556,
-        displayId: 5426,
-        launcher: 10902,
-        subVariants: [ 215561 ],
-        path: "league-of-legends-arena",
-        name: "League of Legends: Arena"
-    },
-    {
-        id: 215561,
-        displayId: 22848,
-        launcher: 10902,
-        mainVariant: 21556,
-        docs: "league-of-legends-arena",
-        path: "league-of-legends-public-beta-arena",
-        name: "League of Legends PBE: Arena",
         variant: "PBE"
     },
     {

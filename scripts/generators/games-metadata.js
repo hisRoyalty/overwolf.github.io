@@ -1,7 +1,7 @@
 const fs = require('fs') // filesystem
 const { declare } = require("./declare");
 const { metaData } = require('../configs/games-metadata.js');
-const paths = ["../website/static/js/games_metadata.js", "../website/src/components/game-events-status/gamesMetaData.jsx"] // the paths where the code should run
+const paths = ["../website/static/js/games_metadata.js", "../website/src/components/game-events-status/gamesMetaData.tsx"] // the paths where the code should run
 const compliancePath = "../website/pages/docs/start/game-compliance/"
 
 // generator code
@@ -32,7 +32,7 @@ const stringified = JSON.stringify(GamesMetaData, undefined, 4);
 
 let oldJSON = `const GamesMetaData = ${stringified}\n\nconsole.log('GamesMetaData is loaded locally');`
 
-let newJSON = `export const GamesMetadata = ${stringified}`
+let newJSON = `export const GamesMetadata: { [key: string]: GameMetaData } = ${stringified}`
 
 fs.writeFile(paths[0], oldJSON, 'utf8', function (err) {
     if (err) {

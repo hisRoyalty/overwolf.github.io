@@ -1,0 +1,7 @@
+Request Type: POST
+Headers:
+  Authorization: `Basic ${`${clientId}:${clientSercret}`.toString('base64')}`
+  Content-Type: 'application/x-www-form-urlencoded'
+Body:
+  token: `${AccessTokenToRevoke}`
+  token_type_hint: 'access_token'

@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import './game-info.scss';
-import { GamesMetadata } from '../live-game-data/gamesMetaData';
-import { stateToCss } from '../live-game-data/utils/status';
+import './game-nav.scss';
+import { GamesMetadata } from '../game-events-status/gamesMetaData';
 import LauncherGamesList from './launcher-games-list';
-import StatusToolTip from './status-tooltip';
-import Preloader from '../preloader/preloader';
+import StatusToolTip from './partials/status-tooltip';
 import SpecificGameInfo, {
   AllLinksOn,
   DisabledLinks,
 } from './specific-game-info';
+import OWClassNames from '@site/src/theme/OverwolfClassNames';
+import StatusLegend from './partials/status-legend';
+import { StateNames, stateClassNames } from './utils/status';
 
-function GameInfo(props: {
-  gameId: string;
-  page: 'docs' | 'status' | 'compliance';
+function GameNav(props: {
+  gameId: number;
+  currentPage: 'docs' | 'status' | 'compliance';
 }) {
-  const { gameId, page } = props;
+  const { gameId, currentPage } = props;
 
-  const [gameStatus, setGameStatus] = useState<number | null>(null);
+  const [gameStatus, setGameStatus] = useState<StateNames>(StateNames.Loading);
 
   // ---------------------------------------------------------------------------
 
@@ -34,27 +35,29 @@ function GameInfo(props: {
 
   // Data for the current game/launcher
   const data = GamesMetadata[gameId];
+  // [If Game] Data for this game's launcher
   const launcherData = GamesMetadata[data.launcher];
-  // Only works if this is a launcher
-  const launcherGames = data?.games;
+  // [If Launcher] Data for the games launched by this launcher
+  const launchedGames = data?.games;
+  // [If SubVariant] Data for this game's main variant
   const mainVariant = GamesMetadata[data.mainVariant];
+  // [If MainVariant] Data for this game's sub variants
   const subVariants = data.subVariants;
-  const hasElectron = true;
 
   // ---------------------------------------------------------------------------
-  return gameStatus !== null ? (
-    <section className="game-info-section">
+  return (
+    <section className={OWClassNames.siteComponents.liveGameData.gameNav}>
       <div className="game-info-item">
         <h1
-          className={`game-info-title ${stateToCss(
-            data.endOfLife ? 0 : gameStatus,
-          )}`}
+          className={`game-info-title ${
+            stateClassNames[data.endOfLife ? StateNames.EndOfLife : gameStatus]
+          }`}
         >
           <img src={data.iconLargeUrl} />
           <span>{data.name}</span>
 
           <StatusToolTip
-            gameState={gameStatus}
+            gameState={gameStatus ?? -1}
             endOfLife={data.endOfLife}
           />
         </h1>
@@ -72,7 +75,7 @@ function GameInfo(props: {
             <SpecificGameInfo
               metaData={data}
               type="Game"
-              disabledLinks={LinkToggler(page)}
+              disabledLinks={LinkToggler(currentPage)}
             />
           </li>
 
@@ -82,7 +85,7 @@ function GameInfo(props: {
                 metaData={data}
                 type="Game"
                 hasElectron={true}
-                disabledLinks={LinkToggler(page)}
+                disabledLinks={LinkToggler(currentPage)}
               />
             </li>
           )}
@@ -125,20 +128,12 @@ function GameInfo(props: {
         </ul>
       </div>
 
-      {launcherGames?.length && (
-        <LauncherGamesList gamesListData={launcherGames} />
+      {launchedGames?.length && (
+        <LauncherGamesList gamesListData={launchedGames} />
       )}
 
-      {page === 'status' && (
-        <ul className="legend">
-          <li className="good">Good to go</li>
-          <li className="medium">Some events may be unavailable</li>
-          <li className="bad">Events are currently unavailable</li>
-        </ul>
-      )}
+      {currentPage === 'status' && <StatusLegend />}
     </section>
-  ) : (
-    <Preloader small={true} />
   );
 }
 
@@ -161,4 +156,4 @@ function LinkToggler(
   return disabled;
 }
 
-export default GameInfo;
+export default GameNav;

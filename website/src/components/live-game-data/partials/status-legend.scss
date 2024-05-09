@@ -1,0 +1,48 @@
+.legend {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background: transparent;
+  gap: 10px;
+  padding: 5px 10px;
+  margin: 0;
+  background-color: var(--color-200);
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--color-black);
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  > li {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    color: white;
+
+    &::before {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 6px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    ::after {
+      background: var(--live-game-data-status-color);
+    }
+  }
+}

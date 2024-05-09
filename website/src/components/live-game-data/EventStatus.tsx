@@ -1,7 +1,7 @@
 import React from 'react';
 import "./gep-game-list.scss";
 import Status from '@site/static/img/components/game-events-status/status.svg'
-import { stateToCss } from './events-utils';
+import { stateToCss } from './utils/status';
 
 function EventStatus(props: {name: string, platformStatus?: number, electronStatus?: number}) {
   const { name, platformStatus, electronStatus } = props;

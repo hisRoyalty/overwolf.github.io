@@ -35,8 +35,8 @@
     "jsdoc"
   ],
   "rules": {
-    "@docusaurus/string-literal-i18n-messages": "warn",
-    "@docusaurus/no-untranslated-text": "warn",
+    "@docusaurus/string-literal-i18n-messages": "off",
+    "@docusaurus/no-untranslated-text": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/interface-name-prefix": "off",

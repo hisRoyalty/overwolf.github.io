@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Footer from '../components/footer/footer';
-import { IsMobileProvider } from '../components/contexts/is-mobile-context';
+import { IsMobileProvider } from '../components/root-contexts/is-mobile-context';
+import { IsSsrProvider } from '../components/root-contexts/is-ssr-context';
+import { TooltipsContainerProvider } from '../components/root-contexts/tooltips-container-context';
 
 // Default implementation, that you can customize
 export default function Root({ children }) {
@@ -22,8 +24,12 @@ export default function Root({ children }) {
   return (
     <>
       <IsMobileProvider>
-        {children}
-        <Footer />
+        <IsSsrProvider>
+          <TooltipsContainerProvider>
+            {children}
+            <Footer />
+          </TooltipsContainerProvider>
+        </IsSsrProvider>
       </IsMobileProvider>
     </>
   );

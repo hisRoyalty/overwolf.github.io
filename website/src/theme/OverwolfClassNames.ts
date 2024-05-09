@@ -1,5 +1,23 @@
 const OWClassNames = {
+  siteComponents: {
+    liveGameData: {
+      shared: {
+        gameLinks: 'game-links-component',
+      },
+      gameNav: 'game-nav-component',
+    },
+  },
+  themeComponents: {
+    tooltips: {
+      tooltip: 'theme-tooltip-component',
+      container: 'theme-tooltips-container-component',
+    },
+  },
   common: {
+    content: 'content',
+    fakeTooltip: 'fake-tooltip',
+
+    // Old namings
     collapsible: 'ow-theme-collapsible',
     desktopOnly: 'desktop-only',
     mobileOnly: 'mobile-only',

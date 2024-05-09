@@ -10,7 +10,7 @@ import { NavbarSecondaryMenuFiller } from '@docusaurus/theme-common';
 
 // @ts-expect-error theme-common/internal is not properly exported
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
-import { IsMobileContext } from '@site/src/components/contexts/is-mobile-context';
+import { IsMobileContext } from '@site/src/components/root-contexts/is-mobile-context';
 
 type RootSidebarProps = Omit<SidebarProps, 'setActiveCategory'>;
 type ComponentSidebarProps = RootSidebarProps;

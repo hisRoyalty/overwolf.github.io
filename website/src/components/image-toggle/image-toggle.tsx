@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import React, { FC, useContext } from 'react';
 import ThemedImage from '@theme/ThemedImage';
-import { IsMobileContext } from '../contexts/is-mobile-context';
+import { IsMobileContext } from '../root-contexts/is-mobile-context';
 
 interface ImageToggleProps {
   imgSrc: string;

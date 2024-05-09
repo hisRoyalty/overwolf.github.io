@@ -1,0 +1,70 @@
+---
+id: ow-sso
+image: "/img/embed/dev-tools.jpg"
+title: Overwolf Single Sign-On
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: true
+---
+
+:::tip Single Sign-On (SSO)
+**Single Sign-on (SSO)** - A mechanism of user Authentication, where one, Singular Sign-On, is then used
+to "log in" to several services, while only exposing select information to each service.
+:::
+
+As part of the Overwolf Accounts service, we also provide App developers with access to **Overwolf's SSO**.  
+This, in turn, allows any website/external API your app requires, ***that is owned by you\* ***, to utilize a user's
+Overwolf Account as a form of authentication, while also exposing certain information about the user, based on their consent.
+
+*\* If you need to integrate the Overwolf SSO mechanism into a service that isn't owned by you, please [reach out](/support/contact-us) and we will examine it further.*
+
+## Technical Specification
+
+Overwolf's SSO is built to be compliant with the OAuth 2.0 standard ([RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749)),
+while also utilizing the PKCE standard ([RFC 7636](http://tools.ietf.org/html/rfc7636)) for added security.
+
+For the remainder of this document, we will be using the following terminology:
+- SSO CLIENT - Website/API requiring authentication of the user*.
+- SSO PROVIDER - The Overwolf SSO API.
+
+*\* While it is possible to perform this flow from within a desktop app, it is generally ill advised. You can read more about it below in [Best Practices](#best-practices).*
+
+### Complete Authorization Flow
+
+- **Log-in** - User initiates the log-in flow within the SSO CLIENT.
+- **PKCE Created** - The SSO CLIENT generates a PKCE Code Verifier + Challenge.
+  - You can see an example of PKCE in action [here](https://example-app.com/pkce).
+- **Request Authorization Form** - The SSO CLIENT requests an authorization form from the SSO PROVIDER, while attaching the PKCE Code Challenge.
+  - [The relevant endpoint](#request-authorization-form)
+- **Redirect User** - The User is redirected by the SSO CLIENT to the log-in form returned by the SSO PROVIDER in the last step.
+  - *This should [ideally be done](#best-practices) in the users' default browser, in a separate tab/window.*
+- **Authorization Approval** - The user approves the authorization, and informs the SSO PROVIDER of the information they allow it to share.
+- **Authorization Code** - The SSO PROVIDER redirects back to the SSO CLIENT, with a **temporary** Authorization Token as a path parameter.
+  - [The exact structure of the redirect](#redirect-url)
+- **Verify Authorization** - The SSO CLIENT sends the **temporary** Authorization Token to the SSO PROVIDER, while attaching the PKCE Code Verifier.
+  - [The relevant endpoint](#verify-authentication-token)
+- **Access Token** - The SSO PROVIDER, upon confirming that the PKCE Code Challenge and Verifier match for this specific **temporary** Authorization Token, returns a proper Access Token, with the scopes allowed by the user.
+  - This token is then used to authenticate the identity of this specific user, as well as obtain data on behalf of the user.
+
+
+*This flow outline was paraphrased from the [Auth0 documentation](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce#how-it-works),
+which originally does include a separation between an ID Token and an Access Token that this implementation has no need for.*
+
+### Relevant Network Exchanges
+
+#### Request Authorization Form
+
+
+#### Redirect URL
+
+
+#### Verify Authentication Token
+
+
+### Endpoints Authorized by the Token
+
+#### User Identity Endpoint
+
+
+### Best Practices

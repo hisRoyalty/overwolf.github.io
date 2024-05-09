@@ -12,6 +12,10 @@ export default interface gameMetaData {
     games?: number[];
     mainVariant?: number;
     subVariants?: number[];
+    mainMode?: string;
+    extraModes?: {
+        [key: string]: string;
+    };
     variant?: string;
     endOfLife?: string;
 }

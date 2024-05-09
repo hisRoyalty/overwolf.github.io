@@ -1,5 +1,5 @@
 import React from 'react';
-import { stateToCss } from './events-utils';
+import { stateToCss } from './utils/status';
 import './game-list.scss';
 
 // ---------------------------------------------------------------------------

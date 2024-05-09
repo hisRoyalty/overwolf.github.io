@@ -1,5 +1,5 @@
 import React, { FC, useContext, useRef, useState } from 'react';
-import { IsMobileContext } from '../contexts/is-mobile-context';
+import { IsMobileContext } from '../root-contexts/is-mobile-context';
 
 interface OWTableRowProps {
   children: React.ReactNode;

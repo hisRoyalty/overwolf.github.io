@@ -7,7 +7,7 @@ import {
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import { CollapseContext } from '../../../contexts/collapse-context';
 import { LinkableSidebarItemProps } from '../../../types/types';
-import { IsMobileContext } from '@site/src/components/contexts/is-mobile-context';
+import { IsMobileContext } from '@site/src/components/root-contexts/is-mobile-context';
 
 export default function SidebarLinkHook(
   item: LinkableSidebarItemProps,
