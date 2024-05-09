@@ -598,24 +598,3 @@ const OIDCSpec = ({ children }: React.PropsWithChildren<any>) => {
 };
 
 export default OIDCSpec;
-
-// const f: JsonToAst<typeof oidcSchema> = {
-//   children: {
-//     info: {
-//       _nodeKey: 'hello',
-//       children: {
-//         description: 'hello',
-//         title: 'hello',
-//         version: '1.1.1',
-//       },
-//       _idInParent: 1,
-//       _nodeName: 'hello',
-//     },
-//     testArray: {
-//       _nodeKey: 'hello',
-//       members: [],
-//       _idInParent: 1,
-//       _nodeName: 'hello',
-//     },
-//   },
-// };

@@ -134,7 +134,7 @@ Response Code | Response Payload            | Description                       
 
 The token can be used to obtain certain details of the user's profile, via the following `GET` https request:
 
-<Tabs groupId="https-format">
+<Tabs groupId="generated-fetch">
 <TabItem value="curl" label="cURL">
 
 ```js title="Example cURL request"
@@ -142,7 +142,7 @@ curl -XGET -H 'Authorization: Bearer ${temp-token}' 'https://accounts.overwolf.c
 ```
 
 </TabItem>
-<TabItem value="javascript" label="Javascript">
+<TabItem value="javascript-fetch" label="Javascript (Fetch)">
 
 ```js title="Example Javascript request"
 // Loosely based on https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options
@@ -187,7 +187,7 @@ machineId          | string   |                                             |
 partnerId          | int      |                                             |   
 channel            | string   |                                             |   
 parameters         | string   |                                             |   
-installParams      | JSON     | see [Creating Download Link](/topics/best-practices/create-download-link#extract-referral-data-using-api) |
+installParams      | JSON     | extracts all UTM parameters attached to this installation via the [App Installer](/api/general/ow-store) |
 avatar             | string   |                                             |   
 installerExtension | string   |                                             |   
 displayName        | string   |                                             |   

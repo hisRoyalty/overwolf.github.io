@@ -905,8 +905,11 @@ export default [
     ],
   },
   {
-    to: '/topics/best-practices/create-download-link',
-    from: '/docs/topics/create-download-link',
+    to: '/api/general/ow-store',
+    from: [
+      '/topics/best-practices/create-download-link',
+      '/docs/topics/create-download-link',
+    ],
   },
   {
     to: '/topics/community-help/creators-content',

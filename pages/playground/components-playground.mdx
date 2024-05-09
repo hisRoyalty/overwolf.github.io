@@ -160,7 +160,7 @@ const foo =  {
   // @asString
   tabs: {
     // The amount of kills
-    kills: number,
+    kills: (number),
     assists: number,
   }
 }
@@ -186,3 +186,41 @@ gep_info test => {
 
 /JSON
 
+
+<Table>
+<TableHeader x={1} y={0}>Test</TableHeader>
+<TableCell x={1} y={1} ySize={3} xSize={3} subgrid>
+
+<TableSubCell x={2} y={2}>
+Hello world
+</TableSubCell>
+<TableSubCell x={1} y={1}>
+Hello world 1
+</TableSubCell>
+
+</TableCell>
+
+
+</Table>
+
+import { Macros } from '@site/src/components';
+
+<TabsNew renderers={[
+  Macros.TabItemRenderers({
+    label: 'Code Tab',
+    tabId: 'code-tab',
+    children: (<div>
+
+Code Tab Content
+
+</div>)
+  }),
+  Macros.TabItemRenderers({
+    label: 'Code Tab1',
+    tabId: 'code-tab1',
+    children: (<div>Code Tab Content1</div>),
+  })
+]}/>
+
+
+test

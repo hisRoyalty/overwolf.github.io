@@ -37,6 +37,7 @@ import ImageHeading from '@site/../src/components/image-heading/image-heading';
 import SubscriptionsComparisonTable from '@site/../src/presets/comparison-table/subscriptions-comparison-table';
 import OWLottie from '@site/../src/components/ow-lottie';
 import OIDCSpec from '../../presets/open-api/oidc-spec';
+import StoreSpec from '../../presets/open-api/store-spec';
 
 const devMode = process.env.NODE_ENV === 'development';
 
@@ -76,6 +77,7 @@ const MDXComponents: MDXComponentsObject = {
   },
   ...{
     OIDCSpec,
+    StoreSpec,
   },
   Tabs,
   TabItem,

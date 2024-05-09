@@ -14,8 +14,8 @@ with any App hosted on the [Overwolf Developers' Console](/tools/developers-cons
 
 ## When should the Overwolf Installer be used
 
-<Tabs groupId="frameworks">
-<TabItem value="overwolf-platform" label="Overwolf Platform">
+<TabsGroup choiceGroup='frameworks' panels={{
+  'overwolf-platform': <Fragment>
 
 All Overwolf Platform Apps **Always\*** use the Overwolf Installer.  
 This is done to ensure that no matter what happens, the Overwolf Client, as well as any other dependencies, are properly installed,
@@ -26,9 +26,8 @@ From there, every app can easily further [customize][customize] its installer ba
 *\* The Overwolf Installer is only displayed if Overwolf was **not already installed** on that computer. Otherwise, the app is
 **[silently](https://www.makeuseof.com/windows-silent-installation-explained/)** installed as soon as the installer is executed.*
 
-</TabItem>
-
-<TabItem value="electron-platform" label="Overwolf Electron">
+  </Fragment>,
+  'overwolf-electron': <Fragment>
 
 Overwolf Electron Apps **can choose** whether to use the Overwolf Installer, their own default installer, or any other installer/combination.
 
@@ -37,8 +36,8 @@ which one you use and where\*.*
 
 *\* The Overwolf Installer currently only works on Windows OS.*
 
-</TabItem>
-</Tabs>
+  </Fragment>}}
+/>
 
 ## Benefits of the Overwolf Installer
 
