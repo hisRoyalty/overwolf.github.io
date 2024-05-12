@@ -337,6 +337,7 @@ player0 / player1 … palyerN (N = number of players in the match)| playersInfo|
 team1 / team2| teamsInfo | Check notes |See [notes](#teamsInfo-note)|    24.0   |
 team1_score / team2_score| teamsScore|team1 / team2 score – integer|See [notes](#pseudo_match_id-note)|    86.0   |
 players_rank| playersInfo|The rank of each player at the end of a match |See [notes](#players_rank-note)|    237.0   |
+players_boost| playersInfo|The boost level of each teammate during the match |See [notes](#players_boost-note)|    252.0   |
 
 #### *player* note
 
@@ -384,6 +385,16 @@ Data Example
 
 ```json
  {"feature": "roster", "category": "playersInfo", "key": "players_rank", "data": "[{\"name\":\"Yo55680\",\"rank\":\"Silver III\"},{\"name\":\"BruTS93330\",\"rank\":\"Silver III\"},{\"name\":\"ruzgaasar07\",\"rank\":\"Silver III\"},{\"name\":\"t2l__ll\",\"rank\":\"Silver III\"}]"}
+```
+
+#### *players_boost* note
+
+Data Example
+
+Values are round up and the possible values are 0,10,20,30,40,50,60,70,80,90,100.
+
+```json
+ {"feature":"roster","category":"playersInfo","key":"players_boost","value":"[{\"player_name\":\"Centice\",\"boost\":50},{\"player_name\":\"Naco8\",\"boost\":0}]"}
 ```
 
 ### Events
@@ -567,15 +578,16 @@ Data Examples:
 
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
-training_round| The current round number in the training pack |New round starts|See [notes](#training_round-note)|      236.0     |
+training_round| The current round number and length in the training pack |New round starts|See [notes](#training_round-note)|      236.0     |
 training_round_result| The completed round nuber and the round result |A round ends|See [notes](#training_round_result-note)|      236.0     |
+training_shuffle_mode| Select shuffle mode true/false |Shuffle mode selected|See [notes](#training_shuffle_mode-note)|      236.0     |
 
 #### *training_round* note
 
 Data Example:
 
 ```json
-{"events":[{"name":"training_round","data":"2"}]}
+{"events":[{"name":"training_round","data":{\"round_number\":1, \"round_max_time\":5}}]}
 ```
 
 #### *training_round_result* note
@@ -590,4 +602,12 @@ Data Example:
 
 ```json
 {"events":[{"name":"training_round","data":"{\"round\":2,\"result\":\"complete\"}"}]}
+```
+
+#### *training_shuffle_mode* note
+
+Data Example:
+
+```json
+{"events":[{"name":"training_shuffle_mode","data":true}]}
 ```
