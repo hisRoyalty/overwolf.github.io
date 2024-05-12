@@ -37,13 +37,13 @@ Add explanation about ltr reading order, and why Ads should sit in the "dead spa
 </SkipMe>
 
 <ImageHeading
-  title={'Desktop / 2nd screen windows'}
+  title={'All Windows'}
   imgDarkSrc={'/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/window.svg'}
   imgLightSrc={'/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/window-light.svg'}
-  id={'desktop-2nd-screen-windows'}
+  id={'all-windows'}
 >
 
-Desktop / 2nd screen windows often stay open for long periods of time, with much less competition for screen space.
+The following is a list of recommended Ad layouts for your different App windows.
 
 </ImageHeading>
 
@@ -115,139 +115,6 @@ Desktop / 2nd screen windows often stay open for long periods of time, with much
       {
         description: 'A simple, two large split Containers layout',
         showsVideo: true,
-        dimensions: '400x600 + 160x600',
-        multipleAds: true,
-        userFriction: 'Noticable+',
-        designConstraints: 'Noticable+',
-        revenue: 'Very High',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-</OWTable>
-
-*\* The estimated revenue for this layout has recently been optimized, and a more
-accurate estimate is currently being worked on.*  
-*\*\* One or more Containers in this layout may contain multiple Ads at once, based on
-realtime optimization. Standard limitations about Ads per window still apply.*
-
-
-<ImageHeading
-  title={'In-Game Windows'}
-  imgDarkSrc={'/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/window.svg'}
-  imgLightSrc={'/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/window-light.svg'}
-  id={'in-game-windows'}
->
-
-In-Game windows that display Ads often don't stay open for long periods, and must utilize their screen space as efficiently as possible.
-
-</ImageHeading>
-
-
-<OWTable headerCellNames={['Layout', 'Revenue Est. ($)', 'Overview']}>
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/one-ad-small'
-    name='One Ad (Small)'
-    revenueBenchmark='Baseline (100%)'
-    overview={
-      {
-        description: 'A simple, one Container layout',
-        showsVideo: false,
-        dimensions: '300x250',
-        userFriction: 'Minimal',
-        designConstraints: 'Minimal',
-        revenue: 'Baseline',
-      }
-    }
-    tabs= {
-      [ 'Bottom Right', 'Bottom Left', 'Top Left', 'Top Right' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/one-ad-long'
-    name='One Ad (Long)'
-    revenueBenchmark='105~150%'
-    overview={
-      {
-        description: 'A simple, one long vertical Container layout',
-        showsVideo: false,
-        dimensions: '160x600',
-        userFriction: 'Minimal',
-        designConstraints: 'Minimal',
-        revenue: 'Baseline+',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/one-ad-large'
-    name='One Ad (Large)'
-    revenueBenchmark='135~150%'
-    undervalued='true'
-    overview={
-      {
-        description: 'A simple, one large Container layout',
-        showsVideo: false,
-        dimensions: '400x600',
-        multipleAds: true,
-        userFriction: 'Minimal',
-        designConstraints: 'Minimal',
-        revenue: 'Baseline+',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/two-ads-group'
-    name='Two Ads (Group)'
-    revenueBenchmark='~200%'
-    overview={
-      {
-        description: 'A simple, two grouped small Containers layout',
-        showsVideo: false,
-        dimensions: '300x250 + 300x250',
-        userFriction: 'Minimal+',
-        designConstraints: 'Minimal+',
-        revenue: 'High',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/two-ads-split'
-    name='Two Ads (Split)'
-    revenueBenchmark='200~300%'
-    overview={
-      {
-        description: 'A simple, split two Containers layout',
-        showsVideo: false,
-        dimensions: '300x250 + 160x600',
-        userFriction: 'Minimal+',
-        designConstraints: 'Minimal+',
-        revenue: 'High',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/in-game/two-ads-large'
-    name='Two Ads (Large)'
-    revenueBenchmark='300~400%'
-    undervalued='true'
-    overview={
-      {
-        description: 'A simple, two large Containers layout',
-        showsVideo: false,
         dimensions: '400x600 + 160x600',
         multipleAds: true,
         userFriction: 'Noticable+',
