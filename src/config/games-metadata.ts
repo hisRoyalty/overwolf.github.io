@@ -244,6 +244,11 @@ const metaData: GameMetaData[] = [
     name: 'Lethal Company',
   },
   {
+    id: 24110,
+    path: 'content-warning',
+    name: 'Content Warning',
+  },
+  {
     id: 23944,
     path: 'palworld',
     name: 'Palworld',
