@@ -467,6 +467,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/helldivers-2.png",
     "iconLargeUrl": "/img/game-logos/large/helldivers-2.png"
   },
+  "24110": {
+    "id": 24110,
+    "path": "/status/content-warning",
+    "name": "Content Warning",
+    "rawPath": "content-warning",
+    "standardPath": "content-warning",
+    "docs": "/api/live-game-data/supported-games/content-warning",
+    "iconUrl": "/img/game-logos/content-warning.png",
+    "iconLargeUrl": "/img/game-logos/large/content-warning.png"
+  },
   "215561": {
     "id": 215561,
     "displayId": 22848,
