@@ -1,0 +1,24 @@
+---
+id: 251
+image: "/img/embed/changelogs.jpg"
+title: "Version 0.251"
+sidebar_label: "0.251"
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: false
+---
+
+### Platform
+- Added support for Intel's AV1 encoder.
+
+### API
+- Added the [`overwolf.utils.openNativeFolderPicker`](/api/utils#opennativefolderpicker)
+  method, will open Windows' native folder picker dialog for selecting a folder.
+
+- Added the [`overwolf.utils.openNativeFilePicker`](/api/utils#opennativefilepicker)
+([+4 override](/api/utils#opennativefilepicker)) method, will open Windows' native file picker dialog for selecting a file.
+
+### Bug Fixes
+- Fixed an issue where `ExitOverwolfOnExit` would close Overwolf when other apps
+  were still running.

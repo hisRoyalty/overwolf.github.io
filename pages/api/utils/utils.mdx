@@ -28,6 +28,8 @@ Common use cases:
 * [overwolf.utils.openFilePicker()](#openfilepickerfilter-callback)
 * [overwolf.utils.openFilePicker()](#openfilepickerfilter-initialpath-callback)
 * [overwolf.utils.openFolderPicker()](#openfolderpickerinitialpath-callback)
+* [overwolf.utils.openNativeFolderPicker()](#opennativefolderpicker)
+* [overwolf.utils.openNativeFilePicker()](#opennativefilepicker)
 * [overwolf.utils.openWindowsExplorer()](#openwindowsexplorerurl-callback)
 * [overwolf.utils.isTouchDevice()](#istouchdevicecallback)
 * [overwolf.utils.openUrlInDefaultBrowser()](#openurlindefaultbrowserurl)
@@ -190,6 +192,33 @@ Parameter   | Type     | Description                     |
 initialPath | string   | The starting folder's path      |
 callback    | ([Result: OpenFolderPickerResult](#openfolderpickerresult-object)) => void | Called with the selected folder |
 
+## openNativeFolderPicker()
+#### Version added: 0.251
+
+> Will open Windows' native file picker dialog for selecting a file.
+
+Parameter   | Type     | Description                     |
+----------- | ---------| --------------------------------|
+initialPath | string   | The starting folder's path      |
+callback    | ([Result: OpenFolderPickerResult](#openfolderpickerresult-object)) => void | Called with the selected folder |
+
+## openNativeFilePicker()
+#### Version added: 0.251
+
+> Will open Windows' native file picker dialog for selecting a file.
+
+##### Supports the following overrides:
+- openNativeFilePicker(filter, callback);
+- openNativeFilePicker(filter, initialPath, callback);
+- openNativeFilePicker(filter, multipleSelect, callback);
+- openNativeFilePicker(filter, initialPath, multipleSelect, callback);
+
+Parameter   | Type                                                                   | Description                                                 |
+----------- | -----------------------------------------------------------------------| ----------------------------------------------------------- |
+filter      | string                                                                 | A file filter.  A file filter. See [notes](#filter-notes)   |
+initialPath (optional) | string                                                      | An optional path to start browsing from                     |
+callback    | ([Result: OpenFilePickerResult](#openfilepickerresult-object)) => void | Called with a url to the selected file                      |
+multipleSelect (optional) | boolean                                                  | An optional param to allow multiple file selection    
 
 ## openWindowsExplorer(url, callback)
 #### Version added: 0.91
