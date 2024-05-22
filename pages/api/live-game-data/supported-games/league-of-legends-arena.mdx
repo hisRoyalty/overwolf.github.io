@@ -904,6 +904,8 @@ Event | Event Data                        | Fired When                  | Notes 
 round_start | the current round number | A round start              |See [notes](#round_start-notes)|     230.0     |
 round_end   | null                         | A round is won or lost                |See [notes](#round_end-notes)|     230.0     |
 round_outcome | null                         | At the end of the current round |See [notes](#round_outcome-notes)|     230.0     |
+battle_start | null | The battle start              |See [notes](#battle_start-notes)|     253.0     |
+battle_end | null | The battle end              |See [notes](#battle_end-notes)|     253.0     |
 
 #### *round_start* note
 
@@ -927,6 +929,23 @@ Data example:
 ```json
 {"events":[{"name":"round_outcome","data":"defeat"}]}
 ```
+
+#### *battle_start* note
+
+Data Example:
+
+```json
+{"events":[{"name":"battle_start","data":""}]}
+```
+
+#### *battle_end* note
+
+Data Example:
+
+```json
+{"events":[{"name":"battle_end","data":""}]}
+```
+
 
 ## `summoner_info`
 
