@@ -188,10 +188,11 @@ Dock icons should be .png format files, sized 256×256 pixels and weighing under
 In order to get test ads enabled on your app, please follow these steps:
 
 1. Open app
-2. Paste `localStorage.owAdTestAd = true` into the console
-3. Press F5 to refresh window
-4. Open http://localhost:54284
-5. Open app
+2. Open the developer console (Ctrl + Shift + I)
+3. Paste `localStorage.owAdTestAd = true` into the console
+4. Press the "Enter" key
+5. Press F5 to refresh window
+6. The Relevant ads will appear
 
 ### Testing Ad visibility
 
@@ -199,16 +200,16 @@ In order to get test ads enabled on your app, please follow these steps:
 
 2. Go over your app screens and look for the Ad containers, ensure Ads appear properly.
 
-3. Click an Ad, it should open the link in a new browser window external to your app.
-
-4. Click on the ad 5 times, make sure five different browsers are launched without crashing Overwolf or harming your app's performance.
-
 ### Ad click functionality
 
 1. Launch your app.
 
 2. Click on any element that is hiding ads and make sure the ads do not open and that your element functions as intended.
-  
+
+3. Click an Ad, it should open the link in a new browser window external to your app.
+
+4. Click on the ad 5 times, make sure five different browsers are launched without crashing Overwolf or harming your app's performance.
+
 ### Ads are not hidden
 
 Open Overwolf's developer tools by pressing ctrl + shift + i, and look at the console. No ad processes should be visible if no ads are displayed on screen.
