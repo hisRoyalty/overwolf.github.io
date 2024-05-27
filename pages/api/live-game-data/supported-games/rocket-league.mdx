@@ -229,7 +229,8 @@ matchStart  | null         | Match starts  |See [notes](#matchStart-note)|      
 matchEnd    | null         | Match ends    |See [notes](#matchEnd-note)|      14.0     |
 victory     | null     |team_score (1 / 2)(1 – Victory, 2 - defeat)|    |   86.0   |
 defeat      | null     |team_score (1 / 2)(1 – Victory, 2 - defeat)|    |   86.0   |
-
+surrender   | ID of the forfeiting team | A team forfeits the match | See [notes](#surrender-note)|      253.0   |
+overtime    | null  |The match reaches overtime |  See [notes](#overtime-note)|   253.0   |
 #### *matchStart* note
 
 Data Example:
@@ -261,8 +262,29 @@ Data Example:
 ```json
 {"events":[{"name":"defeat","data":"{"team_score":0}"}]}
 ```
+Data Example:
+
+```json
+{"events":[{"name":"defeat","data":"{"team_score":0}"}]}
+```
+
+#### *surrender* note
+
+Data Example:
+
+```json
+{"events":[{"name":"surrender","data": "{\"team\":1}"}]}
+```
+#### *overtime* note
+
+Data Example:
+
+```json
+{"events":[{"name":"overtime","data":""}]}
+```
 
 ## `match_info`
+
 
 ### Info Updates
 
