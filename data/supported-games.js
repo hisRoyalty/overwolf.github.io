@@ -397,6 +397,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/counter-strike-2.png",
     "iconLargeUrl": "/img/game-logos/large/counter-strike-2.png"
   },
+  "22804": {
+    "id": 22804,
+    "path": "/status/honkai-star-rail",
+    "name": "Honkai Star Rail",
+    "rawPath": "honkai-star-rail",
+    "standardPath": "honkai-star-rail",
+    "docs": "/api/live-game-data/supported-games/honkai-star-rail",
+    "iconUrl": "/img/game-logos/honkai-star-rail.png",
+    "iconLargeUrl": "/img/game-logos/large/honkai-star-rail.png"
+  },
   "23222": {
     "id": 23222,
     "path": "/status/starfield",
@@ -476,6 +486,26 @@ const GamesMetaData = {
     "docs": "/api/live-game-data/supported-games/content-warning",
     "iconUrl": "/img/game-logos/content-warning.png",
     "iconLargeUrl": "/img/game-logos/large/content-warning.png"
+  },
+  "24176": {
+    "id": 24176,
+    "path": "/status/manor-lords",
+    "name": "Manor Lords",
+    "rawPath": "manor-lords",
+    "standardPath": "manor-lords",
+    "docs": "/api/live-game-data/supported-games/manor-lords",
+    "iconUrl": "/img/game-logos/manor-lords.png",
+    "iconLargeUrl": "/img/game-logos/large/manor-lords.png"
+  },
+  "24218": {
+    "id": 24218,
+    "path": "/status/hades2",
+    "name": "Hades 2",
+    "rawPath": "hades2",
+    "standardPath": "hades2",
+    "docs": "/api/live-game-data/supported-games/hades2",
+    "iconUrl": "/img/game-logos/hades2.png",
+    "iconLargeUrl": "/img/game-logos/large/hades2.png"
   },
   "215561": {
     "id": 215561,
