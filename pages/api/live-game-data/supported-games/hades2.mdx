@@ -64,13 +64,14 @@ scene | game_info | The current scene-state |See [notes](#scene-note)|   253.0  
 
 Possible Scene values:
 
-* lobby
+* menu
 * ingame
+* death
 
 Data Example:
 
 ```json
-{"feature": "game_info", "category": "game_info", "key": "scene", "data": "lobby"}
+{"feature": "game_info", "category": "game_info", "key": "scene", "data": "ingame"}
 ```
 
 ## `match_info`
@@ -79,8 +80,9 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
 ------------| -------------| --------------| -------------------------------------- | ---------------|
-match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |253.0|
-match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |253.0|
+match_start |  nulll            | In the beginning of each run| See [notes](#match_start-note) |253.0|
+match_end   |    nulll          | At the end of each run| See [notes](#match_end-note) |253.0|
+death | nulll |    The local player died	         |  See [notes](#death-note)  |   253.0     
 
 #### *match_start* note
 
@@ -97,3 +99,9 @@ Data Example:
 ```json
 {"events":[{"name":"match_end","data":null}]}
 ```
+#### *death* note
+
+Data Example:
+
+```json
+{"events":[{"name":"death","data":null}]}
