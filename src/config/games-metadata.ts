@@ -249,6 +249,21 @@ const metaData: GameMetaData[] = [
     name: 'Content Warning',
   },
   {
+    id: 24176,
+    path: 'manor-lords',
+    name: 'Manor Lords',
+  },
+  {
+    id: 22804,
+    path: 'honkai-star-rail',
+    name: 'Honkai Star Rail',
+  },
+  {
+    id: 24218,
+    path: 'hades2',
+    name: 'Hades 2',
+  },
+  {
     id: 23944,
     path: 'palworld',
     name: 'Palworld',
