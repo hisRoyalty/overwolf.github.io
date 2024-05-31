@@ -32,9 +32,20 @@ ol {
         counter-increment: level3;
 
         &::before {
-          content: counter(level1) "." counter(level2) "." counter(level3, lower-roman) " ";
+          content: counter(level1) "." counter(level2) "." counter(level3) " ";
         }
       }
+    }
+  }
+}
+
+ol.free-style, ul.free-style {
+  padding: 0;
+  
+  li {
+    margin-bottom: 10px;
+    &:before {
+      display: none;
     }
   }
 }
