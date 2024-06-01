@@ -30,9 +30,6 @@ const Footer = (props) => {
               <h5>Legal</h5>
               <ul>
                 <li>
-                  <a href="/legal/data-processing-agreement">App Developer DPA</a>
-                </li>
-                <li>
                   <a href="/legal/developer-terms">App Developer Terms</a>
                 </li>
                 <li>
@@ -44,6 +41,9 @@ const Footer = (props) => {
                   <a href="/legal/developer-california-privacy-act">
                     App Developer CCPA
                   </a>
+                </li>
+                <li>
+                  <a href="/legal/data-processing-agreement">App Developer DPA</a>
                 </li>
                 <li>
                   <a
