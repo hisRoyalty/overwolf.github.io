@@ -407,6 +407,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/honkai-star-rail.png",
     "iconLargeUrl": "/img/game-logos/large/honkai-star-rail.png"
   },
+  "22994": {
+    "id": 22994,
+    "path": "/status/xdefiant",
+    "name": "XDefiant",
+    "rawPath": "xdefiant",
+    "standardPath": "xdefiant",
+    "docs": "/api/live-game-data/supported-games/xdefiant",
+    "iconUrl": "/img/game-logos/xdefiant.png",
+    "iconLargeUrl": "/img/game-logos/large/xdefiant.png"
+  },
   "23222": {
     "id": 23222,
     "path": "/status/starfield",
