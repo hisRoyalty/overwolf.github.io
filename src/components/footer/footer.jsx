@@ -43,6 +43,9 @@ const Footer = (props) => {
                   </a>
                 </li>
                 <li>
+                  <a href="/legal/data-processing-agreement">App Developer DPA</a>
+                </li>
+                <li>
                   <a
                     href="//www.overwolf.com/legal/"
                     target="_blank"
