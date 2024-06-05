@@ -249,6 +249,11 @@ const metaData: GameMetaData[] = [
     name: 'Content Warning',
   },
   {
+    id: 22994,
+    path: 'xdefiant',
+    name: 'XDefiant',
+  },
+  {
     id: 24176,
     path: 'manor-lords',
     name: 'Manor Lords',
