@@ -58,7 +58,7 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-scene | game_info | The current scene |See [notes](#scene-note)|   254.1   |
+scene        | game_info   | The current scene          |See [notes](#scene-note)|   254.1   |
 
 #### *scene* note
 
@@ -80,11 +80,11 @@ Data Example:
 
 Event | Event Data                        | Fired When                  | Notes              | Since GEP Ver. |
 ------| ----------------------------------| --------------------------- | ------------------ | --------------|
-match_start | null                         | Round starts               | See [notes](#match_start-note)  |     254.1      |
-match_end | null                           | Round ends                | See [notes](#match_end-note)   |     254.1      |
-elimination | number of eliminations |    An opponent is eliminated by a team member         |  See [notes](#elimination-note)  |   254.1      |
-death | null |    The local player died	         |  See [notes](#death-note)  |   254.1      
-match_outcome | null |    The final match outcome         |  See [notes](#match_outcome-note)  |   254.1  
+match_start | null                        | The match starts            | See [notes](#match_start-note)  |     254.1      |
+match_end | null                          | The match ends              | See [notes](#match_end-note)   |     254.1      |
+elimination | number of eliminations |    An opponent is eliminated by a team member|  See [notes](#elimination-note)  |   254.1      |
+death | null |    The local player died	    |  See [notes](#death-note)  |   254.1      
+match_outcome | null                      |    The final match outcome   |  See [notes](#match_outcome-note)  |   254.1  
 
 #### *match_start* note
 
@@ -118,6 +118,11 @@ Data Example:
 {"events":[{"name":"death","data":""}]}
 ```
 #### *match_outcome* note
+
+Possible values: 
+
+* victory
+* defeat
 
 Data Example:
 
