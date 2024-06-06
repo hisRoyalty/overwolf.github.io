@@ -1,9 +1,9 @@
 export default {
   latest: {
-    date: 'March 2024',
-    path: '2024/march',
-    name: '248',
-    suffix: '.120',
+    date: 'May 2024',
+    path: '2024/may',
+    name: '251',
+    suffix: '',
   },
   deploying: {
     date: 'March 2024',
@@ -12,9 +12,9 @@ export default {
     suffix: '.120',
   },
   dev: {
-    date: 'April 2024',
-    path: '2024/april',
-    name: '250',
+    date: 'May 2024',
+    path: '2024/may',
+    name: '251',
   },
   'ow-electron': {
     date: 'March 2024',
