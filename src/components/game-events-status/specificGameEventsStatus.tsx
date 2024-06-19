@@ -94,8 +94,16 @@ function SpecificGameEventsStatus(props) {
                 <div className='table'>
                   <div className="row">
                     <h4 className='title'>Events</h4>
-                    <img className='icon' alt={"Overwolf Platform"} src={overwolfIcon} />
-                    <img className='icon' alt={"Overwolf Electron"} src={electronIcon} />
+                    <img className='icon'
+                      alt={"Overwolf Platform"}
+                      title={"Overwolf Platform"}
+                      src={overwolfIcon}
+                    />
+                    <img className='icon'
+                      alt={"Overwolf Electron"}
+                      title={"Overwolf Electron"}
+                      src={electronIcon}
+                    />
                   </div>
                   {events}
                 </div>
@@ -105,8 +113,16 @@ function SpecificGameEventsStatus(props) {
                 <div className='table'>
                   <div className="row">
                     <h4 className='title'>Info updates</h4>
-                    <img className='icon' alt={"Overwolf Platform"} src={overwolfIcon} />
-                    <img className='icon' alt={"Overwolf Electron"} src={electronIcon} />
+                    <img className='icon'
+                      alt={"Overwolf Platform"}
+                      title={"Overwolf Platform"}
+                      src={overwolfIcon}
+                    />
+                    <img className='icon'
+                      alt={"Overwolf Electron"}
+                      title={"Overwolf Electron"}
+                      src={electronIcon}
+                    />
                   </div>
                   {updates}
                 </div>
