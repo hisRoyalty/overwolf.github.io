@@ -1,0 +1,35 @@
+---
+id: 254
+image: "/img/embed/changelogs.jpg"
+title: "Version 0.254"
+sidebar_label: "0.254"
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: false
+---
+
+### Platform
+OBS Updates and changes:
+- Audio changes **(Applies to [`Streaming`](/api/streaming) and [`Replays`](/api/media/replays) Settings)**
+  - Can now set [`audio capture`](/api/streaming#processaudiocapture-object) sound from 0 to 2000.
+  - Added an option to manually set and control [`audio tracks`](/api/streaming#audiotracks-enum) for the recorded video.
+  - Added an option to set the audio [`sample rate.`](/api/streaming#audiosamplerate-enum)
+  - Added an option to add and record multiple [`audio devices.`](/api/streaming#audiodeviceoptions-object)
+  - Added an extensive way to capture and control [`captured process audio.`](/api/streaming#processaudiocapture-object)
+- Video changes **(Applies to [`Streaming`](/api/streaming) and [`Replays`](/api/media/replays) Settings)**
+  - Added an option to set the video’s [`color space.`](/api/streaming#videocolorspec-enum)
+  - Added an option to set the video’s [`color format.`](/api/streaming#videocolorformat-enum)
+- [`Streaming`](/api/streaming) API changes:
+  - Allow web camera to be captured on desktop capture.
+- [`Replays`](/api/media/replays) API changes:
+  - Added a new flag to disable session folder naming.
+  - Allow replays capture on desktop.
+
+### Bug Fixes
+- Fixed an Overlay issue with Honkai: Star rail.
+- Fixed an issue where we failed to delete an app’s local settings when the `disable_cleanup` manifest flag is enabled.
+- Fixed an issue where `openUrlInDefaultBrowser()` failed to open Windows’ settings pages.
+- Fixed an issue where applications set with `run as admin` would have the `run as admin` flag removed after launch.
+- Fixed an issue where the folder picker failed to open for a folder a user has no permission to.
+

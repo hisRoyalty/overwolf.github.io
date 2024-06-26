@@ -1074,7 +1074,7 @@ Defines the configuration for an x264 encoder.
 | separate_tracks | bool                                          | Enable multiple audio tracks. See [notes](#separate_tracks-notes)              | 0.156 |
 | devices        | [AudioDeviceOptions[]](#audiodeviceoptions-object) | An array of devices to capture. <br />**MUST** disable the **mic + game** audio options when using this feature. | 0.254  |
 | process_audio_capture        | [ProcessAudioCapture[]](#processaudiocapture-object) | Add and control process’ audio capture. <br />**MUST** disable the **game** audio options when using this feature. | 0.254  |
-| tracks        | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum)| Specify how many tracks you want to create for your captured video. <br/>Defaults to **’AllTracks’** (255). | 0.254  |
+| tracks        | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) | Specify how many tracks you want to create for your captured video. <br/>Defaults to **’AllTracks’** (255). | 0.254  |
 | sample_rate        | string &#124; [overwolf.streaming.enums.AudioSampleRate](#audiosamplerate-enum) | Control the audio sample rate.<br/> Defaults to **kHz441**. | 0.254  |
 
 ## AudioSampleRate enum
@@ -1172,7 +1172,55 @@ The Video will be created with three different audio tracks (when both Mic + Des
 
 | Name      | Type   | Description                                          | Since |
 |-----------| ------ |------------------------------------------------------| ----- |
-| mic         |  |     | 0.83  |
+| process_name | string | Specify the process name that should be recorded.   | 0.254  |
+| volume       | int | Defines the volume of the recorded process from 0 to 200.   | 0.254  |
+| mono         | bool | Specify whether the process should be recorded as mono or not. <br />Defaults to false (stereo).   | 0.254  |
+| tracks         | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) | Specify which track the process should be recorded on. Can select multiple tracks by using &#124; . <br />Defaults to **’AllTracks’** (255).   | 0.254  |
+
+```json
+{
+  provider: 'VideoRecorder',
+  settings: {
+    audio: {
+      mic: {
+        device_id: 'default',
+        enable: true,
+        volume: 75,
+      },
+      game: {
+        device_id: 'default',
+        // Must be false to prevent unwanted sounds from the background to be captured
+        enable: false,
+        volume: 75,
+      },
+      process_audio_capture: [
+        { process_name: 'gw.exe', volume: 50, mono: false },
+        // { "process_name": "chrome.exe", "volume": 50, "mono": false },
+      ],
+    },
+
+
+    video: {
+      include_full_size_video: false,
+      frame_size_method: 'Original',
+      base_frame_size_source: 'Setting',
+      enable_on_demand_split: true,
+      use_app_display_name: false,
+      capture_desktop: {
+        enable: true,
+      },
+      keep_game_capture_on_lost_focus: false,
+      override_overwolf_setting: false,
+    },
+    peripherals: {
+      capture_mouse_cursor: 'both',
+    },
+    quota: {
+      max_quota_gb: 1,
+    },
+  },
+};
+```
 
 ## StreamDeviceVolume Object
 
@@ -1186,7 +1234,7 @@ Defines a device volume and enablement settings.
 | mono      | bool   |  Whether or not this device should be recorded as in `mono` or `stereo` mode. Defaults to `false` | 0.224  |
 | volume    | int    |  Defines the device volume in the range of 0 to 100  | 0.78  |
 | device_id | string |  Defines the device ID to use                        | 0.78  |
-| tracks | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) |  Specify which track the process should be recorded on. Can select multiple tracks by using &#124; . <br />Defaults to **’AllTracks’** (255). | 0.254  |
+| tracks | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) |  Specify which track the input device should be recorded on. Can select multiple tracks by using &#124; . <br />Defaults to **’AllTracks’** (255). | 0.254  |
 | use_device_timing (optional) | bool |  Can be used to try fix sync issues between video and sound. On input devices defaults to **false**. On output devices defaults to **true**.                       | 0.254  |
 
 #### Example data: Tracks Settings
@@ -1280,8 +1328,8 @@ Defines a game's volume and enablement settings.
 | volume    | int    |  Defines the game's volume in the range of 0 to 100  | 0.78  |
 | device_id | string |  Defines the device ID to use                        | 0.78  |
 | filtered_capture | [GameCaptureOptions](#gamecaptureoptions-object) | If enabled, only audio from the game and the specifically marked processes will be captured. See [notes](#filtered_capture-notes)             | 0.199 |
-| tracks | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) |  Specify which track the process should be recorded on. Can select multiple tracks by using &#124; . <br />Defaults to **’AllTracks’** (255). | 0.254  |
-| use_device_timing (optional) | bool |  Can be used to try fix sync issues between video and sound. On input devices defaults to **false**. On output devices defaults to **true**.                       | 0.254  |
+| tracks | int &#124; [overwolf.streaming.enums.AudioTracks](#audiotracks-enum) |  Specify which track the game audio should be recorded on. Can select multiple tracks by using &#124; . <br />Defaults to **’AllTracks’** (255). | 0.254  |
+| use_device_timing (optional) | bool |  Can be used to try fix possible sync issues between video and sound. On input devices defaults to **false**. On output devices defaults to **true**.                       | 0.254  |
 
 #### filtered_capture notes
 
