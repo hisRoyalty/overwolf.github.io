@@ -12,9 +12,9 @@ export default {
     suffix: '.120',
   },
   dev: {
-    date: 'May 2024',
-    path: '2024/may',
-    name: '251',
+    date: 'June 2024',
+    path: '2024/june',
+    name: '254',
   },
   'ow-electron': {
     date: 'March 2024',
