@@ -508,6 +508,8 @@ Represents the settings required to start a replay video.
 | max_quota_gb | double                                                                            | Max media folder size in GB. <br></br>  **deprecated**  | 0.78  |
 | quota        | [StreamQuotaParams](../streaming#streamquotaparams-object) object           | Parameters for limiting disk space allocation. See [note](#quota-note)  | 0.147  |
 | video        | [ReplayVideoOptions](#replayvideooptions-object) Object                           | Replay video options                     | 0.147  |
+| ignore_session_folder        | bool   | Defines whether or not to use the session folder naming for replays. <br/>Defaults to **false** (session folder naming will be used).  | 0.254  |
+| capture_desktop        | [StreamDesktopCaptureOptions](../streaming#streamdesktopcaptureoptions-object) Object  | Defines the desktop streaming options.  | 0.254  |
 
 #### `quota` note
 
@@ -546,6 +548,9 @@ Replay video options.
 | frame_size_method | [eVideoFrameSizeCalcMethod](../streaming#evideoframesizecalcmethod-enum) Enum | See [note](#frame_size_method-notes)   | 0.168  |
 | game_window_capture | [GameWindowCapture](#gamewindowcapture-object) Object | Dedicate option for game window capture (when available). See [note](#game_window_capture-notes)   | 0.176  |
 | keep_game_capture_on_lost_focus | bool | Keep capturing the game when the game loses focus (i.e do not show "Be Right Back"). Note: if game is minimized, BRB will be shown.  | 0.180  |
+| color_space | string &#124; [overwolf.streaming.enums.VideoColorSpec](../streaming#videocolorspec-enum) | The default value is: **Rec709**. | 0.254 |
+| color_format | string &#124; [overwolf.streaming.enums.VideoColorFormat](../streaming#videocolorformat-enum) | The default value is: **NV12**. | 0.254 |
+| fragmented_video_file | bool | Splits the video to smaller fragments which allows for the immediate start of video playback after downloading only a small initial segment. <br/>Defaults to **true**. | 0.254 |
 
 #### base_frame_size_source notes
 
