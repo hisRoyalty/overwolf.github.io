@@ -11,30 +11,17 @@ sidebar_custom_props:
 
 import AdsLayoutRow from '@site/../src/components/start/monetize-your-app/advertising/ads-layout-row';
 
-Planning for Ads is hard, especially with so many [sizes](working-with-ads#list-of-ad-sizes) to choose from.
+Planning your app layout with ads can present challenges, particularly due to the wide array of ad [sizes](working-with-ads#list-of-ad-sizes) available.
 
-To make it slightly easier, we have devised a list of recommended, optimized Ad Container combinations/layouts, for different app windows
-while taking into account the many different factors at play. You can also find a brief summary of each layouts's pros and cons,
-as well as a ***(very rough)*** revenue estimate for its performance*, when compared to the baseline layout of its window type**.
-With this, we hope to give you a place to foothold to get started.
+To simplify this process, we have curated a list of recommended and optimized ad container combinations/layouts. These recommendations consider various factors and aim to maximize advertisers' key performance indicators. Each layout is accompanied by a short summary and a rough estimate of potential revenue performance*.
 
-*\* Revenue estimates are generated based on aggregated performance data across the entire platform, across many countries and setups. Actual milage may vastly differ.*
-*\*\* Revenue baselines differ depending on the window type.*
-
-Currently, the following window types are accounted for:
-- [Desktop / 2nd screen](#desktop-2nd-screen-windows) - Native, desktop windows, existing outside of a game's context
-- [In-Game](#in-game-windows) - In-game, overlay windows, existing only within a game's overlay
-
+*\* Revenue estimates are generated based on aggregated performance data across the entire platform, across many countries and configurations.*
 
 :::tip Can't find the right layout for your case?
 Try to pick a few you like, and see why they work. Combine, experiment, and most importantly, get feedback from others. We are [always here](/support/contact-us) for
 any questions you may have!
 :::
 
-
-<SkipMe>
-Add explanation about ltr reading order, and why Ads should sit in the "dead space" created
-</SkipMe>
 
 <ImageHeading
   title={'All Windows'}
@@ -49,17 +36,78 @@ The following is a list of recommended Ad layouts for your different App windows
 
 <OWTable headerCellNames={['Layout', 'Revenue Est. ($)', 'Overview']}>
   <AdsLayoutRow 
+    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/two-ads-large'
+    name='Two Ads (Large)'
+    revenueBenchmark='$$$$$'
+    undervalued='true'
+    overview={
+      {
+        description: 'A simple, two large split Containers layout',
+        dimensions: '400x600 + 160x600',
+        multipleAds: true,
+        adsFormats: 'Video, Display'
+      }
+    }
+    tabs= {
+      [ 'Right Aligned', 'Left Aligned' ]
+    }
+  />
+  <AdsLayoutRow 
+    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/two-ads-split2'
+    name='Two Ads (Split)'
+    revenueBenchmark='$$$$$'
+    overview={
+      {
+        description: 'A simple, split two Containers layout',
+        dimensions: '400x600 + 300x250',
+        adsFormats: 'Video, Display'
+      }
+    }
+    tabs= {
+      [ 'Right Aligned', 'Left Aligned', 'Large Left', 'Large Right' ]
+    }
+  />
+  <AdsLayoutRow 
+    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/two-ads-split'
+    name='Two Ads (Split)'
+    revenueBenchmark='$$$$'
+    overview={
+      {
+        description: 'A simple, split two Containers layout',
+         dimensions: '400x300 + 160x600',
+        adsFormats: 'Video, Display'
+      }
+    }
+    tabs= {
+      [ 'Right Aligned', 'Left Aligned' ]
+    }
+  />
+  <AdsLayoutRow 
+    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/one-ad-large'
+    name='One Ad (Large)'
+    revenueBenchmark='$$$$'
+    undervalued='true'
+    overview={
+      {
+        description: 'A simple, one large Container layout',
+        dimensions: '400x600',
+        multipleAds: true,
+        adsFormats: 'Video, Display'
+      }
+    }
+    tabs= {
+      [ 'Right Aligned', 'Left Aligned' ]
+    }
+  />
+  <AdsLayoutRow 
     assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/one-ad-medium'
     name='One Ad (Medium)'
-    revenueBenchmark='Baseline (100%)'
+    revenueBenchmark='$$$'
     overview={
       {
         description: 'A simple, one Container layout',
-        showsVideo: true,
         dimensions: '400x300',
-        userFriction: 'Minimal',
-        designConstraints: 'Minimal',
-        revenue: 'Baseline',
+        adsFormats: 'Video, Display'
       }
     }
     tabs= {
@@ -68,67 +116,7 @@ The following is a list of recommended Ad layouts for your different App windows
       ]
     }
   />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/one-ad-large'
-    name='One Ad (Large)'
-    revenueBenchmark='110~120%'
-    undervalued='true'
-    overview={
-      {
-        description: 'A simple, one large Container layout',
-        showsVideo: true,
-        dimensions: '400x600',
-        multipleAds: true,
-        userFriction: 'Minimal+',
-        designConstraints: 'Minimal+',
-        revenue: 'Baseline+',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/two-ads-split'
-    name='Two Ads (Split)'
-    revenueBenchmark='115~140%'
-    overview={
-      {
-        description: 'A simple, split two Containers layout',
-        showsVideo: true,
-        dimensions: '400x300 + 160x600',
-        userFriction: 'Noticable',
-        designConstraints: 'Noticable',
-        revenue: 'High',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
-  <AdsLayoutRow 
-    assetsPath='/assets/start/monetize-your-app/advertising/recommended-ads-layouts/desktop/two-ads-large'
-    name='Two Ads (Large)'
-    revenueBenchmark='120~145%'
-    undervalued='true'
-    overview={
-      {
-        description: 'A simple, two large split Containers layout',
-        showsVideo: true,
-        dimensions: '400x600 + 160x600',
-        multipleAds: true,
-        userFriction: 'Noticable+',
-        designConstraints: 'Noticable+',
-        revenue: 'Very High',
-      }
-    }
-    tabs= {
-      [ 'Right Aligned', 'Left Aligned' ]
-    }
-  />
 </OWTable>
 
-*\* The estimated revenue for this layout has recently been optimized, and a more
-accurate estimate is currently being worked on.*  
-*\*\* One or more Containers in this layout may contain multiple Ads at once, based on
-realtime optimization. Standard limitations about Ads per window still apply.*
+*\* The estimated revenue for this layout has recently been optimized, and a more accurate estimate is currently being worked on.*  
+*\*\* One or more Containers in this layout may contain multiple Ads at once, based on real-time optimization.*
