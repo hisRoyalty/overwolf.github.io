@@ -64,6 +64,7 @@ Data Example:
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
 phase | game_info   | The current game scene/phase. |   See [notes](#phase-notes)|   123.0  |
+steam_id | game_info | The local player steam ID. |See [notes](#steam_id-note)|   256.0    |
 
 #### `phase` notes
 
@@ -81,6 +82,14 @@ Example:
 
 ```json
 {"info":{"game_info":{"phase":"lobby"}},"feature":"game_info"}
+```
+
+#### *steam_id* note
+
+Data Example:
+
+```json
+{"feature":"game_info","category":"game_info","key":"steam_id","value":76561198088746530}
 ```
 
 ## `match_info`
