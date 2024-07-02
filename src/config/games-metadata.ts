@@ -245,7 +245,7 @@ const metaData: GameMetaData[] = [
   },
   {
     id: 24300,
-    path: 'wuthering_waves',
+    path: 'wuthering-waves',
     name: 'Wuthering Waves',
   },
   {
