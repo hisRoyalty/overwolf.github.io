@@ -244,6 +244,11 @@ const metaData: GameMetaData[] = [
     name: 'Lethal Company',
   },
   {
+    id: 24300,
+    path: 'wuthering_waves',
+    name: 'Wuthering Waves',
+  },
+  {
     id: 24110,
     path: 'content-warning',
     name: 'Content Warning',

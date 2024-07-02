@@ -1,9 +1,9 @@
 ---
-id: hades2
-image: "/img/embed/games/hades2.jpg"
-title: Hades 2 Game events
+id: wuthering_waves
+image: "/img/embed/games/wuthering_waves.jpg"
+title: Wuthering Waves Game events
 hide_title: true
-sidebar_label: Hades 2
+sidebar_label: Wuthering Waves
 sidebar_position: 0
 sidebar_custom_props:
   tags:
@@ -14,15 +14,15 @@ sidebar_custom_props:
 <!-- GENERATED USING /scripts/generate.js -->
 
 <head>
-  <meta name="keywords" content="API for Hades 2, Hades 2 API, SDK for Hades 2, Hades 2 SDK"/>
+  <meta name="keywords" content="API for Wuthering Waves, Wuthering Waves API, SDK for Wuthering Waves, Wuthering Waves SDK"/>
 </head>
 
-<GameInfo gameId={24218} page="docs" />
+<GameInfo gameId={24300} page="docs" />
 
 Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
 
 ## Sample Apps
-* [Hades 2 game events sample app](https://github.com/overwolf/events-sample-app)
+* [Wuthering Waves game events sample app](https://github.com/overwolf/events-sample-app)
 
 ## Available Features
 
@@ -58,20 +58,20 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-scene | game_info | The current scene-state |See [notes](#scene-note)|   253.0       |
+scene | game_info | The current scene-state |See [notes](#scene-note)|   256.0       |
 
 #### *scene* note
 
 Possible Scene values:
 
-* menu
+* lobby
 * ingame
 * death
 
 Data Example:
 
 ```json
-{"feature": "game_info", "category": "game_info", "key": "scene", "data": "ingame"}
+{"feature": "game_info", "category": "game_info", "key": "scene", "data": "lobby"}
 ```
 
 ## `match_info`
@@ -80,9 +80,10 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
 ------------| -------------| --------------| -------------------------------------- | ---------------|
-match_start |  nulll            | In the beginning of each run| See [notes](#match_start-note) |253.0|
-match_end   |    nulll          | At the end of each run| See [notes](#match_end-note) |253.0|
-death | nulll |    The local player died	         |  See [notes](#death-note)  |   253.0     
+match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |256.0|
+match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |256.0|
+death | nulll |    The local player died	         |  See [notes](#death-note)  |   256.0     
+respawn  |     nulll         | The local player respawn| See [notes](#death-note) |256.0|
 
 #### *match_start* note
 
@@ -99,10 +100,19 @@ Data Example:
 ```json
 {"events":[{"name":"match_end","data":null}]}
 ```
+
 #### *death* note
 
 Data Example:
 
 ```json
 {"events":[{"name":"death","data":null}]}
+```
+
+#### *respawn* note
+
+Data Example:
+
+```json
+{"events":[{"name":"respawn","data":null}]}
 ```
