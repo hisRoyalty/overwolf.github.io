@@ -517,6 +517,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/hades2.png",
     "iconLargeUrl": "/img/game-logos/large/hades2.png"
   },
+  "24300": {
+    "id": 24300,
+    "path": "/status/wuthering-waves",
+    "name": "Wuthering Waves",
+    "rawPath": "wuthering-waves",
+    "standardPath": "wuthering-waves",
+    "docs": "/api/live-game-data/supported-games/wuthering-waves",
+    "iconUrl": "/img/game-logos/wuthering-waves.png",
+    "iconLargeUrl": "/img/game-logos/large/wuthering-waves.png"
+  },
   "215561": {
     "id": 215561,
     "displayId": 22848,
