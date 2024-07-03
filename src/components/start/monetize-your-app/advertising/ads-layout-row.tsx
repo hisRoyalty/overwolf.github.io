@@ -35,6 +35,7 @@ function AdsLayoutRow(props: {
     userFriction: string;
     designConstraints: string;
     revenue: string;
+    adsFormats: string;
   };
 }) {
   const { name, assetsPath, revenueBenchmark, undervalued, tabs, overview } =
@@ -72,29 +73,11 @@ function AdsLayoutRow(props: {
         <OWdataCell thTitle={'Overview'} width={'64%'}>
           <p style={{ marginBottom: '12px' }}>{overview.description}</p>
           <div>
-            <div className="row">
-              <AdField title="Dimensions" value={overview.dimensions} />
-            </div>
+            <AdField title="Dimensions" value={overview.dimensions} />
             {overview.multipleAds && (
-              <div className="row">
-                <AdField title="Multiple Ads in Container**" value={'True'} />
-              </div>
+              <AdField title="Multiple Ads in Container**" value={'True'} />
             )}
-            <div className="row">
-              <AdField title="Revenue" value={overview.revenue} first={true} />{' '}
-              <AdField
-                title="Show Video Ads"
-                value={overview.showsVideo ? 'Yes' : 'No'}
-              />
-            </div>
-            <div className="row">
-              <AdField
-                title="Design Constraints"
-                value={overview.designConstraints}
-                first={true}
-              />{' '}
-              <AdField title="User Friction" value={overview.userFriction} />
-            </div>
+            <AdField title="Ad Formats" value={overview.adsFormats} />
           </div>
         </OWdataCell>
       </OWTableRow>
