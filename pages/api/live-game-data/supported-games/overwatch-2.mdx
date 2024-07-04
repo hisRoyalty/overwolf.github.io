@@ -66,6 +66,7 @@ game_state   | game_info   | The current state of the game.|See [notes](#game_st
 game_mode    | game_info   | Currently played game-mode.|See [notes](#game_mode-note)|   229.0       |
 battle_tag | game_info   | Player's battelnet tag  |  See [notes](#battle_tag-note) |   229.2 |
 game_type | game_info   | The type of the current played game  |  See [notes](#game_type-note) |   252.0 |
+game_queue_type | match_info   | The type of the current queue  |  See [notes](#game_queue_type-note) |   256.1 |
 
 #### *game_state* note:
 
@@ -154,6 +155,17 @@ Data Example:
 
 ```json
 {"feature":"game_info","category":"match_info","key":"game_type","value":"SKIRMISH"}
+```
+#### *game_queue_type* note:
+
+possible game_queue_type values:
+* OPEN_QUEUE
+* ROLE_QUEUE
+
+Data Example:
+
+```json
+{"feature":"game_info","category":"match_info","key":"game_queue_type","value":"OPEN_QUEUE"}
 ```
 
 ## `match_info`
