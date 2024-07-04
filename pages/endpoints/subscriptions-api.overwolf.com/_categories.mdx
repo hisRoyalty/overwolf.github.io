@@ -1,0 +1,61 @@
+```yaml
+Request Type: 'GET'
+Hostname: 'https://subscriptions-api.overwolf.com'
+Path: '/subscriptions/${STORE_ID}/categories'
+Search Params:
+  extensionId: string
+Headers:
+  Authorization: 'Bearer ${token}'
+
+Result: Array of:
+  name: 'string'
+  description: 'string' 
+  active_tier?:
+    tier_id: 'number'
+    package:
+      base_price: 'number'
+      category:
+        id: 'number'
+        name: 'string'
+      created_at: 'string'
+      description: 'string'
+      disable_gifting: 'boolean'
+      disable_quantity: 'boolean'
+      discount: 'number'
+      expiration_date?: 'string'
+      id: 'number'
+      image?: 'string'
+      name: 'string'
+      sales_tax: 'number'
+      total_price: 'number'
+      type: 'subscription' | 'single'
+      updated_at: 'string'
+      prorate_price?: 'number'
+      currency: 'string'
+    active: 'boolean'
+    created_at: 'string'
+    next_payment_date: 'string'
+    status:
+      id: 'string'
+      description: 'string'
+  packages: Array of:
+    base_price: 'number'
+    category:
+      id: 'number'
+      name: 'string'
+    created_at: 'string'
+    description: 'string'
+    disable_gifting: 'boolean'
+    disable_quantity: 'boolean'
+    discount: 'number'
+    expiration_date?: 'string'
+    id: 'number'
+    image?: 'string'
+    name: 'string'
+    sales_tax: 'number'
+    total_price: 'number'
+    type: 'subscription' | 'single'
+    updated_at: 'string'
+    prorate_price?: 'number'
+    currency: 'string'
+```
