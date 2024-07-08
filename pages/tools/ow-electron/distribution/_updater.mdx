@@ -8,7 +8,7 @@ However, in order for Electron to be able to automatically update your app, it m
 In order to set up the endpoint, simply add the following to your main .js file:
 
 ```js title="Setting up ow-electron auto updates"
-const { autoUpdater } = require("electron")
+const { autoUpdater } = require("electron-updater");
 ...
 
 autoUpdater.setFeedURL({
