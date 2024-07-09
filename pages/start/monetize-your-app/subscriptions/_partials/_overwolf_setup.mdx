@@ -27,9 +27,19 @@ You MUST first [configure a webhook](#setting-up-webhook) before you can create 
 :::
 
 The store is now set up, but it still needs to define packages that can be sold. To do that:
+
+For Regular packages **without** upgrade/downgrade methods:
 * Head to the [Packages](https://creator.tebex.io/packages) page (make sure you're viewing the right store).
 * Create a package for every plan you wish to support, supplying it with all the details you want. Keep in mind that:
   * **Pricing** - The package MUST be set to `Recurring Payment = Charge a recurring subscription`, to ensure that it is an actual subscription.
+
+For packages that **support** upgrade/downgrade methods:
+* Head to the [Packages](https://creator.tebex.io/packages) page (make sure you're viewing the right store).
+* Create a new Category, supplying it with all the details you want.
+* Turn on the `Enable Tiers` button (This will enable the upgrade/downgrade system for all packages under that category).
+* After the category creation, create a package for every plan you wish to support. Keep in mind that:
+  * Category - The package MUST be set to the created category that support `Tiers`.
+  * Pricing - The package MUST be set to `Recurring Payment = Charge a recurring subscription`, to ensure that it is an actual subscription.
 
 ### Store ID and Private Key
 

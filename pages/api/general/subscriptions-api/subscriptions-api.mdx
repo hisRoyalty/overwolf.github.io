@@ -16,6 +16,8 @@ The following is a list of endpoints exposed by the Overwolf Subscriptions API, 
 
 **For live examples of the different endpoints, please check out the [Tebex Subs Sample App](https://github.com/overwolf/tebex-subs-sample).**
 
+**For live examples of the new categories and upgrade/downgrade endpoint, please check out the [Tebex Subs Sample App on the “upgrade/downgrade-develop” branch](https://github.com/overwolf/tebex-subs-sample/tree/upgrade/downgrade-develop).**
+
 ### Checkout
 
 > Generates a checkout page for a specific subscription plan (package).
@@ -41,6 +43,32 @@ import Subscriptions from '@site/../pages/endpoints/subscriptions-api.overwolf.c
 import Packages from '@site/../pages/endpoints/subscriptions-api.overwolf.com/_packages.mdx'
 
 <Packages/>
+
+### Categories
+
+> Returns a list of all categories and their associated packages available for a specific store in this App.
+
+import Categories from '@site/../pages/endpoints/subscriptions-api.overwolf.com/_categories.mdx'
+
+<Categories/>
+
+### Upgrade/Downgrade
+
+> Updates the package tier of a subscription package within a specific category for this App.
+
+import UpgradeDowngrade from '@site/../pages/endpoints/subscriptions-api.overwolf.com/_pgrade-downgrade.mdx'
+
+<UpgradeDowngrade/>
+
+#### Notes for Using the Categories and Upgrade/Downgrade Endpoints:
+
+*   To utilize the new `Categories` endpoint, you **must** create a new category and packages for that category in your Tebex store.
+*   If you have users subscribed to the "old" package type (which cannot be upgraded or downgraded), please implement the following UI changes in the subscription settings section of your app:
+    *   inform the user that he can’t switch between plans and must cancel his current plan first.
+        
+    *   Allow the user to cancel his subscription and only then allow him to switch to the new package type that allows for Upgrading/Downgrading their package tier.
+
+*   When subscribing to the new package type, an initial purchase must be made using the `Checkout` endpoint. After the initial subscription, you can query the new `Categories` endpoint to check if the user has an active tier (subscription), and then display the Update/Downgrade buttons accordingly using the `prorate_price`.
 
 ## Deeplinks
 

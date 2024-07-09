@@ -1,0 +1,19 @@
+```yaml
+Request Type: 'PUT'
+Hostname: 'https://subscriptions-api.overwolf.com'
+Path: '/subscriptions/${STORE_ID}'
+Search Params:
+  extensionId: string
+Headers:
+  Authorization: 'Bearer ${token}'
+
+Body:
+{
+// The tierId from the activeTier object received by the get categories method.
+  "tierId": number,
+// The packageId you want to change to.
+  "packageId": number, 
+// Whether to upgrade or downgrade to a package.
+  "type": "upgrade" | "downgrade" 
+}
+```
