@@ -23,14 +23,15 @@
 .ow-theme-sidebar {
   --sidebar-width: var(--doc-sidebar-width, 300px);
 
+  @media (max-width: 600px) {
+    padding-top: 0;
+    height: calc(100vh - 136px);
+  }
+
   &.desktop-only {
     --sidebar-hover-content: '';
     top: 60px;
     width: var(--sidebar-width);
-  }
-
-  &.mobile-only {
-    background-color: var(--docsearch-hit-background);
   }
 
   padding: 
