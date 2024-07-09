@@ -1,6 +1,194 @@
-/* brand 2021 colors dark */
 
 :root {
+
+	//brand late 2024
+	  //Core Typography brand fonts
+		--font-family-brand: "Montserrat", sans-serif;
+		--font-family-default: "Lato", sans-serif;
+		--font-family-code: "Consolas", sans-serif;
+	
+		// Font weight
+		--font-weight-regular: 400;
+		--font-weight-medium: 500;
+		--font-weight-bold: 700;
+	
+		// Line height
+		--font-line-height-350: 14px; /* 31.818% */
+		--font-line-height-400: 16px; /* 36.364% */
+		--font-line-height-500: 20px; /* 45.455% */
+		--font-line-height-600: 24px; /* 54.545% */
+		--font-line-height-700: 28px; /* 63.636% */
+		--font-line-height-800: 32px; /* 72.727% */
+		--font-line-height-1000: 40px; /* 90.909% */
+		--font-line-height-1300: 52px; /* 118.182% */
+		--font-line-height-1800: 72px; /* 163.636% */
+		--font-line-height-2600: 104px; /* 236.364% */
+	
+		//Letter spacing
+		--font-letter-spacing-none: 0px;
+		--font-letter-spacing-regular: 1.2px;
+	
+		// Core font sizes
+		--font-size-300: 12px;
+		--font-size-350: 14px;
+		--font-size-400: 16px;
+		--font-size-450: 18px;
+		--font-size-500: 20px;
+		--font-size-550: 22px;
+		--font-size-600: 24px;
+		--font-size-800: 32px;
+		--font-size-1100: 44px;
+		--font-size-1600: 64px;
+		--font-size-2400: 96px;
+	
+		//Company Main Brand Core colors
+		--color-brand-ow: #D34037;
+		--color-hover-brand-ow: #F05C48;
+		--color-brand-cf: #EB622B;
+		--color-hover-brand-cf: #F18536;
+		--color-brand-tb: #41C4C3;
+		--color-hover-brand-tb: #5DE3E2;
+		--color-brand-el: #9FEAF9;
+		--color-brand-nt: #B5DF30;
+		--color-hover-brand-nt: #C4E559;
+	
+		//Core Neutral colors
+		--color-neutral-0: #000000;
+		--color-neutral-8: #101010;
+		--color-neutral-16: #202020;
+		--color-neutral-24: #303030;
+		--color-neutral-32: #404040;
+		--color-neutral-40: #505050;
+		--color-neutral-48: #606060;
+		--color-neutral-80: #9F9F9F;
+		--color-neutral-88: #AFAFAF;
+		--color-neutral-96: #BFBFBF;
+		--color-neutral-104: #CFCFCF;
+		--color-neutral-112: #DFDFDF;
+		--color-neutral-120: #EFEFEF;
+		--color-neutral-128: #FFFFFF;
+	
+		// Core infographic colors for Overwolf
+		
+		--color-infographic-ow-1: var(--color-brand-ow);
+		--color-infographic-ow-2: #942B27;
+		--color-infographic-ow-3: #FFD2D0;
+		--color-infographic-ow-4: #FFA4A1;
+		--color-infographic-ow-5: #EC7068;
+	
+		// Core Functional colors
+		--color-functional-critical-light: #FE3737;
+		--color-functional-critical-dark: #D93025;
+		--color-functional-warning-light: #E07400;
+		--color-functional-warning-dark: #C35404;
+		--color-functional-success-light: #32A100;
+		--color-functional-success-dark: #018901;
+		--color-functional-info-light: #2690E7;
+		--color-functional-info-dark: #0074C7;
+	
+		// Core Alfa colors
+		--color-alfa-brand: rgba(211, 64, 55, 0.16);
+		--color-alfa-dark-8: rgba(255, 255, 255, 0.08);
+		--color-alfa-dark-12: rgba(255, 255, 255, 0.12);
+		--color-alfa-dark-16: rgba(255, 255, 255, 0.16);
+		--color-alfa-dark-32: rgba(255, 255, 255, 0.32);
+		--color-alfa-light-8: rgba(0, 0, 0, 0.08);
+		--color-alfa-light-12: rgba(0, 0, 0, 0.12);
+		--color-alfa-light-16: rgba(0, 0, 0, 0.16);
+		--color-alfa-light-32: rgba(0, 0, 0, 0.32);
+		--color-alfa-critical-16: rgba(217, 48, 37, 0.16);
+		--color-alfa-critical-64: rgba(217, 48, 37, 0.64);
+		--color-alfa-warning-16: rgba(195, 84, 4, 0.16);
+		--color-alfa-warning-64: rgba(195, 84, 4, 0.64);
+		--color-alfa-success-16: rgba(1, 137, 1, 0.16);
+		--color-alfa-success-64: rgba(1, 137, 1, 0.64);
+		--color-alfa-info-16: rgba(0, 116, 199, 0.16);
+		--color-alfa-info-64: rgba(0, 116, 199, 0.64);
+	
+		// Surface colors
+		--color-surface-pure: var(--color-neutral-0);
+		--color-surface-primary: var(--color-neutral-8);
+		--color-surface-secondary: var(--color-neutral-16);
+		--color-surface-tertiary: var(--color-neutral-24);
+		--color-surface-quaternary: var(--color-neutral-48);
+		--color-surface-invert: var(--color-neutral-128);
+		--color-surface-brand-ow: var(--color-brand-ow);
+		--color-surface-critical: var(--color-functional-critical-dark);
+		--color-surface-warning: var(--color-functional-warning-dark);
+		--color-surface-success: var(--color-functional-success-dark);
+		--color-surface-info: var(--color-functional-info-dark);
+		--color-surface-focus-brand-ow: var(--color-alfa-brand);
+		--color-hover-on-focus-brand-ow: var(--color-alfa-brand);
+		--color-hover-on-surface: var(--color-alfa-dark-12);
+		--color-surface-note-regular: var(--color-alfa-dark-16);
+		--color-surface-note-critical: var(--color-alfa-critical-16);
+		--color-surface-note-warning: var(--color-alfa-warning-16);
+		--color-surface-note-success: var(--color-alfa-success-16);
+		--color-surface-note-info: var(--color-alfa-info-16);
+	
+		// Text colors
+		--color-text-invert: var(--color-neutral-0);
+		--color-text-tertiary: var(--color-neutral-80);
+		--color-text-secondary: var(--color-neutral-96);
+		--color-text-primary: var(--color-neutral-112);
+		--color-text-pure: var(--color-neutral-128);
+		--color-text-cta-ow: var(--color-neutral-128);
+		--color-text-brand-ow: var(--color-brand-ow);
+		--color-text-hover-brand-ow: var(--color-hover-brand-ow);
+		--color-text-critical: var(--color-functional-critical-light);
+		--color-text-warning: var(--color-functional-warning-light);
+		--color-text-success: var(--color-functional-success-light);
+		--color-text-info: var(--color-functional-info-light);
+	
+		// Icon colors
+		--color-icon-secondary: var(--color-neutral-80);
+		--color-icon-primary: var(--color-neutral-112);
+		--color-icon-pure: var(--color-neutral-128);
+		--color-icon-cta-ow-surface: var(--color-neutral-128);
+		--color-icon-brand-ow: var(--color-brand-ow);
+		--color-icon-critical: var(--color-functional-critical-light);
+		--color-icon-warning: var(--color-functional-warning-light);
+		--color-icon-success: var(--color-functional-success-light);
+		--color-icon-info: var(--color-functional-info-light);
+	
+		// Border colors
+		--color-border-tertiary: var(--color-neutral-32);
+		--color-border-secondary: var(--color-neutral-80);
+		--color-border-primary: var(--color-neutral-112);
+		--color-border-quaternary: var(--color-alfa-dark-16);
+		--color-border-note: var(--color-alfa-dark-32);
+		--color-border-critical: var(--color-alfa-critical-64);
+		--color-border-warning: var(--color-alfa-warning-64);
+		--color-border-success: var(--color-alfa-success-64);
+		--color-border-info: var(--color-alfa-info-64);
+	
+		// Core Spaces
+		--space-0: 0px;
+		--space-50: 2px;
+		--space-100: 4px;
+		--space-200: 8px;
+		--space-300: 12px;
+		--space-400: 16px;
+		--space-500: 20px;
+		--space-600: 24px;
+		--space-800: 32px;
+		--space-1000: 40px;
+		--space-1200: 48px;
+		--space-1400: 56px;
+		--space-1600: 64px;
+		--space-1800: 72px;
+		--space-2000: 80px;
+		--space-2200: 88px;
+		--space-2400: 96px;
+		--space-2600: 104px;
+		--space-3200: 128px;
+		--space-4000: 160px;
+		--space-4800: 192px;
+		--space-5600: 224px;
+		--space-6400: 256px;
+
+
+	/* old brand 2021 colors dark */
 	--color-100: #101010;
 	--color-120: #1a1a1a;
 	--color-150: #171717;
