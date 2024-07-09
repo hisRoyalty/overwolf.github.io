@@ -1,3 +1,4 @@
+
 html[data-theme="dark"]{
 
   .tabs-container {
@@ -39,15 +40,6 @@ html[data-theme="dark"]{
 
   .main-content {
     background-color: black;
-  }
-
-  body, .body {
-      color: var(--color-txt);
-      background: black !important;
-  }
-
-  h1, h2, h3, h4, h5 {
-    color: var(--color-headline);
   }
 
   aside {
