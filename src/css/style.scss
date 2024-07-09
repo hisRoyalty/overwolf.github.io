@@ -258,40 +258,40 @@
 
 }
 
-@font-face {
-	font-family: "Madera";
-	src: url("/fonts/madera/Madera-UltraLight.woff") format("woff");
-	font-weight: 200;
-	font-style: normal
-}
+// @font-face {
+// 	font-family: "Madera";
+// 	src: url("/fonts/madera/Madera-UltraLight.woff") format("woff");
+// 	font-weight: 200;
+// 	font-style: normal
+// }
 
-@font-face {
-	font-family: "Madera";
-	src: url("/fonts/madera/Madera-Light.woff") format("woff");
-	font-weight: 300;
-	font-style: normal
-}
+// @font-face {
+// 	font-family: "Madera";
+// 	src: url("/fonts/madera/Madera-Light.woff") format("woff");
+// 	font-weight: 300;
+// 	font-style: normal
+// }
 
-@font-face {
-	font-family: "Madera";
-	src: url("/fonts/madera/Madera-Regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal
-}
+// @font-face {
+// 	font-family: "Madera";
+// 	src: url("/fonts/madera/Madera-Regular.woff") format("woff");
+// 	font-weight: 400;
+// 	font-style: normal
+// }
 
-@font-face {
-	font-family: "Madera";
-	src: url("/fonts/madera/Madera-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style: normal
-}
+// @font-face {
+// 	font-family: "Madera";
+// 	src: url("/fonts/madera/Madera-Medium.woff") format("woff");
+// 	font-weight: 500;
+// 	font-style: normal
+// }
 
-@font-face {
-	font-family: "Madera";
-	src: url("/fonts/madera/Madera-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style: normal
-}
+// @font-face {
+// 	font-family: "Madera";
+// 	src: url("/fonts/madera/Madera-Bold.woff") format("woff");
+// 	font-weight: 700;
+// 	font-style: normal
+// }
 
 *,
 *:before,
@@ -395,7 +395,7 @@ th {
 
 h1,
 h2, h3, h4, h5 {
-	font-family: 'Madera', sans-serif;
+	font-family: var(--font-family-brand);
   color: var(--color-220);
 }
 
@@ -509,7 +509,7 @@ body, .body {
 	line-height: 1.5;
 	color: var(--color-220);
 	background:  var(--light-mode-bg);
-	font-family: 'Lato', sans-serif;
+	font-family: var(--font-family-default);
 	font-size: 16px;
   height: auto;
 }
