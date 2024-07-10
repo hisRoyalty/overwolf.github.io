@@ -148,7 +148,7 @@ function CategoryItem(
         <li
           style={PlaceOnGrid({
             rowStart: rowNumber,
-            columnStart: isMobile ? 3 : 1,
+            columnStart: isMobile ? 1 : 1, //add 3 to invert position
           })}
           title={`${expanded ? 'Collapse' : 'Expand'} ${label}`}
           className={clsx(
