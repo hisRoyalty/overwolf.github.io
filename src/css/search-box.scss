@@ -39,20 +39,11 @@ div[class^="searchBox"] {
       color: var(--color-neutral-112);
       transition: all 150ms ease;
       width: 16px;
-      
-      @media (max-width: 760px) {
-        // color: white;
-      }
     }
 
     &:hover {
       box-shadow: unset;
       background: rgba(0, 0, 0, 0.16);
-
-      .DocSearch-Search-Icon {
-        // color: white;
-
-      }
     }
   }
 
@@ -63,8 +54,6 @@ div[class^="searchBox"] {
   .DocSearch-Button-Placeholder {
     font-size: var(--font-size-400);
     padding: 0 0 0 8px;
-    // position: relative;
-    // top: -1px;
   }
 }
 
@@ -75,20 +64,14 @@ div[class^="searchBox"] {
     .DocSearch-Form {
       border-radius: 0;
       box-shadow: unset;
-      border: 2px solid var(--color-800);
-
-      .DocSearch-MagnifierLabel, .DocSearch-Reset {
-        color: var(--color-bg);
-      }
     }
   }
 
   .DocSearch-Screen-Icon svg {
     margin: auto;
-    color: var(--color-bg);
   }
 
   .DocSearch-Cancel {
-    color: var(--color-primary);
+    color: var(--color-neutral-112);
   }
 }
