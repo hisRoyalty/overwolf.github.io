@@ -12,8 +12,8 @@
 
 .navigation-with-keyboard {
   &:focus {
-    outline-color: #ccc !important;
-    outline-width: 1px !important;
+    outline-color: transparent !important;
+    outline-width: 0px !important;
     outline-style: solid !important;
     outline-offset: 2px !important;
   }
@@ -139,9 +139,14 @@
         a {
           font-family: var(--font-family-brand);
           color: var(--color-text-primary);
-          font-size: 16px;
-          font-weight: 500;
-          margin: 8px 0 4px;
+          font-size: var(--font-size-350);
+          font-weight: var(--font-weight-medium);
+          line-height: var(--font-line-height-600);
+          letter-spacing: var(--font-letter-spacing-regular);
+          text-transform: uppercase;
+          height: 40px;
+          display: flex;
+          align-items: center;
         }
       }
     }

@@ -329,6 +329,12 @@ img {
 	user-select: none
 }
 
+a, button {
+	&:focus-visible {
+		box-shadow: inset 0 0 0 1px var(--color-text-primary);
+	}
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
