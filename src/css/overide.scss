@@ -1,5 +1,5 @@
 aside {
-  border-right: 1px solid var(--color-border-tertiary);
+  border-right: 1px solid var(--color-border-quaternary);
 
   nav.menu {
     &::-webkit-scrollbar {
@@ -10,7 +10,7 @@ aside {
 
     &::-webkit-scrollbar-thumb {
       border-width: 0;
-      background-color: var(--color-800);
+      background-color: var(--color-neutral-32);
       background-clip: padding-box;
     }
   }
@@ -46,35 +46,46 @@ div[class^="sidebar"] {
 }
 
 div[class^="tableOfContents"] {
-  border-left: 1px solid var(--color-300);
-  padding-bottom: 4px;
-  top: 110px !important;
+  border-left: 1px solid var(--color-border-quaternary);
+
+  &::before {
+    content: 'on this page';
+    color: var(--color-text-tertiary);
+    font-family: var(--font-family-brand);
+    font-size: var(--font-size-350);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--font-line-height-600);
+    letter-spacing: var(--font-letter-spacing-regular, 1.2px);
+    text-transform: uppercase;
+    padding: var(--space-200) var(--space-300) var(--space-200) var(--space-400);
+    height: 40px;
+    display: block;
+  }
 }
 
 .table-of-contents {
-
-  + a {
-    margin-left: 16px;
-  }
-
   overflow-y: auto;
-  height: calc(100vh - 410px);
+  height: calc(100vh - 200px);
   margin-bottom: 34px;
-
+  padding: 0;
 
   @media (max-width: 800px) {
     height: auto;
   }
 
+  + a {
+    margin-left: 16px;
+  }
+
   &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-    background-color: var(--color-600);
+    background-color: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
     border-width: 0;
-    background-color: var(--color-800);
+    background-color: var(--color-neutral-32);
     background-clip: padding-box;
   }
 
@@ -82,7 +93,12 @@ div[class^="tableOfContents"] {
     border-left: none !important;
   }
 
+  ul {
+    padding: 0;
+  }
+
   li {
+    margin: 0;
 
     @media (max-width: 800px) {
       &::before {
@@ -91,44 +107,45 @@ div[class^="tableOfContents"] {
     }
 
      a {
-      font-size: 14px;
-      line-height: 144%;
-      font-family: var(--font-family-brand);;
-      color: var(--color-600);
-
+      color: var(--color-text-secondary);
+      font-family: var(--font-family-brand);
+      font-size: var(--font-size-350);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-line-height-600);
+      letter-spacing: var(--font-letter-spacing-none);
+      display: block;
+      padding: var(--space-100, 4px) var(--space-400, 16px);
+      position: relative;
 
       @media (max-width: 800px) {
         text-decoration: none;
       }
 
       &.table-of-contents__link--active, &:hover {
-        color: var(--color-bg);
+        color: var(--color-text-primary);
       }
-     }
+
+      &.table-of-contents__link--active {
+       &::before {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: var(--color-brand-ow);
+        position: absolute;
+        left: 0;
+        top: 0;
+       }
+      }
+
+      + ul {
+        
+        li a {
+          padding-left: var(--space-800);
+        }
+      }
+    }
   }
 }
-
-// .electron {
-//   .menu__list-item-collapsible {
-//     button {
-//     &::after{
-
-//       content: url('/img/platforms/electron-platform/electron-sidebar.png');
-//     }
-//   }
-//   }
-// }
-
-// .platform {
-//   .menu__list-item-collapsible {
-//     button {
-//     &::before{
-
-//       content: url('/img/platforms/overwolf-platform/overwolf-sidebar.png');
-//     }
-//   }
-//   }
-// }
 
 .theme-doc-breadcrumbs {
   .breadcrumbs {

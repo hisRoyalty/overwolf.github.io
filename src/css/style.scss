@@ -150,7 +150,6 @@
 	// Border colors
 	--color-border-secondary: var(--color-neutral-80);
 	--color-border-primary: var(--color-neutral-112);
-	--color-border-quaternary: var(--color-alfa-dark-16);
 	--color-border-note: var(--color-alfa-dark-32);
 	--color-border-critical: var(--color-alfa-critical-64);
 	--color-border-warning: var(--color-alfa-warning-64);
@@ -258,6 +257,7 @@ html[data-theme="light"] {
 	--color-text-secondary: #404040;
 	--color-surface-pure: #FFFFFF;
 	--color-border-tertiary: #BFBFBF;
+	--color-border-quaternary: rgba(0, 0, 0, 0.16);
 }
 
 html[data-theme="dark"] {
@@ -266,6 +266,7 @@ html[data-theme="dark"] {
 	--color-text-secondary: var(--color-neutral-96);
 	--color-text-primary: var(--color-neutral-112);
 	--color-border-tertiary: var(--color-neutral-32);
+	--color-border-quaternary: var(--color-alfa-dark-16);
 }
 
 *,

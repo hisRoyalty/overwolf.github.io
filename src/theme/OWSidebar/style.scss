@@ -38,13 +38,13 @@
   }
 
   &::-webkit-scrollbar {
-    height: var(--ifm-scrollbar-size);
-    width: var(--ifm-scrollbar-size);
+    height: 4px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    background-color: #4D4D4D;
+    background-color: var(--color-neutral-32);
     border-width: 0;
   }
 
