@@ -1,25 +1,12 @@
 .services-section {
-  // background: linear-gradient(180deg, #000000 0%, #131313 100%);
-  background-color: #000000;
-  // padding: 0 0 40px;
+  background-color: var(--color-neutral-0);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  // @media (max-width: 600px) {
-  //   padding-bottom: 24px;
-  // }
-
   .btn-secondary {
     margin-top: 40px;
-    color: #DFDFDF;
-    border-color: #DFDFDF;
-
-    &:hover {
-      background-color: #DFDFDF;
-      color: var(--color-220) !important;
-    }
   }
 
   ul {
@@ -111,10 +98,11 @@
         padding: 0 16px;
 
         h2 {
-          font-size: 40px;
-          line-height: 60px;
-          color: var(--color-headline);
-          margin-bottom: 8px;
+          color: var(--color-neutral-128);
+          font-size: var(--font-size-1100);
+          font-weight: var(--font-weight-bold);
+          line-height: var(--font-line-height-1300);
+          margin: 8px ;
 
           @media (max-width: 600px) {
             font-size: 32px;

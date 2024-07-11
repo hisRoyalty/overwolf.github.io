@@ -501,31 +501,30 @@ blockquote {
   background-color: white;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary  {
+	font-family: var(--font-family-brand);
   border: none;
-  color: white;
   text-decoration: none;
-  font-weight: 600;
-  padding: 12px 32px;
-  font-size: 16px;
-  letter-spacing: 0.04em;
-  line-height: 21px;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-400) var(--space-800);
+  font-size: var(--font-size-400);
   height: 48px;
-  min-width: 160px;
   white-space: nowrap;
   cursor: pointer;
-  background-color: var(--color-primary);
   display: inline-block;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--font-letter-spacing-regular);
+	text-decoration: none !important;
+}
+
+.btn-primary {
+  color: var(--color-text-cta-ow);
+  background-color: var(--color-surface-brand-ow);
+	line-height: 18px;
 
   &:hover {
-    color: white !important;
-    text-decoration: none;
-    background-color: var(--color-primary-hover);
-  }
-
-  @media (max-width: 600px) {
-    font-size: 16px;
+    background-color: var(--color-hover-brand-ow);
+		color: var(--color-text-cta-ow);
   }
 
   &.has-icon {
@@ -542,32 +541,18 @@ blockquote {
 }
 
 .btn-secondary {
-  border: 1px solid var(--color-450);
-  color: var(--color-220);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 12px 32px;
-  font-size: 16px;
-  letter-spacing: 0.04em;
-  line-height: 21px;
-  height: 48px;
-  min-width: 160px;
-  white-space: nowrap;
-  cursor: pointer;
+	border: 1px solid var(--color-border-primary);
+  color: var(--color-text-primary);
   background-color: transparent;
-  display: inline-block;
-  text-align: center;
+	line-height: 16px;
 
   &:hover {
-    background-color: var(--color-120);
-    border-color: var(--color-120);
-    text-decoration: none;
-    color: white;
+		background-color: var(--color-hover-brand-ow);
+    border-color: var(--color-hover-brand-ow);
+    color: var(--color-neutral-128);
+    
   }
 
-  @media (max-width: 600px) {
-    font-size: 16px;
-  }
 }
 
 .underline-patch a{

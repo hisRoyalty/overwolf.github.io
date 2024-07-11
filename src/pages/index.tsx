@@ -8,7 +8,7 @@ import Community from '../components/home-page/community/community';
 import OWInternalLink from '../theme/ow-internal-link';
 import FrameworkComparison from '../components/home-page/framework-comparison/framework-comparison';
 
-const Index = (props) => {
+const Index = (props: any) => {
   // const {} = props;
 
   return (
