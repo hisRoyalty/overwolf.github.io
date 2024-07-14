@@ -554,6 +554,13 @@ blockquote {
     color: var(--color-text-cta-ow);
   }
 
+	&.small {
+		padding: 16px var(--space-600, 24px);
+		height: 40px;
+		text-transform: none;
+		line-height: 7px;
+	}
+
 }
 
 .underline-patch a {

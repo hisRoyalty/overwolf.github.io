@@ -138,7 +138,7 @@ const Services = (props: any) => {
         smooth={true}
         to="framework-comparison-section"
         offset={-60}
-        className="btn-secondary"
+        className="btn-secondary small"
       >
         See full feature comparison
       </OWInternalLink>
