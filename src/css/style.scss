@@ -25,7 +25,7 @@
 		--font-line-height-2600: 104px; /* 236.364% */
 	
 		//Letter spacing
-		--font-letter-spacing-none: 0px;
+		--font-letter-spacing-default: 0px;
 		--font-letter-spacing-regular: 1.2px;
 	
 		// Core font sizes
@@ -40,7 +40,32 @@
 		--font-size-1100: 44px;
 		--font-size-1600: 64px;
 		--font-size-2400: 96px;
-	
+
+		// Core Spaces
+		--space-0: 0px;
+		--space-50: 2px;
+		--space-100: 4px;
+		--space-200: 8px;
+		--space-300: 12px;
+		--space-400: 16px;
+		--space-500: 20px;
+		--space-600: 24px;
+		--space-800: 32px;
+		--space-1000: 40px;
+		--space-1200: 48px;
+		--space-1400: 56px;
+		--space-1600: 64px;
+		--space-1800: 72px;
+		--space-2000: 80px;
+		--space-2200: 88px;
+		--space-2400: 96px;
+		--space-2600: 104px;
+		--space-3200: 128px;
+		--space-4000: 160px;
+		--space-4800: 192px;
+		--space-5600: 224px;
+		--space-6400: 256px;
+
 		//Company Main Brand Core colors
 		--color-brand-ow: #D34037;
 		--color-hover-brand-ow: #F05C48;
@@ -156,30 +181,7 @@
 	--color-border-success: var(--color-alfa-success-64);
 	--color-border-info: var(--color-alfa-info-64);
 
-		// Core Spaces
-		--space-0: 0px;
-		--space-50: 2px;
-		--space-100: 4px;
-		--space-200: 8px;
-		--space-300: 12px;
-		--space-400: 16px;
-		--space-500: 20px;
-		--space-600: 24px;
-		--space-800: 32px;
-		--space-1000: 40px;
-		--space-1200: 48px;
-		--space-1400: 56px;
-		--space-1600: 64px;
-		--space-1800: 72px;
-		--space-2000: 80px;
-		--space-2200: 88px;
-		--space-2400: 96px;
-		--space-2600: 104px;
-		--space-3200: 128px;
-		--space-4000: 160px;
-		--space-4800: 192px;
-		--space-5600: 224px;
-		--space-6400: 256px;
+
 
 	/* old brand 2021 colors dark */
 	--color-100: #101010;
@@ -549,13 +551,12 @@ blockquote {
   &:hover {
 		background-color: var(--color-hover-brand-ow);
     border-color: var(--color-hover-brand-ow);
-    color: var(--color-neutral-128);
-    
+    color: var(--color-text-cta-ow);
   }
 
 }
 
-.underline-patch a{
+.underline-patch a {
 	text-decoration-color: initial;
 }
 

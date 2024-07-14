@@ -38,7 +38,7 @@ const Services = (props: any) => {
             /> */}
           </div>
           <div className="info">
-            <h2>Overwolf Platform</h2>
+            <h2>Overwolf Native</h2>
             <p>
               Create powerful desktop apps and game overlays, built with 100%
               pure JavaScript.

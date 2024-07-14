@@ -138,7 +138,7 @@ div[class^="tableOfContents"] {
       font-size: var(--font-size-350);
       font-weight: var(--font-weight-regular);
       line-height: var(--font-line-height-600);
-      letter-spacing: var(--font-letter-spacing-none);
+      letter-spacing: var(--font-letter-spacing-default);
       display: block;
       padding: var(--space-100, 4px) var(--space-400, 16px);
       position: relative;
@@ -184,7 +184,7 @@ div[class^="tableOfContents"] {
       font-size: var(--font-size-300);
       font-weight: var(--font-weight-regular);
       line-height: var(--font-line-height-400);
-      letter-spacing: var(--font-letter-spacing-none);
+      letter-spacing: var(--font-letter-spacing-default);
 
       &:not(:last-child):after {
         width: 20px;
