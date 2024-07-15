@@ -152,7 +152,7 @@
         }
 
         span {
-          color: var(--color-220);
+          color: var(--color-neutral-80);
           font-size: 14px;
         }
       }
@@ -160,18 +160,3 @@
     }
   }
 
-  html[data-theme=dark] {
-    .site-footer {
-
-      .site-footer-social {
-        background-color: var(--color-120);
-
-        .copyright {
-          span {
-            color: var(--color-neutral-80);
-          }
-        }
-
-      }
-    }
-  }
