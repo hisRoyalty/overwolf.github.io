@@ -1,10 +1,12 @@
 .community-section {
   overflow: hidden;
+  max-width: 1396px;
+  margin: auto;
 
   > div {
     max-width: 1112px;
     margin: auto;
-    padding: 56px 0;
+    padding: var(--space-800) 0 var(--space-1000) 0;
 
     @media (max-width: 600px) {
       padding: 24px 0;
@@ -21,16 +23,16 @@
     }
 
     svg {
-      width: 62px;
-      height: 42px;
-      color: var(--color-220);
-      margin-bottom: 16px;
+      width: 64px;
+      height: 48px;
+      color: var(--color-icon-pure);
+      margin-bottom: var(--space-600);
     }
 
     h4 {
-      font-size: 40px;
-      line-height: 48px;
-      margin-bottom: 8px;
+      font-size: var(--font-size-1100);
+      line-height: var(--font-line-height-1300);
+      margin-bottom: var(--space-200);
 
       @media (max-width: 1130px) {
         font-size: 32px;
@@ -39,9 +41,10 @@
     }
 
     p {
-      font-size: 18px;
-      line-height: 28px;
-      margin-bottom: 24px ;
+      color: var(--color-text-primary);
+      font-size: var(--font-size-450);
+      line-height: var(--font-line-height-700);
+      margin-bottom: var(--space-600);
     }
   }
 
@@ -64,7 +67,7 @@
     .assets {
       position: absolute;
       top: 0;
-      left: -174px;
+      left: -114px;
       width: 814px;
       height: 562px;
       background-image: url(/img/home-2023/smoke-light.webp);
@@ -107,7 +110,6 @@
           display: none;
         }
       }
-
 
     }
 
@@ -182,10 +184,6 @@
 html[data-theme=dark] {
 
   .community-section {
-
-    .info svg {
-      color: white;
-    }
 
     .discord-community {
 
