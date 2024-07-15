@@ -1,30 +1,22 @@
 :root {
-  --evc-table-header-bg: var(--color-black);
-  --evc-border-header: var(--border-table);
-  --evc-border: var(--border-table);
-  --evc-header-title: var(--color-white);
-  --evc-group-title: var(--color-999);
-  --evc-group-title-bg: var(--secondary-bg);
-  --evc-row-title: var(--txt-secondary);
+  --evc-table-header-bg: var(--color-neutral-0);
+  --evc-border-header: var(--color-neutral-24);
+  --evc-border: var(--color-border-tertiary);
+  --evc-header-title: var(--color-neutral-128);
+  --evc-group-title: var(--color-text-tertiary);
+  --evc-group-title-bg: var(--color-surface-primary);
+  --evc-row-title: var(--color-text-primary);
   --evc-tab-active: var(--color-primary);
 }
 
-html[data-theme="light"] {
-  --evc-border: var(--light-border-color);
-  --evc-group-title-bg: var(--light-border-color);
-  --evc-group-title: var(--border-table);
-  --evc-row-title: var(--secondary-bg);
-}
-
-// TODO convert all active vs inactives here to use ISMOBILE
-
 .comparison-table {
-  max-width: 1112px;
+  width: 1112px;
   margin: auto;
-  padding: 56px 0;
+  padding: var(--space-1400, 56px) 0;
 
-  @media (max-width: 966px) {
+  @media (max-width: 1112px) {
     padding: 0 0 32px;
+    width: 100%;
   }
 
   .comparison-table-headers {
@@ -167,11 +159,11 @@ html[data-theme="light"] {
           justify-content: center;
 
           &.green {
-            color: var(--color-ui-success-dark);
+            color: var(--color-text-success);
           }
 
           &.red {
-            color: var(--color-primary);
+            color: var(--color-brand-ow);
           }
 
           .tt-container {
