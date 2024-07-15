@@ -45,7 +45,7 @@ const Community = (props) => {
           <h4>Game developer?</h4>
           <p>Community is power and a driver for retention.
 Give your community tools to create valuable in-game content for your game with the Overwolf Game Events SDK.</p>
-          <a href='/topics/integrations/events-sdk-for-game-developers' className='btn-secondary small'>Learn more</a>
+          <a href='/topics/integrations/events-sdk-for-game-developers' className='btn-secondary'>Learn more</a>
         </div>
 
         <div className='assets'>
