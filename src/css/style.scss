@@ -160,7 +160,6 @@
 	--color-text-info: var(--color-functional-info-light);
 
 	// Icon colors
-	--color-icon-secondary: var(--color-neutral-80);
 	--color-icon-primary: var(--color-neutral-112);
 	--color-icon-cta-ow-surface: var(--color-neutral-128);
 	--color-icon-brand-ow: var(--color-brand-ow);
@@ -257,6 +256,7 @@ html[data-theme="light"] {
 	--color-border-tertiary: #CFCFCF;
 	--color-border-primary: #202020;
 	--color-icon-pure: #000000;
+	--color-icon-secondary: #606060;
 }
 
 html[data-theme="dark"] {
@@ -269,6 +269,7 @@ html[data-theme="dark"] {
 	--color-border-tertiary: var(--color-neutral-24);
 	--color-border-primary: var(--color-neutral-112);
 	--color-icon-pure: var(--color-neutral-128);
+	--color-icon-secondary: var(--color-neutral-80);
 }
 
 *,
