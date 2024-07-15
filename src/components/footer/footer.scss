@@ -2,14 +2,13 @@
   .site-footer {
     width: 100%;
     padding-top: 60px;
-    background-color: #000000;
+    background-color: var(--color-neutral-0);
     background-image: url(/img/home-2023/footer-bg.webp);
     background-repeat: no-repeat;
     background-position: top 60px center;
 
     @media (max-width: 800px){
       background-size: auto;
-      background-color: #030303;
     }
 
 
@@ -22,19 +21,19 @@
       margin: auto;
       font-size: 16px;
       line-height: 24px;
-      color: #B5B5B5;
+      color: var(--color-neutral-112);
       text-decoration: none;
       margin-bottom: 12px;
 
       svg {
-        color: #E9E9E9;
+        color: var(--color-neutral-128);
         width: 24px;
         height: 24px;
 
       }
 
       &:hover, &:hover svg {
-        color: var(--color-primary-hover);
+        color: var(--color-hover-brand-ow);
       }
     }
 
@@ -74,10 +73,11 @@
           list-style: none;
 
           h5 {
-            font-size: 16px;
-            line-height: 24px;
-            color: var(--color-txt);
-            font-weight: bold;
+            font-family: var(--font-family-brand);
+            font-size: var(--font-size-400);
+            font-weight: var(--font-weight-medium, 500);
+            line-height: var(--font-line-height-600);
+            color: var(--color-neutral-80);
           }
 
           & ul {
@@ -92,36 +92,38 @@
               width: fit-content;
 
               & + li {
-                margin-top: 16px;
+                margin-top: 12px;
               }
 
               svg {
                 width: 24px;
                 height: 24px;
-                color: var(--color-999);
+                color: var(--color-neutral-80);
               }
 
               &:hover {
                 a {
-                  color: var(--color-txt);
+                  color: var(--color-neutral-128);
                   text-decoration: underline;
                 }
 
                 svg {
-                  color: var(--color-txt);
+                  color: var(--color-neutral-128);
                 }
               }
 
               a {
-                font-size: 16px;
-                line-height: 24px;
-                color: var(--color-999);
+                color: var(--color-neutral-80);
+                font-family: var(--font-family-brand);
+                font-size: var(--font-size-350);
+                font-weight: var(--font-weight-regular, 400);
+                line-height: var(--font-line-height-600);
                 text-decoration: none;
                 text-underline-offset: 3px;
-                letter-spacing: 0.02em;
+
 
                  &.is-active {
-                  color: var(--color-headline);
+                  color: var(--color-neutral-128);
                   text-decoration: underline;
                 }
               }
@@ -132,7 +134,7 @@
     }
 
     .site-footer-social {
-      background-color: var(--color-grey-light-2);
+      background-color: var(--color-neutral-8);
 
       .site-footer-social-inner {
         padding: 12px 24px;
@@ -166,7 +168,7 @@
 
         .copyright {
           span {
-            color: var(--color-txt);
+            color: var(--color-neutral-80);
           }
         }
 

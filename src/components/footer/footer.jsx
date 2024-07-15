@@ -187,7 +187,7 @@ const Footer = (props) => {
       <div className="site-footer-social">
         <div className="site-footer-social-inner">
           <div className="copyright">
-            <span>Overwolf 2023</span>
+            <span>Overwolf 2024</span>
           </div>
         </div>
       </div>
