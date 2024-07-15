@@ -4,7 +4,7 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: var(--space-1600) var(--space-500) 0;
+  padding: var(--space-1600) 0 var(--space-500) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +12,7 @@
   row-gap: var(--space-600);
 
   @media (max-width: 1600px) {
-    padding: var(--space-400) 0px var(--space-600) 0px;
-
+    padding: var(--space-800) 0px var(--space-600) 0px;
   }
 
   h1 {

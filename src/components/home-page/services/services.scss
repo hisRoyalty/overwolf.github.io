@@ -53,7 +53,7 @@
           img {
 
             &.platform-app-bg, &.platform-app {
-              filter: brightness(1.1);
+              filter: brightness(1.120);
             }
 
             &.electron-app-bg, &.electron-app {
@@ -69,34 +69,14 @@
 
         img {
           transition: all 300ms ease;
-
-          @media (max-width: 1600px) {
-            height: 180px;
-            width: auto;
-            margin: auto;
-          }
+          height: 200px;
+          width: auto;
+          margin: auto;
 
           @media (max-width: 600px) {
             height: auto;
           }
         }
-
-        @media (max-width: 600px) {
-          height: 280px;
-        }
-
-      .bg {
-        @media (max-width: 600px) {
-          position: absolute;
-          width: 512px;
-          right: -60px;
-          max-width: unset;
-        }
-
-        @media (max-width: 380px) {
-          right: -65px;
-        }
-      }
 
       .symbol {
         position: absolute;
@@ -127,15 +107,10 @@
 
         h2 {
           color: var(--color-neutral-128);
-          font-size: var(--font-size-1100);
           font-weight: var(--font-weight-bold);
-          line-height: var(--font-line-height-1300);
+          font-size: var(--font-size-800);
+          line-height: var(--font-line-height-1000);
           margin: var(--space-200) 0;
-
-          @media (max-width: 1600px) {
-            font-size: var(--font-size-800);
-            line-height: var(--font-line-height-1000);
-          }
         }
 
         p {
