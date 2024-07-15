@@ -1,8 +1,12 @@
 .documentation-section {
-  padding: var(--space-800) var(--font-size-500) var(--space-1000) ;
+  padding: var(--space-800) var(--font-size-500) var(--space-1000);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+  @media (max-width: 600px) {
+    padding: var(--space-400) var(--space-600) var(--space-400);
+  }
 
   h3 {
     color: var(--color-text-pure);
@@ -13,8 +17,8 @@
     margin-bottom: var(--space-200);
 
     @media (max-width: 600px) {
-      font-size: 32px;
-      line-height: 48px;
+      font-size: var(--font-size-800);
+      line-height: var(--font-line-height-1000);
     }
 
     + p {
@@ -25,6 +29,10 @@
       line-height: var(--font-line-height-700);
       letter-spacing: var(--font-letter-spacing-default);
       margin-bottom: var(--space-1000);
+
+      @media (max-width: 600px) {
+        margin-bottom: var(--space-800);
+      }
     }
   }
 

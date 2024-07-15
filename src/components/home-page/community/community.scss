@@ -9,7 +9,7 @@
     padding: var(--space-800) 0 var(--space-1000) 0;
 
     @media (max-width: 600px) {
-      padding: 24px 0;
+      padding: 16px 0;
      }
   }
 
@@ -35,8 +35,8 @@
       margin-bottom: var(--space-200);
 
       @media (max-width: 1130px) {
-        font-size: 32px;
-        line-height: 48px;
+        font-size: var(--font-size-800);
+        line-height: var(--font-line-height-1000);
       }
     }
 

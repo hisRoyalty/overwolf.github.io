@@ -6,7 +6,7 @@
   align-items: center;
 
   @media (max-width: 600px) {
-    // padding: 40px 16px;
+    padding: var(--space-400) 0;
   }
 
   h3 {
@@ -14,13 +14,15 @@
     font-size: var(--font-size-1100);
     line-height: var(--font-line-height-1300);
     margin-bottom: var(--space-200);
+    padding: 0 var(--space-500);
 
     @media (max-width: 600px) {
-      font-size: 32px;
-      line-height: 48px;
+      font-size: var(--font-size-800);
+      line-height: var(--font-line-height-1000);
     }
 
-    +p {
+    + p {
+      padding: 0 var(--space-500);
       color: var(--color-text-primary);
       text-align: center;
       font-size: var(--font-size-450);

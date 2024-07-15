@@ -518,6 +518,7 @@ blockquote {
   text-transform: uppercase;
   letter-spacing: var(--font-letter-spacing-regular);
 	text-decoration: none !important;
+	min-width: 160px;
 }
 
 .btn-primary {

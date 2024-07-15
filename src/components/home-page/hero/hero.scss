@@ -11,10 +11,9 @@
   align-items: center;
   row-gap: var(--space-600);
 
+  @media (max-width: 1600px) {
+    padding: var(--space-400) 0px var(--space-600) 0px;
 
-  @media (max-width: 600px) {
-    padding-top: 32px;
-    padding-bottom: 32px;
   }
 
   h1 {
@@ -26,9 +25,9 @@
     margin: 0;
     text-align: center;
 
-    @media (max-width: 600px) {
-      font-size: 40px;
-      line-height: 60px;
+    @media (max-width: 1600px) {
+      font-size: var(--font-size-1100);
+      line-height: var(--font-line-height-1300);
     }
   }
 
@@ -42,9 +41,9 @@
     max-width: 676px;
     text-align: center;
 
-    @media (max-width: 600px) {
-      font-size: 18px;
-      line-height: 28px;
+    @media (max-width: 1600px) {
+      font-size: var(--font-size-450);
+      line-height: var(--font-line-height-700);
     }
   }
 }
