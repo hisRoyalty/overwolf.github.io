@@ -107,6 +107,10 @@
       font-size: 14px;
       line-height: 20px;
 
+      + li {
+        margin-top: 0;
+      }
+
       &::before {
         display: none;
       }

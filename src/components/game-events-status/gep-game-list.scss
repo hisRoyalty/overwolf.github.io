@@ -27,14 +27,12 @@
       height: 40px;
       font-weight: 300;
       transition: all .15s ease;
-      background-color: #fff;
+      background-color: var(--color-surface-secondary);
 
-      &:hover {
-        &::placeholder {
-          color: #ccc;
-        }
+      &::placeholder {
+        color: var(--color-text-tertiary);
       }
-
+  
       &:focus {
         background: var(--card-hover);
 
@@ -242,14 +240,6 @@ html[data-theme="dark"] {
   .gep-game .search-game {
     color: var(--color-500);
     background: var(--color-200);
-
-    .search-input {
-      background: var(--color-black);
-
-      &::placeholder {
-        color: var(--color-500);
-      }
-    }
   }
 
   .gep-game .search-game:hover .search-input,
