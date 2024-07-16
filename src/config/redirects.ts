@@ -554,7 +554,7 @@ export default [
     from: '/docs/start/how-to-test-your-app',
   },
   {
-    to: '/start/test-your-app/marketing-checklist',
+    to: '/',
     from: '/docs/start/marketing-checklist',
   },
   {
