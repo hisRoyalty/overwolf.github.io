@@ -19,7 +19,7 @@
     z-index: 1;
 
     @media (max-width: 1130px) {
-     padding: 0 16px;
+     padding: 0 var(--space-500);
     }
 
     svg {
@@ -126,11 +126,12 @@
       flex-direction: column-reverse;
       align-items: center;
       text-align: center;
+      padding-bottom: var(--space-800);
     }
 
     .assets {
       position: absolute;
-      top: 0;
+      top: -30px;
       right: -130px;
       width: 814px;
       height: 480px;

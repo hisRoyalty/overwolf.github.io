@@ -12,7 +12,7 @@
   row-gap: var(--space-600);
 
   @media (max-width: 1600px) {
-    padding: var(--space-800) 0px var(--space-600) 0px;
+    padding: var(--space-800) var(--space-500) var(--space-600) var(--space-500);
   }
 
   h1 {

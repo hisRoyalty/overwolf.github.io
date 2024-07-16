@@ -7,7 +7,7 @@
   padding-bottom: var(--space-1000);
 
   @media (max-width: 600px) {
-    padding-bottom: var(--space-400);
+    padding-bottom: var(--space-800);
   }
 
   .btn-secondary {
@@ -103,7 +103,7 @@
 
       .info {
         text-align: center;
-        padding: 0 var(--space-400);
+        padding: 0 var(--space-500);
 
         h2 {
           color: var(--color-neutral-128);

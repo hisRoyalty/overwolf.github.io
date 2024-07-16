@@ -36,7 +36,7 @@
       flex-direction: row;
 
       @media (max-width: 966px) {
-        overflow-x: scroll;
+        // overflow-x: scroll;
         gap: 0;
 
         flex-basis: 100% !important;
@@ -64,6 +64,7 @@
         border: none;
         flex-basis: 100% !important;
         min-height: 68px;
+        padding-top: 28px;
       }
 
       &.comparison-title {

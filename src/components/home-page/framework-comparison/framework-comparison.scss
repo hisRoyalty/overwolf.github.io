@@ -6,7 +6,7 @@
   align-items: center;
 
   @media (max-width: 600px) {
-    padding: var(--space-400) 0;
+    padding: var(--space-800) 0;
   }
 
   h3 {
@@ -28,6 +28,10 @@
       font-size: var(--font-size-450);
       line-height: var(--font-line-height-700, 28px);
       margin: 0;
+
+      @media (max-width: 600px) {
+        padding-bottom: var(--space-600);
+      }
     }
   }
 }
