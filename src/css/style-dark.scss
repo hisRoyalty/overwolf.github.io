@@ -25,21 +25,6 @@ html[data-theme="dark"]{
 
   }
 
-  .main-content {
-    background-color: black;
-  }
-
-  article {
-
-    a {
-      color: var(--color-grey-light-2);
-
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
-  }
-
   details {
     border: none;
     background: var(--color-300);
@@ -69,10 +54,6 @@ html[data-theme="dark"]{
 
   .admonition-content {
 
-    h1, h2, h3, h4, h5, h6 {
-      color: var(--color-300);
-    }
-
     a {
       color: var(--color-bg);
       text-decoration-color: var(--color-bg);
@@ -91,25 +72,6 @@ html[data-theme="dark"]{
       background-color: var(--color-100);
     }
   }
-
-  .theme-doc-sidebar-container .theme-doc-sidebar-item-category .menu__list li a.menu__link,.theme-doc-sidebar-container .theme-doc-sidebar-item-link-level-1 a.menu__link {
-    color: var(--color-800);
-
-    &:hover {
-      color: var(--color-grey);
-    }
-
-    &.menu__link--active {
-      color: var(--color-grey);
-    }
-  }
-  .theme-doc-sidebar-container .theme-doc-sidebar-item-category .menu__list-item-collapsible a.menu__link {
-    color: var(--color-900);
-    &.menu__link--active {
-      color: var(--color-grey);
-    }
-  }
-
 
   .DocSearch.DocSearch-Container {
     .DocSearch-Modal {
@@ -199,18 +161,6 @@ html[data-theme="dark"]{
       color: #fff;
     }
   }
-
-  .btn-pink {
-    border: 1px solid var(--color-grey);
-    color: var(--color-grey);
-    text-decoration: none;
-
-    &:hover {
-      border: 1px solid transparent;
-      color: white;
-    }
-  }
-
 
 
   th,
