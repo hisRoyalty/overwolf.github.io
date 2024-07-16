@@ -145,6 +145,10 @@ article, .markdown {
 		line-height: var(--font-line-height-600);
 	}
 
+	h4, h5, h6 {
+		font-family: var(--font-family-default);
+	}
+
 	a {
 		text-decoration: underline;
 		color: var(--color-text-primary);
@@ -201,10 +205,9 @@ article, .markdown {
 		}
 
 		blockquote {
-			background-color: var(--card-hover);
-			border-left: 2px solid var(--color-800);;
-			padding: 15px 30px 15px 15px;
-			color: var(--color-bg);
+			background-color: var(--color-surface-secondary);
+			border-left: 2px solid var(--color-brand-ow);
+			padding: 8px 16px;
 
 			p {
 				margin: 0;

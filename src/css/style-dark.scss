@@ -1,42 +1,6 @@
 
 html[data-theme="dark"]{
 
-  .tabs-container {
-    background-color: #1A1A1A;
-    padding: 0 24px 32px;
-
-    .tabs {
-      border-bottom: 1px solid #333333;
-      .tabs__item {
-        color: #999999;
-
-        &:hover {
-
-          &:after {
-            color: #ccc;
-          }
-        }
-
-        &.tabs__item--active {
-          color: #ccc;
-        }
-      }
-    }
-
-  }
-
-  details {
-    border: none;
-    background: var(--color-300);
-
-    div[class^="collapsibleContent"] {
-      border-top: 1px solid var(--color-bg);
-    }
-
-    summary::before {
-      border-color: #0000 #0000 #0000 var(--color-grey-light-2);
-    }
-  }
 
   div[class^="codeBlockLines"] {
     span.token.string {
@@ -185,27 +149,8 @@ html[data-theme="dark"]{
     color: white;
   }
 
-
-
-
   .admonition h5, .admonition p, .admonition ul li, .admonition ul li a {
     color: var(--color-300) !important;
-  }
-
-  summary {
-      color: var(--color-txt);
-    cursor: pointer;
-  }
-
-  blockquote {
-      background-color: var(--color-300) !important;
-      border-left: 2px solid #FF3434;
-      padding: 15px 30px 15px 15px;
-      color: white !important;
-  }
-
-  .alert a {
-    text-decoration-color: var(--color-grey-light-2);
   }
 
 }
