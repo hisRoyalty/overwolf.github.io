@@ -131,8 +131,6 @@
 	--color-alfa-info-64: rgba(0, 116, 199, 0.64);
 
 	// Surface colors
-	--color-surface-secondary: var(--color-neutral-16);
-	--color-surface-tertiary: var(--color-neutral-24);
 	--color-surface-quaternary: var(--color-neutral-48);
 	--color-surface-invert: var(--color-neutral-128);
 	--color-surface-brand-ow: var(--color-brand-ow);
@@ -142,8 +140,6 @@
 	--color-surface-info: var(--color-functional-info-dark);
 	--color-surface-focus-brand-ow: var(--color-alfa-brand);
 	--color-hover-on-focus-brand-ow: var(--color-alfa-brand);
-	--color-hover-on-surface: var(--color-alfa-dark-12);
-	--color-surface-note-regular: var(--color-alfa-dark-16);
 	--color-surface-note-critical: var(--color-alfa-critical-16);
 	--color-surface-note-warning: var(--color-alfa-warning-16);
 	--color-surface-note-success: var(--color-alfa-success-16);
@@ -154,23 +150,12 @@
 	--color-text-cta-ow: var(--color-neutral-128);
 	--color-text-brand-ow: var(--color-brand-ow);
 	--color-text-hover-brand-ow: var(--color-hover-brand-ow);
-	--color-text-critical: var(--color-functional-critical-light);
-	--color-text-warning: var(--color-functional-warning-light);
-	--color-text-success: var(--color-functional-success-light);
-	--color-text-info: var(--color-functional-info-light);
 
 	// Icon colors
-	--color-icon-primary: var(--color-neutral-112);
 	--color-icon-cta-ow-surface: var(--color-neutral-128);
 	--color-icon-brand-ow: var(--color-brand-ow);
-	--color-icon-critical: var(--color-functional-critical-light);
-	--color-icon-warning: var(--color-functional-warning-light);
-	--color-icon-success: var(--color-functional-success-light);
-	--color-icon-info: var(--color-functional-info-light);
 
 	// Border colors
-	--color-border-secondary: var(--color-neutral-80);
-	--color-border-note: var(--color-alfa-dark-32);
 	--color-border-critical: var(--color-alfa-critical-64);
 	--color-border-warning: var(--color-alfa-warning-64);
 	--color-border-success: var(--color-alfa-success-64);
@@ -249,27 +234,61 @@
 html[data-theme="light"] {
 	--color-surface-pure: #FFFFFF;
 	--color-surface-primary: #EFEFEF;
+	--color-surface-secondary: #DFDFDF;
+	--color-surface-tertiary: #CFCFCF;
+	--color-surface-invert: #000000;
+	--color-hover-on-surface:  rgba(0, 0, 0, 0.12);
+	--color-surface-note-regular: rgba(0, 0, 0, 0.16);
 	--color-text-pure: #000000;
 	--color-text-primary: #202020;
 	--color-text-secondary: #404040;
 	--color-text-tertiary: #606060;
-	--color-border-tertiary: #CFCFCF;
-	--color-border-primary: #202020;
+	--color-text-invert: #FFFFFF;
+	--color-text-critical: #D93025;
+	--color-text-warning: #C35404;
+	--color-text-success: #018901;
+	--color-text-info: #0074C7;
 	--color-icon-pure: #000000;
+	--color-icon-primary: #000000;
 	--color-icon-secondary: #606060;
+	--color-icon-critical: #D93025;
+	--color-icon-warning: #C35404;
+	--color-icon-success: #018901;
+	--color-icon-info: #0074C7;
+	--color-border-primary: #202020;
+	--color-border-secondary: #606060;
+	--color-border-tertiary: #BFBFBF;
+	--color-border-note: rgba(0, 0, 0, 0.32);
 }
 
 html[data-theme="dark"] {
 	--color-surface-pure: var(--color-neutral-0);
 	--color-surface-primary: var(--color-neutral-8);
+	--color-surface-secondary: var(--color-neutral-16);
+	--color-surface-tertiary: var(--color-neutral-24);
+	--color-surface-invert: var(--color-neutral-128);
+	--color-hover-on-surface: var(--color-alfa-dark-12);
+	--color-surface-note-regular: var(--color-alfa-dark-16);
 	--color-text-pure: var(--color-neutral-128);
 	--color-text-primary: var(--color-neutral-112);
 	--color-text-secondary: var(--color-neutral-96);
 	--color-text-tertiary: var(--color-neutral-80);
-	--color-border-tertiary: var(--color-neutral-24);
-	--color-border-primary: var(--color-neutral-112);
+	--color-text-invert: var(--color-neutral-0);
+	--color-text-critical: var(--color-functional-critical-light);
+	--color-text-warning: var(--color-functional-warning-light);
+	--color-text-success: var(--color-functional-success-light);
+	--color-text-info: var(--color-functional-info-light);
 	--color-icon-pure: var(--color-neutral-128);
+	--color-icon-primary: var(--color-neutral-112);
 	--color-icon-secondary: var(--color-neutral-80);
+	--color-icon-critical: var(--color-functional-critical-light);
+	--color-icon-warning: var(--color-functional-warning-light);
+	--color-icon-success: var(--color-functional-success-light);
+	--color-icon-info: var(--color-functional-info-light);
+	--color-border-primary: var(--color-neutral-112);
+	--color-border-secondary: var(--color-neutral-80);
+	--color-border-tertiary: var(--color-neutral-24);
+	--color-border-note: var(--color-alfa-dark-32);
 }
 
 *,

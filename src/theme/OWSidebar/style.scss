@@ -144,6 +144,11 @@
 
     .selectable {
       &:not(.current):hover {
+
+        a {
+            color: var(--color-text-primary,);
+          }
+
         &::before {
           content: '';
           margin-top: 0;
