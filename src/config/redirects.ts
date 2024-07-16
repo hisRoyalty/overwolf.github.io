@@ -565,7 +565,7 @@ export default [
     ],
   },
   {
-    to: '/start/test-your-app/product-checklist',
+    to: '/',
     from: '/docs/start/product-checklist',
   },
   {
@@ -627,7 +627,7 @@ export default [
     from: '/docs/start/support-your-users',
   },
   {
-    to: '/start/test-your-app/technical-checklist',
+    to: '/',
     from: '/docs/start/technical-checklist',
   },
   {
