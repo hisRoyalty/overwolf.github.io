@@ -16,26 +16,6 @@ html[data-theme="dark"]{
     }
   }
 
-  .admonition-content {
-
-    a {
-      color: var(--color-bg);
-      text-decoration-color: var(--color-bg);
-
-      &:hover {
-        color: var(--color-primary);
-        text-decoration-color: var(--color-primary);
-      }
-    }
-
-  }
-
-  div[class^="sidebar"] {
-
-    &::before {
-      background-color: var(--color-100);
-    }
-  }
 
   .DocSearch.DocSearch-Container {
     .DocSearch-Modal {
@@ -147,10 +127,6 @@ html[data-theme="dark"]{
 
   .theme-edit-this-page {
     color: white;
-  }
-
-  .admonition h5, .admonition p, .admonition ul li, .admonition ul li a {
-    color: var(--color-300) !important;
   }
 
 }
