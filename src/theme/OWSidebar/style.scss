@@ -11,9 +11,10 @@
 }
 
 .navigation-with-keyboard {
+  
   &:focus {
-    outline-color: #ccc !important;
-    outline-width: 1px !important;
+    outline-color: transparent !important;
+    outline-width: 0px !important;
     outline-style: solid !important;
     outline-offset: 2px !important;
   }
@@ -21,7 +22,11 @@
 
 // Main sidebar container
 .ow-theme-sidebar {
-  --sidebar-width: var(--doc-sidebar-width, 300px);
+  padding: var(--space-400) 0 0 0;
+  position: sticky;
+  height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  overflow-x: hidden;
 
   @media (max-width: 600px) {
     padding-top: 0;
@@ -29,32 +34,18 @@
   }
 
   &.desktop-only {
-    --sidebar-hover-content: '';
-    top: 60px;
-    width: var(--sidebar-width);
+    top: 80px;
+    width: 300px;
   }
 
-  padding: 
-  calc(20px + 12px)
-  16px
-  0px
-  8px;
-  
-
-  position: sticky;
-  
-  height: calc(100vh - 100px);
-  max-height: calc(100vh - 100px);
-  overflow-x: hidden;
-
   &::-webkit-scrollbar {
-    height: var(--ifm-scrollbar-size);
-    width: var(--ifm-scrollbar-size);
+    height: 4px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    background-color: #4D4D4D;
+    background-color: var(--color-neutral-32);
     border-width: 0;
   }
 
@@ -70,143 +61,102 @@
     background-color: transparent;
   }
 
+  .item-wrapper {
+    display: contents;
+    position: relative;
+  }
+
   .sidebar-container {
     // Variables
     --sidebar-item-height: 24px;
-    // The default value of this is never used
-    // --sidebar-item-current-color: #000;
-    --sidebar-item-collapse-color: #999;
-    --sidebar-item-collapse-color-active: #d6d6d6;
-    --sidebar-item-caret-color: #4D4D4D;
-    --sidebar-item-caret-width: 1px;
-    --sidebar-item-highlight-color: 211, 64, 55;
-    --sidebar-item-highlight-opacity: 0.24;
-    --sidebar-item-highlight-transparent: rgba(var(--sidebar-item-highlight-color), var(--sidebar-item-highlight-opacity));
-    --sidebar-item-text-color: #999;
-    --sidebar-item-text-color-active: #ccc;
-    --sidebar-item-hover-color: 256, 256, 256;
-    --sidebar-item-hover-opacity: 0.16;
-    --sidebar-item-hover-transparent: rgba(var(--sidebar-item-hover-color), var(--sidebar-item-hover-opacity));
-
-    &.light {
-      --sidebar-item-collapse-color: #5C5C5C;
-      --sidebar-item-collapse-color-active: #1F1F1F;
-      --sidebar-item-caret-color: #C2C2C2;
-      --sidebar-item-text-color: #1F1F1F;
-      --sidebar-item-text-color-active: #1F1F1F;
-      --sidebar-item-hover-color: 0, 0, 0;
-      --sidebar-item-hover-opacity: 0.08;
-    }
+    grid-template-columns: var(--sidebar-item-height) 1fr var(--sidebar-item-height);
+    margin-bottom: 0;
 
     // Define sidebar grid
     &:not(.collapsed) {
       display: grid !important;
     }
 
-    padding: 0px;
-
-    > :not(.sidebar-wrapper) {
-      margin: 8px 0px;
-    }
-
-    // Column sizes are - 24px, the rest, 24px
-    grid-template-columns: var(--sidebar-item-height) 1fr var(--sidebar-item-height);
-
     &.show-caret {
-      // Defines the item carets
-      margin-left: -12px;
-      padding-left: calc(12px - var(--sidebar-item-caret-width));
-      border-left-width: var(--sidebar-item-caret-width);
+      margin-left: -5px;
+      border-left-width: 1px;
       border-left-style: solid;
-      border-left-color: var(--sidebar-item-caret-color);
+      border-left-color: var(--color-border-tertiary);
     }
 
-    // Defines a label cell
     .label-cell {
-      --sidebar-item-current-color: var(--sidebar-item-text-color);
-      padding-left: 8px;
+      padding-left: 12px;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+
       a,
       a:hover {
         &.fallback {
           cursor: pointer;
         }
-        
+        color: var(--color-text-secondary);
+        font-family: var(--font-family-brand);
+        font-size: var(--font-size-350);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-line-height-600);
         position: relative;
-        font-weight: 400;
-        font-size: 16px;
-        font-style: normal;
-        font-family: Lato;
-        letter-spacing: 0.32px;
-
-        color: var(--sidebar-item-current-color);
         width: 100%;
         text-decoration: none;
-
         display: flex;
         flex-direction: row;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: bottom;
 
         svg {
           height: var(--sidebar-item-height);
         }
 
-        // Applies item text overflow policy
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        // Makes text re-align to bottom, since overflow: hidden changes that
-        vertical-align: bottom;
-
-
-        // Applies the item's line height
-        line-height: var(--sidebar-item-height);
       }
-
-      // Select non-links when hovering
-      // &.label a {
-      //   &:hover {
-      //   }
-      // }
-
-      // Select links when hovering
-      // &.link a {
-      //   &:hover {
-      //   }
-      // }
 
       &:not(.tag-category) {
         &.active {
-          --sidebar-item-current-color: var(--sidebar-item-text-color-active);
 
           a {
-            font-weight: 700;
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text-primary);
           }
         }
       }
 
       &.tag-category {
-
-        // Override font parameters
         a {
-          font-size: 18px;
-          font-weight: 700;
-          margin: 4px 0px;
-
-          letter-spacing: 0.36px;
+          font-family: var(--font-family-brand);
+          color: var(--color-text-primary);
+          font-size: var(--font-size-350);
+          font-weight: var(--font-weight-medium);
+          line-height: var(--font-line-height-600);
+          letter-spacing: var(--font-letter-spacing-regular);
+          text-transform: uppercase;
+          height: 40px;
+          display: flex;
+          align-items: center;
         }
       }
     }
 
     .selectable {
       &:not(.current):hover {
+
+        a {
+            color: var(--color-text-primary,);
+          }
+
         &::before {
-          content: var(--sidebar-hover-content);
-      
-          margin-top: -8px;
-          height: calc(var(--sidebar-item-height) + 16px);
+          content: '';
+          margin-top: 0;
+          height: 32px;
           position: absolute;
           left: 0px;
           width: 100%;
-          background-color: var(--sidebar-item-hover-transparent);
+          background-color: var(--color-hover-on-surface);
           pointer-events: none;
         }
       }
@@ -214,45 +164,51 @@
       &:not(.hidden, .collapse-cell).current {
         &::before {
           content: '';
-        
-          margin-top: -8px;
-          height: calc(var(--sidebar-item-height) + 16px);
-          border-left-width: 4px;
-          border-left-color: rgb(var(--sidebar-item-highlight-color));
-          border-left-style: solid;
+          margin-top: 0;
+          height: 32px;
+          border-left: 4px solid var(--color-surface-brand-ow);
           position: absolute;
           left: 0px;
-          width: calc(100%);
-          background-color: var(--sidebar-item-highlight-transparent);
+          width: 100%;
+          background-color: var(--color-surface-focus-brand-ow);
           pointer-events: none;
         }
       }
 
       // Defines a collapse cell
       &.collapse-cell {
-        --sidebar-item-collapse-icon-color: var(--sidebar-item-collapse-color);
         z-index: 100;
-        height: var(--sidebar-item-height);
+        min-height: 32px;
         width: var(--sidebar-item-height);
-
-        &:not(.current):hover {
-          background-color: var(--sidebar-item-hover-transparent);
-        }
-  
-        &.current:hover {
-          --sidebar-item-collapse-icon-color: var(--sidebar-item-collapse-color-active);
-          background-color: var(--sidebar-item-highlight-transparent);
-        }
+        margin-left: 8px;
+        display: flex;
+        align-items: center;
 
         svg {
-          fill: var(--sidebar-item-collapse-icon-color);
+          color: var(--color-icon-secondary);
         }
+
+        &:not(.current):hover {
+
+          svg {
+            background-color: var(--color-hover-on-surface);
+          }
+        }
+
+        &.current:hover {
+
+          svg {
+            background-color: var(--color-hover-on-focus-brand-ow);
+          }
+        }
+
       }
     }
 
     .spacer {
       height: 1px;
-      background-color: #4D4D4D;
+      background-color: var(--color-border-tertiary);
+      margin: 4px 0;
     }
   }
 }

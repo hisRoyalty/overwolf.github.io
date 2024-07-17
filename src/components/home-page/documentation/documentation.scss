@@ -1,79 +1,75 @@
 .documentation-section {
-  padding: 32px 16px;
+  padding: var(--space-800) var(--font-size-500) var(--space-1000);
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  
   @media (max-width: 600px) {
-    // padding: 40px 16px;
+    padding: var(--space-800) var(--space-500);
   }
 
   h3 {
-    font-size: 40px;
-    line-height: 48px;
+    color: var(--color-text-pure);
     text-align: center;
-    margin-bottom: 8px;
+    font-size: var(--font-size-1100);
+    line-height: var(--font-line-height-1300);
+    letter-spacing: var(--font-letter-spacing-default);
+    margin-bottom: var(--space-200);
 
     @media (max-width: 600px) {
-      font-size: 32px;
-      line-height: 48px;
+      font-size: var(--font-size-800);
+      line-height: var(--font-line-height-1000);
     }
 
     + p {
-      font-size: 18px;
-      line-height: 28px;
+      color: var(--color-text-primary);
       text-align: center;
-      letter-spacing: 0.02em;
-      margin-bottom: 40px;
+      font-size: var(--font-size-450);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-line-height-700);
+      letter-spacing: var(--font-letter-spacing-default);
+      margin-bottom: var(--space-1000);
+
+      @media (max-width: 600px) {
+        margin-bottom: var(--space-800);
+      }
     }
   }
 
   .documentation-list {
-    max-width: 1112px;
+    max-width: 1396px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-
-    @media (max-width: 1130px) {
-      grid-template-columns: repeat(2, 260px);
-    }
-
-    @media (max-width: 600px) {
-      grid-template-columns: repeat(1, 260px);
-    }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-600);
 
     li {
       a {
         display: flex;
         flex-direction: column;
-
-        background-color: var(--color-120);
-        padding: 24px;
-        width: 260px;
-        height: 100%;
-        min-height: 352px;
-        margin: auto;
+        background-color: var(--color-neutral-16);
+        padding: var(--space-600);
+        max-width: 330px;
+        min-height: 372px;
         text-decoration: none;
-
-        &:hover {
-          background: var(--color-220);
-        }
+        gap: var(--space-200);
 
         h4 {
-          font-size: 32px;
-          line-height: 48px;
-          margin-bottom: 8px;
-          color: var(--color-primary);
+          color: var(--color-text-brand-ow);
+          font-size: var(--font-size-800);
+          line-height: var(--font-line-height-1000);
+          letter-spacing: var(--font-letter-spacing-default);
+          margin: 0;
         }
 
         p {
-          font-size: 16px;
-          line-height: 24px;
-
-          color: var(--color-txt);
+          color: var(--color-neutral-112);
+          font-size: var(--font-size-400);
+          line-height: var(--font-line-height-600);
+          letter-spacing: var(--font-letter-spacing-default);
         }
 
         img {

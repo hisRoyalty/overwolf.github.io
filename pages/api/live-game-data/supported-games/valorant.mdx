@@ -332,12 +332,14 @@ List of parameters:
 * name - the player's name
 * character - the character's name
 * teammate - is the player in my team or not
+* team - 0/1 - team 0 will always start on attack and team 1 will always start on defense. The team IDs will not change after switching sides 
 * kills / deaths / assists - The number of kills, deaths and assists during the game 
 * money - the amount of money during the game for each player
 * is_local - local player or not (Boolean)
 * alive - if the player is alive true/false
 * shield - the currently used shield for the local and teammate players. Possible values are 0 - no shield, 1 - light shield (25), 2 - heavy shield (50)
 * weapon - the current primary weapon (loadout) name used by the local and teammate players. Visible to all players in a deathmatch like the behavior in the scoreboard during the game. 
+* spike - is the player carrying the spike or not (Boolean) - only available for teammates
 * ult_points / ult_max - the current ultimate point out of the maximum ultimate points
 
 <details open>
@@ -400,7 +402,7 @@ knife = Knife
 Data Example:
 
 ```json
-{"info":{"match_info":{"scoreboard_0":"{\"name\":\"MrTesting123 #1111\",\"character\":\"Phoenix\",\"teammate\":true,\"alive\":true,\"player_id\":\"d746ecb4-3b1d-52e7-82b0-270c20acfdba\",\"shield\":2,\"weapon\":\"TX_Hud_Sniper_Operater\",\"ult_points\":1,\"ult_max\":6,\"kills\":0,\"deaths\":0,\"assists\":0,\"money\":99999,\"is_local\":true}"}},"feature":"match_info"}
+{"feature": "match_info", "category": "match_info", "key": "scoreboard_0", "data": "{\"name\":\"MrTest #1111\",\"character\":\"Sarge\",\"teammate\":true,\"team\":1,\"alive\":true,\"player_id\":\"61b608c1-1656-5c92-a34c-c18042826d0d\",\"shield\":0,\"weapon\":\"TX_Hud_Pistol_Classic\",\"spike\":true,\"ult_points\":0,\"ult_max\":8,\"kills\":11,\"deaths\":5,\"assists\":3,\"money\":1800,\"is_local\":true}"}
 ```
 
 #### *kill_feed* note

@@ -3,7 +3,7 @@ import './framework-comparison.scss';
 import FrameworkComparisonTable from '@site/../src/presets/comparison-table/framework-comparison-table';
 import OWInternalLink from '@site/../src/theme/ow-internal-link';
 
-const FrameworkComparison = (props) => {
+const FrameworkComparison = (props: any) => {
   return (
     <section
       id="framework-comparison-section"
@@ -14,7 +14,7 @@ const FrameworkComparison = (props) => {
       <FrameworkComparisonTable />
 
       <OWInternalLink
-        className="btn-secondary"
+        className="btn-secondary small"
         smooth={true}
         to="services-section"
         offset={-60}

@@ -8,10 +8,16 @@ function GameListItem(props) {
   return (
     <li className={className}>
       <a href={path}>
-        <span className='game-info'>
-          <img src={imgSrc}  /> {text}
-        </span>
-        <span className='game-id'>Game ID: <span>{gameID}</span></span>
+        <div className='game-box'>
+          <div className='asset'>
+            <img src={imgSrc}  /> 
+          </div>
+          <div className='content'>
+            <span className='game-info'>{text}</span>
+            <span className='game-id'>Game ID: <span>{gameID}</span></span>
+          </div>
+        </div>
+        
       </a>
     </li>
   );
@@ -21,7 +27,7 @@ function GameListItem(props) {
 function renderGameList(gameListData, urlAsDocsPath) {
 
   const gameListItems = gameListData.map(game => {
-    let className = 'game ' + stateToCss(game.state);;
+    let className = 'game ' + stateToCss(game.state);
 
     return <GameListItem
       key={game.id}
@@ -53,8 +59,9 @@ function GameEventsStatus(props) {
       <div className="gep-games-list">
       <ul className="legend">
         <li className="good">Good to go</li>
-        <li className="medium">Some game events may be unavailable</li>
-        <li className="bad">Game events are currently unavailable</li>
+        <li className="medium">May be unavailable</li>
+        <li className="bad">Currently unavailable</li>
+        <li className="unsupported">Unsupported</li>
       </ul>
 
         <ul className="list">

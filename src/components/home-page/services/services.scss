@@ -1,24 +1,29 @@
 .services-section {
-  // background: linear-gradient(180deg, #000000 0%, #131313 100%);
-  background-color: #000000;
-  // padding: 0 0 40px;
+  background-color: var(--color-neutral-0);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: var(--space-1000);
 
-  // @media (max-width: 600px) {
-  //   padding-bottom: 24px;
-  // }
+  @media (max-width: 600px) {
+    padding-bottom: var(--space-800);
+  }
 
   .btn-secondary {
-    margin-top: 40px;
-    color: #DFDFDF;
-    border-color: #DFDFDF;
+    border: 1px solid var(--color-neutral-112);
+    color: var(--color-neutral-112);
+    margin-top: var(--space-1400);
+
+    @media (max-width: 600px) {
+      width: calc(100% - 40px);
+      text-align: center;
+      margin-top: var(--space-800);
+    }
 
     &:hover {
-      background-color: #DFDFDF;
-      color: var(--color-220) !important;
+      border-color: var(--color-hover-brand-ow);
+      color: var(--color-text-cta-ow);
     }
   }
 
@@ -48,7 +53,7 @@
           img {
 
             &.platform-app-bg, &.platform-app {
-              filter: brightness(1.4);
+              filter: brightness(1.120);
             }
 
             &.electron-app-bg, &.electron-app {
@@ -64,115 +69,96 @@
 
         img {
           transition: all 300ms ease;
-        }
+          height: 200px;
+          width: auto;
+          margin: auto;
 
-        @media (max-width: 600px) {
-          height: 280px;
+          @media (max-width: 600px) {
+            height: auto;
+          }
         }
-
-      .bg {
-        @media (max-width: 600px) {
-          position: absolute;
-          width: 512px;
-          right: -60px;
-          max-width: unset;
-        }
-
-        @media (max-width: 380px) {
-          right: -65px;
-        }
-      }
 
       .symbol {
-          position: absolute;
-          left: 0;
-          right: 0;
-          margin: auto;
-          transition: all 300ms ease;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: all 300ms ease;
 
-          &.platform-app {
-            width: 250px;
-            height: 233px;
-            top: 29px;
-            animation: float 6s ease-in-out infinite;
-          }
+        &.platform-app {
+          width: 250px;
+          height: 233px;
+          top: 29px;
+          animation: float 6s ease-in-out infinite;
+        }
 
-          &.electron-app {
-            width: 154px;
-            height: 168px;
-            top: 58px;
-            animation: float 6s ease-in-out infinite;
-          }
+        &.electron-app {
+          width: 154px;
+          height: 168px;
+          top: 58px;
+          animation: float 6s ease-in-out infinite;
         }
       }
+    }
 
       .info {
         text-align: center;
-        padding: 0 16px;
+        padding: 0 var(--space-500);
 
         h2 {
-          font-size: 40px;
-          line-height: 60px;
-          color: var(--color-headline);
-          margin-bottom: 8px;
-
-          @media (max-width: 600px) {
-            font-size: 32px;
-            line-height: 48px;
-          }
+          color: var(--color-neutral-128);
+          font-weight: var(--font-weight-bold);
+          font-size: var(--font-size-800);
+          line-height: var(--font-line-height-1000);
+          margin: var(--space-200) 0;
         }
 
         p {
-          letter-spacing: 0.02em;
-          font-size: 18px;
-          line-height: 28px;
+          color: var(--color-neutral-112);
+          text-align: center;
+          font-size: var(--font-size-450);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--font-line-height-700);
           max-width: 400px;
-          margin: 0 auto 32px;
-          color: var(--color-txt);
+          margin: 0 auto var(--space-600);
 
           a {
             text-decoration: underline;
 
             &:hover {
-              color: var(--color-primary);
+              color: var(--color-brand-ow);
             }
           }
         }
 
         .app-info-list {
-          text-align: left;
           max-width: 400px;
           margin: auto;
-          padding-top: 40px;
+          padding-top: var(--space-600);
 
           li {
             display: flex;
-            gap: 8px ;
-            padding: 12px 0;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 24px;
-            color: var(--color-txt);
+            gap: var(--space-200);
+            color: var(--color-neutral-112);
+            font-size: var(--font-size-400);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-line-height-600);
+            letter-spacing: var(--font-letter-spacing-default);
+            padding: var(--space-300) 0px;
 
             &:not(:last-of-type) {
-              border-bottom: 1px solid var(--color-333);
-            }
-
-            span {
-              color: var(--color-999);
-              font-weight: 400;
+              border-bottom: 1px solid var(--color-neutral-24);
             }
 
             svg {
               width: 24px;
               height: 24px;
-              color: var(--color-grey-9);
+              color: var(--color-neutral-112);
             }
           }
         }
       }
     }
   }
-
-  padding-bottom: 40px;
 }
+

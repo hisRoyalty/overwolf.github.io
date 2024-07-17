@@ -1,13 +1,8 @@
 :root {
-  --tool-tip-bg: var(--color-600);
-  --tool-tip-txt: var(--color-white);
-  --tool-tip-icon-color: var(--icon-secondary);
-  --tool-tip-icon-hover: var(--icons-primary);
-}
-
-html[data-theme="light"] {
-  --tool-tip-icon-color: var(--color-600);
-  --tool-tip-icon-hover: var(--color-200);
+  --tool-tip-bg: var(--color-surface-quaternary);
+  --tool-tip-txt: var(--color-neutral-128);
+  --tool-tip-icon-color: var(--color-icon-secondary);
+  --tool-tip-icon-hover: var(--color-icon-pure);
 }
 
 .tool-tip-info-icon { 
@@ -35,13 +30,11 @@ html[data-theme="light"] {
   background-color: var(--tool-tip-bg);
   color: var(--tool-tip-txt);
   padding: 16px;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: var(--font-size-400);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-line-height-600);
   min-height: 48px;
   max-width: 320px;
-  line-height: 150%;
   pointer-events: none;
   opacity: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -68,14 +61,13 @@ html[data-theme="light"] {
     font-size: 14px;
     line-height: 145%;
     padding: 12px;
-    background-color: #ccc;
+    background-color: var(--tool-tip-bg);
     pointer-events: none;
   }
 
   span {
     font-size: 12px;
     line-height: 145%;
-    color: #CCCCCC;
     display: block;
     min-width: 184px;
   }

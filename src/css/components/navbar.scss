@@ -133,7 +133,7 @@
 
 .navbar-sidebar {
   width: 100%;
-  background-color: var(--color-neutral-8);
+  background-color: var(--color-surface-primary);
 
   .navbar-sidebar__brand {
     background-color: var(--color-neutral-0);
@@ -180,7 +180,6 @@
 
   .navbar-sidebar__items {
     height: calc(100% - 80px);
-    // background: var(--color-grey-light-2);
 
     .navbar-sidebar__item {
       width: 100%;
@@ -190,7 +189,7 @@
         .clean-btn {
           margin: 0;
           padding: var(--space-400, 16px) var(--space-500, 20px);
-          color: var(--color-neutral-112);
+          color: var(--color-text-primary);
           font-family: var(--font-family-brand);
           font-size: var(--font-size-400);
           font-weight: var(--font-weight-regular);
@@ -213,7 +212,7 @@
 
         .menu__link {
           padding: var(--space-400, 16px) var(--space-500, 20px);
-          color: var(--color-neutral-112);
+          color: var(--color-text-secondary);
           font-family: var(--font-family-brand);
           font-size: var(--font-size-400);
           font-weight: var(--font-weight-regular);
@@ -237,7 +236,6 @@
       }
     }
   }
-
 
 }
 

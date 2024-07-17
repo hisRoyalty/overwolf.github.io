@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import './services.scss';
 import OWInternalLink from '@site/../src/theme/ow-internal-link';
 
-const Services = (props) => {
-  const {} = props;
+const Services = (props: any) => {
+  // const {} = props;
 
   const [appBtn, seAppBtn] = useState(false);
   const [electronAppBtn, seElectronAppBtn] = useState(false);
@@ -31,14 +31,14 @@ const Services = (props) => {
               width={512}
               height={280}
             />
-            <img
+            {/* <img
               src="/img/home-2023/platform-app.webp"
               alt="Overwolf Platform App"
               className="platform-app symbol"
-            />
+            /> */}
           </div>
           <div className="info">
-            <h2>Overwolf Platform</h2>
+            <h2>Overwolf Native</h2>
             <p>
               Create powerful desktop apps and game overlays, built with 100%
               pure JavaScript.
@@ -83,11 +83,11 @@ const Services = (props) => {
               width={512}
               height={280}
             />
-            <img
+            {/* <img
               src="/img/home-2023/electron-app.webp"
               alt="Overwolf Electron App"
               className="electron-app symbol"
-            />
+            /> */}
           </div>
           <div className="info">
             <h2>Overwolf Electron</h2>
@@ -138,7 +138,7 @@ const Services = (props) => {
         smooth={true}
         to="framework-comparison-section"
         offset={-60}
-        className="btn-secondary"
+        className="btn-secondary small"
       >
         See full feature comparison
       </OWInternalLink>

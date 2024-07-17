@@ -1,12 +1,6 @@
 .game-info-section {
   margin-bottom: 24px;
-  background-color: var(--card-hover);
-  color: var(--color-300);
-  border-radius: 5px;
-
-  h1, a {
-    color: var(--color-300) !important;
-  }
+  background-color: var(--color-surface-secondary);
 
   .game-info-item {
     padding: 16px;
@@ -354,28 +348,6 @@
       &.coming-soon:after {
         background: #3F494B
       }
-    }
-  }
-}
-
-
-html[data-theme="light"] {
-
-  .game-info-section .expended-launcher-game-list {
-    background-color: var(--color-600);
-    .expend-btn {
-      background-color: var(--color-700);
-      &:hover {
-        background-color: var(--color-600);
-      }
-    }
-  }
-
-  .game-info-section .legend {
-    background-color: var(--color-1000);
-
-    li {
-      color: inherit;
     }
   }
 }

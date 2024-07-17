@@ -1,31 +1,39 @@
 .framework-comparison-section {
-  padding: 32px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: var(--space-800) var(--space-500);
 
   @media (max-width: 600px) {
-    // padding: 40px 16px;
+    padding: var(--space-800) 0;
+  }
+
+  .btn-secondary {
+    margin: auto;
+    display: block;
+    width: fit-content;
   }
 
   h3 {
-    font-size: 40px;
-    line-height: 48px;
     text-align: center;
-    margin-bottom: 8px;
+    font-size: var(--font-size-1100);
+    line-height: var(--font-line-height-1300);
+    margin-bottom: var(--space-200);
+    padding: 0 var(--space-500);
 
     @media (max-width: 600px) {
-      font-size: 32px;
-      line-height: 48px;
+      font-size: var(--font-size-800);
+      line-height: var(--font-line-height-1000);
     }
 
-    +p {
-      font-size: 18px;
-      line-height: 28px;
+    + p {
+      padding: 0 var(--space-500);
+      color: var(--color-text-primary);
       text-align: center;
-      letter-spacing: 0.02em;
-      margin-bottom: 0;
+      font-size: var(--font-size-450);
+      line-height: var(--font-line-height-700, 28px);
+      margin: 0;
+
+      @media (max-width: 600px) {
+        padding-bottom: var(--space-600);
+      }
     }
   }
 }
