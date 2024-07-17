@@ -1,12 +1,14 @@
 .framework-comparison-section {
   padding: var(--space-800) var(--space-500);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   @media (max-width: 600px) {
     padding: var(--space-800) 0;
+  }
+
+  .btn-secondary {
+    margin: auto;
+    display: block;
+    width: fit-content;
   }
 
   h3 {

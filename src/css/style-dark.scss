@@ -106,27 +106,4 @@ html[data-theme="dark"]{
     }
   }
 
-
-  th,
-  td {
-    border-color: var(--color-100);
-  }
-  th {
-    border-color: var(--color-100);
-    color: white;
-    background: var(--color-300);
-  }
-  td {
-    background: var(--color-200);
-    color: var(--color-txt);
-  }
-
-  table thead tr {
-    border-bottom: var(--color-100);
-  }
-
-  .theme-edit-this-page {
-    color: white;
-  }
-
 }
