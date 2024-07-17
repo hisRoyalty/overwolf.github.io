@@ -275,6 +275,7 @@ body {
 	font-size: var(--font-size-400);
 	font-weight: var(--font-weight-regular);
 	line-height: var(--font-line-height-600);
+	letter-spacing: var(--font-letter-spacing-default);
   height: auto;
 }
 
@@ -284,7 +285,7 @@ body {
 	content: none;
 }
 
-.btn-primary, .btn-secondary  {
+.btn-primary, .btn-secondary, a.btn-primary, a.btn-secondary  {
 	font-family: var(--font-family-brand);
   border: none;
   text-decoration: none;
@@ -302,7 +303,7 @@ body {
 	text-align: center;
 }
 
-.btn-primary {
+.btn-primary, a.btn-primary {
   color: var(--color-text-cta-ow);
   background-color: var(--color-surface-brand-ow);
 	line-height: 18px;
@@ -317,6 +318,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
+		line-height: 25px;
 
     svg {
       width: 20px;
@@ -325,7 +327,7 @@ body {
   }
 }
 
-.btn-secondary {
+.btn-secondarya, a.btn-secondary {
 	border: 1px solid var(--color-border-primary);
   color: var(--color-text-primary);
   background-color: transparent;
@@ -356,9 +358,10 @@ body {
   }
 }
 
-@import './navbar';
-@import './search-box';
+@import './components/sidebar';
+@import './components/navbar';
+@import './components/search-box';
+@import './components/admonition';
 @import './overide';
 @import './style-dark';
-@import './sidebar';
-@import './components.scss';
+@import './components';
