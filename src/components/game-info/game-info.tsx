@@ -131,8 +131,9 @@ function GameInfo(props: {
       {page === 'status' && (
         <ul className="legend">
           <li className="good">Good to go</li>
-          <li className="medium">Some events may be unavailable</li>
-          <li className="bad">Events are currently unavailable</li>
+          <li className="medium">May be unavailable</li>
+          <li className="bad">Currently unavailable</li>
+          <li className="unsupported">Unsupported</li>
         </ul>
       )}
     </section>

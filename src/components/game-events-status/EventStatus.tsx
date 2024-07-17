@@ -16,10 +16,10 @@ function EventStatus(props: {
     <div className="row">
       <div className="text">{name}</div>
       <div className={`status ${stateToCss(platformStatus ?? 0)}`}>
-        <Status />
+        {/* <Status /> */}
       </div>
       <div className={`status ${stateToCss(electronStatus ?? 0)}`}>
-        <Status />
+        {/* <Status /> */}
       </div>
     </div>
   );

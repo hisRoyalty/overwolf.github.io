@@ -11,10 +11,10 @@ export const stateToCss = (state: number) => stateClassNames[state];
 
 const stateLabels = {
   [-1]: 'Deprecated',
-  0: 'Coming soon',
+  0: 'Unsupported',
   1: 'Good to go',
-  2: 'Some events may be unavailable',
-  3: 'Events are currently unavailable'
+  2: 'May be unavailable',
+  3: 'Currently unavailable'
 }
 
 export const stateToTxt = (state: number) => stateLabels[state];;
