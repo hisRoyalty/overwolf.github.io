@@ -137,9 +137,9 @@ useEffect(() => {
 
        <div className='ow-image-slider-inner scroll-start'>
 
-        <button className="btn-next" onClick={() => scroll(1)} disabled={btnDisabled}>
+        <button className="btn-next btn-primary" onClick={() => scroll(1)} disabled={btnDisabled}>
           <svg>
-            <use href="../../img/sprite.svg#next" />
+            <use href="/img/sprite.svg#next" />
           </svg>
         </button>
 
@@ -165,9 +165,9 @@ useEffect(() => {
 
         </ul>
 
-        <button className="btn-prev" onClick={() => scroll(-1)} disabled={btnDisabled}>
+        <button className="btn-prev btn-primary" onClick={() => scroll(-1)} disabled={btnDisabled}>
           <svg>
-              <use href="../../img/sprite.svg#prev" />
+              <use href="/img/sprite.svg#prev" />
           </svg>
         </button>
 

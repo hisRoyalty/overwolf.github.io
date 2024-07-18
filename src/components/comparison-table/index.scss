@@ -23,7 +23,7 @@
     display: flex;
     background-color: var(--evc-table-header-bg);
     position: sticky;
-    top: 74px;
+    top: 80px;
     z-index: 1;
 
     @media (max-width: 966px) {
@@ -80,6 +80,10 @@
         @media (max-width: 966px) {
           border-bottom: 1px solid var(--evc-border);
           padding: 16px 16px 20px;
+        }
+
+        img {
+          margin: 0;
         }
 
         &:after {

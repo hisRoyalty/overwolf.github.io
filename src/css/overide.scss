@@ -485,6 +485,10 @@ details.alert {
   background-color: var(--color-surface-secondary);
   padding: 0;
 
+  &:hover {
+    background-color: var(--color-surface-tertiary);
+  }
+
   div[class^="collapsibleContent"] {
     border-top: 0px solid transparent;
     margin: 0;
@@ -518,7 +522,7 @@ details.alert {
     }
 
     + div {
-      background: var(--color-surface-primary);
+      background-color: var(--color-surface-primary);
       padding: 24px;
 
       p:first-child {
