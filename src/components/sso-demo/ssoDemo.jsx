@@ -56,7 +56,7 @@ function SSODemo(props) {
 
         { token == null &&
           <div className="sso-demo">
-            <button className="button-sso-login" onClick={() => openLoginWindow()}>Login with OW</button>
+            <button className="button-sso-login btn-primary" onClick={() => openLoginWindow()}>Login with OW</button>
           </div>
         }
       </>

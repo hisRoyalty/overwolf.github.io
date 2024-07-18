@@ -15,7 +15,7 @@ function AdField(props: { title: string; value: string; first?: boolean }) {
   const { title, value, first } = props;
   return (
     <div style={{ minWidth: first ? '250px' : '' }}>
-      <span style={{ color: 'var(--color-999)' }}>{`${title}:`}</span>
+      <span style={{ color: 'var(--color-text-tertiary)' }}>{`${title}:`}</span>
       {` ${value}`}
     </div>
   );
