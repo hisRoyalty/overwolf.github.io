@@ -147,6 +147,7 @@ article, .markdown {
     
         &::before {
           content: counter(level1) ".";
+					background-image: none !important;
         }
     
         >ol>li {
@@ -203,6 +204,7 @@ article, .markdown {
 			td {
 				color: var(--color-text-primary);
 				background: var(--color-surface-pure);
+				vertical-align: top;
 			}
 
 		}
