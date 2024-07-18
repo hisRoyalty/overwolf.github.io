@@ -6,6 +6,11 @@
 
   .btn-primary {
     margin-bottom: 24px;
+    color: var(--color-text-cta-ow);
+
+    &:hover {
+      color: var(--color-text-cta-ow);
+    }
   }
 
 }
