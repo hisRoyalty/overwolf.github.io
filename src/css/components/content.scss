@@ -1,0 +1,223 @@
+article, .markdown {
+
+	h1, h2, h3, h4, h5 {
+		margin: 24px 0 8px 0;
+	}
+
+	h1:first-child {
+		margin-top: 0;
+	}
+
+	h1, .markdown h1:first-child {
+		font-size: var(--font-size-800);
+		margin-bottom: var(--font-size-600);
+		line-height: var(--font-line-height-1000);
+	}
+
+	h2 {
+		font-size: var(--font-size-600);
+		line-height: var(--font-line-height-700);
+	}
+
+	h3 {
+		font-size: var(--font-size-500);
+		line-height: var(--font-line-height-600);
+	}
+
+	h2, h3 {
+		margin-bottom: 16px;
+	}
+
+	h4 {
+		font-size: var(--font-size-450);
+		line-height: var(--font-line-height-700);
+	}
+
+	h5 {
+		font-size: var(--font-size-400);
+		line-height: var(--font-line-height-600);
+	}
+
+	h4, h5, h6 {
+		font-family: var(--font-family-default);
+	}
+
+  img {
+    margin: 24px 0;
+  }
+
+	a {
+		text-decoration: underline;
+		color: var(--color-text-primary);
+		text-underline-offset: 3px;
+
+    &:has(code) {
+      text-decoration: none;
+    }
+
+		&:hover {
+			color: var(--color-hover-brand-ow);
+		}
+	}
+
+	p, .markdown > p {
+		color: var(--color-text-secondary);
+		font-size: var(--font-size-400);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--font-line-height-600);
+		letter-spacing: var(--font-letter-spacing-default, 0px);
+		margin-bottom: 16px;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0 0 0 32px;
+			margin: var(--space-800) 0;
+
+			li {
+				position: relative;
+				color: var(--color-text-secondary);
+				font-size: var(--font-size-400);
+				font-weight: var(--font-weight-regular);
+				line-height: var(--font-line-height-600);
+
+				&:before {
+					content: "";
+					background-image: var(--li-star-primary);
+					width: 24px;
+					height: 24px;
+					position: absolute;
+					left: -32px;
+					top: 1px;
+				}
+
+				+ li {
+					margin-top: 16px;
+				}
+
+				p {
+					margin: 0;
+				}
+
+				ul li {
+					&:before {
+						background-image: var(--li-star-secondary)
+					}
+
+					ul li {
+						&:before {
+							background-image: var(--li-star-tertiary);
+						}
+					}
+				}
+				
+			}
+		}
+
+		blockquote {
+			background-color: var(--color-surface-secondary);
+			border-left: 2px solid var(--color-brand-ow);
+			padding: 8px 16px;
+
+			p {
+				margin: 0;
+
+				+ p {
+					margin-bottom: 16px;
+				}
+			}
+		}
+
+    ol {
+      list-style-type: none;
+    
+      li {
+        list-style: none;
+        position: relative;
+    
+        &::before {
+          position: absolute;
+          left: -8px;
+          transform: translateX(-100%);
+        }
+      }
+    
+      >li {
+        counter-increment: level1;
+    
+        &::before {
+          content: counter(level1) ".";
+					background-image: none !important;
+        }
+    
+        >ol>li {
+          counter-increment: level2;
+    
+          &::before {
+            content: counter(level1) "." counter(level2) " ";
+          }
+    
+          >ol>li {
+            counter-increment: level3;
+    
+            &::before {
+              content: counter(level1) "." counter(level2) "." counter(level3) " ";
+            }
+          }
+        }
+      }
+    }
+    
+    ol.free-style, ul.free-style {
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+		table {
+			margin-bottom: 24px;
+
+			tr {
+				border: none;
+			}
+
+			th, td {
+				padding: var(--space-400) var(--space-500);
+				text-align: left;
+				font-size: var(--font-size-350);
+				font-weight: var(--font-weight-medium);
+				line-height: var(--font-line-height-600);
+				border-color: var(--color-border-tertiary);
+			}
+
+			th {
+				font-family: var(--font-family-brand);
+				color: var(--color-text-tertiary);
+				background: var(--color-surface-primary);
+			}
+
+			td {
+				color: var(--color-text-primary);
+				background: var(--color-surface-pure);
+				vertical-align: top;
+			}
+
+		}
+
+		p code, li code, table code {
+			color: var(--text-text-secondary);
+			font-family: var(--font-family-code);
+			font-size: var(--font-size-350);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--font-line-height-350);
+			border-radius: var(--space-100);
+			border: 1px solid var(--color-border-tertiary);
+			background-color: var(--color-alfa-dark-16);
+			padding: var(--space-100) var(--space-200);
+		}
+}

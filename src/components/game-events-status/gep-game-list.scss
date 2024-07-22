@@ -3,18 +3,12 @@
   .search-game {
     position: relative;
     margin: 0 0 24px;
-    height: 40px;
-    color: #8a9ea1;
-    background: #D3CFE5;
+    height: 48px;
 
     &:hover {
 
       .search-input {
-        background: var(--card-hover);
-      }
-
-      .search-submit {
-        color: #D3EAED;
+        background: var(--color-surface-tertiary);
       }
 
     }
@@ -22,23 +16,25 @@
     .search-input {
       display: block;
       width: 100%;
-      line-height: 40px;
-      padding-left: 45px;
-      height: 40px;
+      display: flex;
+      height: 48px;
+      padding: 0 var(--space-300);
+      padding-left: 40px;
       font-weight: 300;
       transition: all .15s ease;
       background-color: var(--color-surface-secondary);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-brand);
+      font-size: var(--font-size-350, 14px);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-line-height-600);
 
       &::placeholder {
         color: var(--color-text-tertiary);
-      }
-  
-      &:focus {
-        background: var(--card-hover);
-
-        ~.search-submit {
-          color: #D3EAED;
-        }
+        font-family: var(--font-family-brand);
+        font-size: var(--font-size-350);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--font-line-height-600);
       }
 
       &::-webkit-search-cancel-button {
@@ -57,7 +53,7 @@
       transition: all .15s ease;
       min-width: auto;
       background: transparent;
-      color: var(--color-500);
+      color: var(--color-border-secondary);
 
       svg {
         display: block;
@@ -91,37 +87,42 @@
       }
 
       .table {
-        background-color: #333;
+        background-color: var(--color-surface-pure);
+        border: 1px solid var(--color-border-tertiary);
       }
 
       .row {
         display: flex;
         align-items: center;
         align-self: stretch;
-        gap: 1px; // TODO - ask @ben.koren@overwolf.com to fix this for dpi != 1
-        margin: 0;
-        background-color: #333;
-
+        gap: 0;
+        
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-border-tertiary);
+        }
 
         .title {
           margin: 0;
           height: 56px;
-          padding: 16px 24px;
+          padding: var(--space-400) var(--space-500);
           flex: 1;
-          color: #999999;
-          background-color: #1a1a1a;
-          font-size: 16px;
-          font-family: Lato;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 0.32px;
+          color: var(--color-text-tertiary);
+          font-family: var(--font-family-brand);
+          font-size: var(--font-size-400);
+          font-weight: var(--font-weight-medium);
+          line-height: var(--font-line-height-600);
+          letter-spacing: var(--font-letter-spacing-regular);
+          text-transform: uppercase;
+          background-color: var(--color-surface-primary);
         }
 
         .icon {
-          padding: 16px;
+          padding: var(--space-400);
           justify-content: center;
           align-items: center;
-          background-color: #1a1a1a;
+          background-color: var(--color-surface-primary);
+          border-left: 1px solid var(--color-border-tertiary);
+          margin: 0;
         }
         
         .text {
@@ -130,37 +131,37 @@
           padding: 16px 24px;
           flex: 1;
           font-size: 16px;
-          font-family: Lato;
+  
           line-height: 24px;
           letter-spacing: 0.32px;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          color: #ccc;
-          background-color: #202020;
+        
         }
 
         .status {
-          padding: 20px;
-          justify-content: center;
-          align-items: center;
-          background-color: #202020;
+          width: 57px;
+          height: 56px;
+          border-left: 1px solid var(--color-border-tertiary);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 24px;
 
-          &.good svg {
-            fill: #3bb447;
+          &.good {
+            background-image: var(--good-icon-data);
           }
-
-          &.medium svg {
-            fill: #b2b43b;
+    
+          &.medium {
+            background-image: var(--warning-icon-data);
           }
-
-          &.bad svg {
-            fill: #b43b3b;
-            stroke: #b43b3b;
+    
+          &.bad {
+            background-image: var(--bad-icon-data);
           }
-
-          &.unsupported svg {
-            fill: #3F494B;
+    
+          &.unsupported {
+            background-image: var(--unsuported-icon-data)
           }
         }
       }
@@ -169,14 +170,14 @@
         display: flex;
         flex-direction: column;
         padding: 0;
-        background: var(--card-hover);
+     
 
         li {
           display: block;
           position: relative;
           margin: 0;
           width: 100%;
-          border-top: 1px solid var(--color-1000);
+          border-top: 1px solid var(--color-border-tertiary);
           padding: 11px 0 12px 45px;
           line-height: 18px;
           font-size: 14px;
@@ -232,27 +233,4 @@
 
   }
 
-}
-
-
-html[data-theme="dark"] {
-
-  .gep-game .search-game {
-    color: var(--color-500);
-    background: var(--color-200);
-  }
-
-  .gep-game .search-game:hover .search-input,
-  .gep-game .search-game .search-input:focus {
-    color: var(--color-900);
-  }
-
-  .gep-game .game-data h4,
-  .gep-game .game-data ul {
-    background: var(--color-200);
-  }
-
-  .gep-game .game-data li {
-    border-top-color: var(--color-black);
-  }
 }

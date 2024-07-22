@@ -63,7 +63,7 @@ function SpecificGameEventsStatus(props) {
       for (let key of feature.keys) {
         if (key.type == type) {
           list.push(
-            <EventStatus name={key.name} platformStatus={key.state} electronStatus={key.state} />
+            <EventStatus key={key} name={key.name} platformStatus={key.state} electronStatus={key.state} />
           );
         }
       }
