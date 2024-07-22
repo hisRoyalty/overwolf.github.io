@@ -9,6 +9,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/world-of-warcraft.png",
     "iconLargeUrl": "/img/game-logos/large/world-of-warcraft.png"
   },
+  "4688": {
+    "id": 4688,
+    "path": "/status/roblox",
+    "name": "Roblox",
+    "rawPath": "roblox",
+    "standardPath": "roblox",
+    "docs": "/api/live-game-data/supported-games/roblox",
+    "iconUrl": "/img/game-logos/roblox.png",
+    "iconLargeUrl": "/img/game-logos/large/roblox.png"
+  },
   "5426": {
     "id": 5426,
     "launcher": 10902,
@@ -366,6 +376,16 @@ const GamesMetaData = {
     "docs": "/api/live-game-data/supported-games/call-of-duty-modern-warfare-2",
     "iconUrl": "/img/game-logos/call-of-duty-modern-warfare-2.png",
     "iconLargeUrl": "/img/game-logos/large/call-of-duty-modern-warfare-2.png"
+  },
+  "22584": {
+    "id": 22584,
+    "path": "/status/dark-and-darker",
+    "name": "Dark and Darker",
+    "rawPath": "dark-and-darker",
+    "standardPath": "dark-and-darker",
+    "docs": "/api/live-game-data/supported-games/dark-and-darker",
+    "iconUrl": "/img/game-logos/dark-and-darker.png",
+    "iconLargeUrl": "/img/game-logos/large/dark-and-darker.png"
   },
   "22638": {
     "id": 22638,
