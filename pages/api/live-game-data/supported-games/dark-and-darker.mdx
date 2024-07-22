@@ -1,0 +1,108 @@
+---
+id: lethal-company
+image: "/img/embed/games/dark-and-darker.jpg"
+title: Dark and Darker events
+hide_title: true
+sidebar_label: Dark and Darker
+sidebar_position: 0
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: true
+---
+
+<!-- GENERATED USING /scripts/generate.js -->
+
+<head>
+  <meta name="keywords" content="API for Dark and Darker, Dark and Darker API, SDK for Dark and Darker, Dark and Darker SDK"/>
+</head>
+
+<GameInfo gameId={22584} page="docs" />
+
+Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
+
+## Sample Apps
+* [Dark and Darker events sample app](https://github.com/overwolf/events-sample-app)
+
+## Available Features
+
+* [gep_internal](#gep_internal)
+* [game_info](#game_info)
+* [match_info](#match_info)
+
+## Game event status
+
+It is highly recommended to communicate errors and warnings to app users.
+
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+
+## `gep_internal`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   244.0       |
+
+#### *gep_internal* note
+
+Data Example:
+
+```json
+{"info":{"gep_internal":{"version_info":"{"local_version":"244.0.0","public_version":"244.0.0","is_updated":true}"}},"feature":"gep_internal"}
+```
+
+## `game_info`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+scene | game_info | The current scene-state |See [notes](#scene-note)|   244.0       |
+
+#### *scene* note
+
+Possible Scene values:
+
+* lobby
+* ingame
+
+Data Example:
+
+```json
+{"feature": "game_info", "category": "game_info", "key": "scene", "data": "lobby"}
+```
+
+## `match_info`
+
+### Events
+
+Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
+------------| -------------| --------------| -------------------------------------- | ---------------|
+match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |257.0|
+match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |257.0|
+death   |     nulll         | The local player died| See [notes](#death-note) |257.0|
+
+#### *match_start* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_start","data":null}]}
+```
+
+#### *match_end* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_end","data":null}]}
+```
+
+#### *death* note
+
+Data Example:
+
+```json
+{"events":[{"name":"death","data":null}]}
+```

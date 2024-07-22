@@ -239,6 +239,16 @@ const metaData: GameMetaData[] = [
     name: 'Genshin Impact',
   },
   {
+    id: 22584,
+    path: 'dark-and-darker',
+    name: 'Dark and Darker',
+  },
+  {
+    id: 4688,
+    path: 'roblox',
+    name: 'Roblox',
+  },
+  {
     id: 23522,
     path: 'lethal-company',
     name: 'Lethal Company',
