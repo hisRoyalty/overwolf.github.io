@@ -29,7 +29,7 @@ Please read all the info about video capture usage and options on our [video cap
 * [overwolf.media.replays.stopCapture()](#stopcapturereplaytype-replayid-callback)
 * [overwolf.media.replays.stopCapture()](#stopcapturereplayid-callback)
 * [overwolf.media.replays.getHighlightsFeatures()](#gethighlightsfeaturesgameid-callback)
-* overwolf.media.replays.turnOff() - Obsolete.
+* [overwolf.media.replays.changeVolume()](#changevolumeaudiooptions-callback)
 
 ## Events Reference
 
@@ -350,6 +350,18 @@ If you run getHighlightsFeatures() for unsupported game,  you will get "no featu
   "status": "error", 
   "error": "no feature supported"}
 ```
+
+## changeVolume(audioOptions, callback)
+#### Version added: 0.256
+
+> Changes the volume of the replay.
+
+Parameter     | Type                                                    | Description                                           |
+------------- | --------------------------------------------------------| ----------------------------------------------------- |
+audioOptions  | [StreamAudioOptions](#streamaudiooptions-object) Object | The new volumes encapsulated in an object             |
+callback      | (Result) => void                                        | Returns with the result                               |
+
+
 
 ## onCaptureError
 
