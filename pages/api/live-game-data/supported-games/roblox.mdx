@@ -1,0 +1,127 @@
+---
+id: roblox
+image: "/img/embed/games/roblox.jpg"
+title: Roblox Game events
+hide_title: true
+sidebar_label: Roblox
+sidebar_position: 0
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: true
+---
+
+<!-- GENERATED USING /scripts/generate.js -->
+
+<head>
+  <meta name="keywords" content="API for Roblox, Roblox API, SDK for Roblox, Roblox SDK"/>
+</head>
+
+<GameInfo gameId={4688} page="docs" />
+
+Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
+
+## Sample Apps
+
+* [Roblox game events sample app](https://github.com/overwolf/events-sample-app)
+
+## Available Features
+
+* [gep_internal](#gep_internal)
+* [game_info](#game_info)
+* [match_info](#match_info)
+
+
+## Game events status
+
+It's highly recommended to communicate errors and warnings to your app users. Check current game event status [here](/status/) or easily check game event status from your app [using our API](/topics/using-events/how-to-check-events-status-from-app).
+
+## `gep_internal`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   143.0       |
+
+#### *gep_internal* note
+
+Data Example:
+
+```json
+{"info":{"gep_internal":{"version_info":"{"local_version":"157.0.1","public_version":"157.0.1","is_updated":true}"}},"feature":"gep_internal"}
+```
+
+## `game_info`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+user_id | game_info | The local player user ID. |See [notes](#user_id-note)|   257.0    |
+
+#### *user_id* note
+
+Data Example:
+
+```json
+{"feature":"game_info","category":"game_info","key":"user_id","value":"9193"}
+```
+
+## `match_info`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+game_id | game_info | The current played minigame ID. |See [notes](#game_id-note)|   257.0    |
+
+#### *game_id* note
+
+Data Example:
+
+```json
+{"feature":"match_info","category":"match_info","key":"game_id","value":"15744137588"}
+```
+
+### Events
+
+Event | Event Data                        | Fired When                  | Notes              | Since GEP Ver. |
+------| ----------------------------------| --------------------------- | ------------------ | --------------|
+match_start | null                         | Round starts               | See [notes](#match_start-note)  |     257.0      |
+match_end | null                           | Round ends                | See [notes](#match_end-note)   |     257.0      |
+record_start | null                         | Record starts               | See [notes](#record_start-note)  |     257.0      |
+record_end | null                           | Record ends                | See [notes](#record_end-note)   |     257.0      |
+
+
+#### *match_start* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_start","data":""}]}
+```
+
+#### *match_end* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_end","data":""}]}
+```
+
+#### *record_start* note
+
+Data Example:
+
+```json
+{"events":[{"name":"record_start","data":""}]}
+```
+
+#### *record_end* note
+
+Data Example:
+
+```json
+{"events":[{"name":"record_end","data":""}]}
+```
