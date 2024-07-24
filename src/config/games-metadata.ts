@@ -153,6 +153,13 @@ const metaData: GameMetaData[] = [
     name: 'League of Legends: Arena',
   },
   {
+    id: 13956,
+    displayId: 5426,
+    launcher: 10902,
+    path: 'league-of-legends-swarm',
+    name: 'League of Legends: Swarm',
+  },
+  {
     id: 215561,
     displayId: 22848,
     launcher: 10902,
