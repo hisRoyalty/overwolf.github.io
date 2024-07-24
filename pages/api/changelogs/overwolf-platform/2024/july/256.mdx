@@ -9,8 +9,12 @@ sidebar_custom_props:
     electron_platform: false
 ---
 
+### API
+- Added the [`overwolf.media.replays.changeVolume()`](/api/media/replays#changevolumeaudiooptions-callback) method, will change the volume of the Game/Mic audio sources.
+
 ### Bug Fixes
 - Fixed an issue where Overwolf would not load properly if `OverwolfBrowser.exe` was run as admin.
 - Fixed a visual mismatch between HDR recording in Overwolf and HDR recording in OBS Studio.
 - Fixed an issue where the microphone could be heard on all audio tracks when it was set to volume 0 at the start of the recording.
 - Fixed an issue where duplicate audio/monitor sources were created when using the replays and streaming services together.
+- Fixed an issue where replays volume was set to 100 even when the volume was set to 0.
