@@ -187,6 +187,18 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/player-unknowns-battlegrounds.png",
     "iconLargeUrl": "/img/game-logos/large/player-unknowns-battlegrounds.png"
   },
+  "13956": {
+    "id": 13956,
+    "displayId": 5426,
+    "launcher": 10902,
+    "path": "/status/league-of-legends-swarm",
+    "name": "League of Legends: Swarm",
+    "rawPath": "league-of-legends-swarm",
+    "standardPath": "league-of-legends-swarm",
+    "docs": "/api/live-game-data/supported-games/league-of-legends-swarm",
+    "iconUrl": "/img/game-logos/league-of-legends-swarm.png",
+    "iconLargeUrl": "/img/game-logos/large/league-of-legends-swarm.png"
+  },
   "21216": {
     "id": 21216,
     "path": "/status/fortnite",
