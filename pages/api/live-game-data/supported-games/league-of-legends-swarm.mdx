@@ -45,9 +45,12 @@ Note that you can also use the LOL game launcher events. Read more [here](/api/l
 * [summoner_info](#summoner_info)
 * [teams](#teams)
 * [match](#match)
-* [augments](#augments)
+* [minions](#minions)
 * [damage](#damage)
-* [heal](#heal)
+* [death](#death) 
+* [counters](#counters)
+* [team_frames](#team_frames)
+* [chat](#chat)
 
 
 ## Game events status
@@ -64,7 +67,7 @@ Because LOL and LOL swarm share the same GameID, when checking LOL swarms game e
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   143.0       |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   257.0       |
 
 #### *gep_internal* note
 
@@ -80,10 +83,10 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-active_player | live_client_data | In-game data received by the client. |See [notes](#active_player-note)|   230.0    |
-all_players | live_client_data | In-game data received by the client. |See [notes](#all_players-note)|   230.0   |
-events | live_client_data | In-game data received by the client. |See [notes](#events-note)|   230.0  |
-game_data | live_client_data | In-game data received by the client. |See [notes](#game_data-note)|   230.0  |
+active_player | live_client_data | In-game data received by the client. |See [notes](#active_player-note)|   257.0    |
+all_players | live_client_data | In-game data received by the client. |See [notes](#all_players-note)|   257.0    |
+events | live_client_data | In-game data received by the client. |See [notes](#events-note)|  257.0   |
+game_data | live_client_data | In-game data received by the client. |See [notes](#game_data-note)|   257.0   |
 
 #### *active_player* note
 
@@ -838,8 +841,8 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-matchStarted | game_info   | true/false (string)       |See [notes](#matchStarted-note)|   230.0       |
-matchId      | game_info   | Current match id          |See [notes](#matchId-note)     |   230.0       |
+matchStarted | game_info   | true/false (string)       |See [notes](#matchStarted-note)|   257.0        |
+matchId      | game_info   | Current match id          |See [notes](#matchId-note)     |   257.0       |
 
 
 #### *matchStarted* note
@@ -862,7 +865,7 @@ Data Example:
 
 Event      | Event Data  | Fired When          | Notes              | Since GEP Ver. |
 -----------| ------------| ------------------- | ------------------ | --------------|
-matchStart | null        | Match has started   |  Match has started |   230.0       |
+matchStart | null        | Match has started   |  Match has started |  257.0       |
 
 
 ## `match_info`
@@ -871,81 +874,10 @@ matchStart | null        | Match has started   |  Match has started |   230.0   
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ----------- | ------------------------- | --------------------- | -------------- |
-round_number | match_info | The number of the current round      |See [notes](#round_number-notes)|   230.0       |
-match_outcome | match_info  | The final march outcome  |See [notes](#match_outcome-note)|   230.0       |
-
-
-#### *round_number* notes
-
-Data example:
-```json
-{"info":{"match_info":{"round_number":"4"}},"feature":"match_info"}
-```
-
-#### *match_outcome*  note
-
-Match outcome at the end of the match with your team's place
-
-Possible `status` values:
-
-* victory
-* defeat
-
-Possible `place` values are 1, 2, 3, 4
-
-Data Example:
-```
-{"info":{"match_info":{"match_outcome":"{\"status\":\"defeat\",\"place\":4}"}},"feature":"match_info"}
-```
+game_mode | match_info | Whether the current game mode is Swarm, TFT, Arena or default LoL. See [notes](#game_mode-notes) |                 |   257.0       |
+players_tagline | match_info | Information about the players in the game. See [notes](#players_tagline-notes) |                 |   257.0      |
 
 ### Events
-
-Event | Event Data                        | Fired When                  | Notes              | Since GEP Ver. |
-------| ----------------------------------| --------------------------- | ------------------ | --------------|
-round_start | the current round number | A round start              |See [notes](#round_start-notes)|     230.0     |
-round_end   | null                         | A round is won or lost                |See [notes](#round_end-notes)|     230.0     |
-round_outcome | null                         | At the end of the current round |See [notes](#round_outcome-notes)|     230.0     |
-battle_start | null | The battle start              |See [notes](#battle_start-notes)|     253.0     |
-battle_end | null | The battle end              |See [notes](#battle_end-notes)|     253.0     |
-
-#### *round_start* note
-
-Data Example:
-
-```json
-{"events":[{"name":"round_start","data":"3"}]}
-```
-
-#### *round_end* note
-
-Data Example:
-
-```json
-{"events":[{"name":"round_end","data":""}]}
-```
-
-#### *round_outcome* notes
-
-Data example:
-```json
-{"events":[{"name":"round_outcome","data":"defeat"}]}
-```
-
-#### *battle_start* note
-
-Data Example:
-
-```json
-{"events":[{"name":"battle_start","data":""}]}
-```
-
-#### *battle_end* note
-
-Data Example:
-
-```json
-{"events":[{"name":"battle_end","data":""}]}
-```
 
 
 ## `summoner_info`
@@ -954,10 +886,10 @@ Data Example:
 
 key       | Category        | Values                                         | Notes                                                   | Since GEP Ver. |
 ----------| ----------------| -----------------------------------------------| ------------------------------------------------------- | ------------- |
-id        | summoner_info   | User’s Summoner Id                         |   Fired immediately with game start. See [notes](#id-note) |      230.0      |
-region    | summoner_info   | User’s region (EUE, EUW, etc.) or PBE client (See notes)             |    See [notes](#region-note)|    230.0        |
-level     | summoner_info   | User’s summoner level                      |  See [notes](#level-note) |    230.0        |
-accountId | summoner_info   | User’s account id                           | See [notes](#accountId-note) |    230.0      |
+id        | summoner_info   | User’s Summoner Id                         |   Fired immediately with game start. See [notes](#id-note) |      257.0      |
+region    | summoner_info   | User’s region (EUE, EUW, etc.) or PBE client (See notes)             |    See [notes](#region-note)|    257.0       |
+level     | summoner_info   | User’s summoner level                      |  See [notes](#level-note) |    257.0       |
+accountId | summoner_info   | User’s account id                           | See [notes](#accountId-note) |    257.0      |
 
 #### *id* note
 
@@ -1008,19 +940,10 @@ Data Example:
 
 key         | Category    | Values                                                                                | Notes                 | Since GEP Ver. |
 ----------- | ------------| --------------------------------------------------------------------------------------| --------------------- | ------------- |
-teams       | game_info   |  Deprecated        |   See [notes](#teams-note)                  |   70.0        |
-swarm_teams       | game_info   |  A JSON object with the teams formation        |   See [notes](#swarm_teams-note)                  |   70.0        |
+teams       | game_info   |  A URI – a decoded string that represents a JSON object with the team's formation        |   See [notes](#teams-note)                  |  257.0       |
 
 
 #### *teams* note
-
-:::caution
-
-teams is deprecated and will be replaced by swarm_teams - See [notes](#swarm_teams-note)
-
-:::
-
-#### *swarm_teams* note
 
 The info-update JSON response will return the following parameters:
 
@@ -1030,19 +953,7 @@ The info-update JSON response will return the following parameters:
   * is_local - true/false to identify the local player
 
 ```json
-{"feature":"teams","category":"game_info","key":"swarm_teams","value":"[{\"team\":\"0\",\"players\":[{\"name\":\"Rosenkeskole8#EUW\"},{\"is_local\":false},{\"name\":\"Rosenkikole9#EUW\"},{\"is_local\":false}]},{\"team\":\"1\",\"players\":[{\"name\":\"Atgucuu#EUW\"},{\"is_local\":false},{\"name\":\"Maks#EUW\"},{\"is_local\":false}]},{\"team\":\"2\",\"players\":[{\"name\":\"Nanoco#6874\"},{\"is_local\":true},{\"name\":\"iamigMac#EUW\"},{\"is_local\":false}]},{\"team\":\"3\",\"players\":[{\"name\":\"ProusRex#EUW\"},{\"is_local\":false},{\"name\":\"Vipel60#EUW\"},{\"is_local\":false}]},{\"team\":\"4\",\"players\":[{\"name\":\"Shâ#EUW\"},{\"is_local\":false},{\"name\":\"Stgaim#EUW\"},{\"is_local\":false}]},{\"team\":\"5\",\"players\":[{\"name\":\"7mdo#EUW\"},{\"is_local\":false},{\"name\":\"Pacan#EUW\"},{\"is_local\":false}]},{\"team\":\"6\",\"players\":[{\"name\":\"Tamaotau#Mommy\"},{\"is_local\":false},{\"name\":\"xM4#EUW\"},{\"is_local\":false}]},{\"team\":\"7\",\"players\":[{\"name\":\"Rosenkild3#EUW\"},{\"is_local\":false},{\"name\":\"skoleX#EUW\"},{\"is_local\":false}]}]"}
-```
-
-## `level`
-
-### Info Updates
-
-key       | Category        | Values                                         | Notes                                                   | Since GEP Ver. |
-----------| ----------------| -----------------------------------------------| ------------------------------------------------------- | ------------- |
-level     | level           | Current level of the player's champion                 |   Fired immediately when the game starts, updates whenever the champion levels up                     |      0.19     |
-
-```json
-{ "info": {"level": { "level": "1" }}, "feature": "level"}
+"feature":"teams","category":"game_info","key":"teams","value":"[{"team":"Order","champion":"Strawberry_Jinx","skinId":"0","summoner":"overwolf#EUW"}]"}```
 ```
 
 ## `match`
@@ -1051,14 +962,14 @@ level     | level           | Current level of the player's champion            
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- | 
-match_started | game_info  | Match has started |See [notes](#match_started-note)|   230.0       |
+match_started | game_info  | Match has started |See [notes](#match_started-note)|   257.0       |
 
 
 ### Events
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- | 
-match_start |                | match start event | See [notes](#match_start-note)|   230.0       |
+match_start |                | match start event | See [notes](#match_start-note)|   257.0       |
 
 
 #### *match_started* note
@@ -1074,28 +985,20 @@ Data Example:
 ```
 {"events":[{"name":"match_start","data":""}]}
 ```
-
-## `augments`
+## `minions`
 
 ### Info Updates
 
-key            | Category    | Values                           | Notes                    | Since GEP Ver. |
--------------- | ------------| ---------------------------------|--------------------------|---------------|
-augments   |   me    | List of available augments   | See [notes](#augments-note) |   230.0       |
-picked_augment   |   me    | The last augment that the player picked   | See [notes](#picked_augment-note) |   222.0       |
+key                | Category    | Values                                         | Notes  | Since GEP Ver. |
+-------------------| ------------| -----------------------------------------------| ------ | ------------- |
+minionKills        | game_info   | amount of of mobs killed by the player   |See [notes](#minionKills-note)|    257.0       |
 
-#### *augments* note
-
-Data Example:
-```json
-{"feature":"augments","category":"me","key":"augments","value":"{\"augment_1\":{\"name\":\"TFT8_Augment_DefenderTrait\"}, \"augment_2\":{\"name\":\"TFT7_Augment_PandorasBench\"}, \"augment_3\":{\"name\":\"TFT6_Augment_SecondWind1\"}, }"}
-```
-
-#### *picked_augment* note
+#### *minionKills* note
 
 Data Example:
+
 ```json
-{"info":{"me":{"picked_augment":"{\"slot_1\":{\"name\":\"TFT9_Augment_CyberneticBulk3\"}, \"slot_2\":{\"name\":\"TFT9_Augment_SettTheBoss\"}, \"slot_3\":{\"name\":\"\"}}"}},"feature":"augments"}
+{"info":{"game_info":{"minionKills":"37"}},"feature":"minions"}
 ```
 
 ## `damage`
@@ -1104,10 +1007,10 @@ Data Example:
 
 key  | Category    | Values                                     | Notes  | Since GEP Ver. |
 -----| ------------| -------------------------------------------| ------ | ------------- |
-total_damage_dealt               | damage | Value of all damage done in the match (Float). |See [notes](#total_damage_dealt-note)|    139.0      |
-total_damage_dealt_to_champions  | damage | Value of all damage done to champions in the match (Float). |See [notes](#total_damage_dealt_to_champions-note)|    139.0      |
-total_damage_taken               | damage | Value of all the damage that was taken in the match (Float). |See [notes](#total_damage_taken-note)|    139.0      | |
-total_damage_self_mitigated      | damage | Value of all mitigated damage in the match (Float). |See [notes](#total_damage_self_mitigated-note)|    139.0      |
+total_damage_dealt               | damage | Value of all damage done in the match (Float). |See [notes](#total_damage_dealt-note)|    257.0     |
+total_damage_dealt_to_champions  | damage | Value of all damage done to champions in the match (Float). |See [notes](#total_damage_dealt_to_champions-note)|    257.0      |
+total_damage_taken               | damage | Value of all the damage that was taken in the match (Float). |See [notes](#total_damage_taken-note)|    257.0     | |
+total_damage_self_mitigated      | damage | Value of all mitigated damage in the match (Float). |See [notes](#total_damage_self_mitigated-note)|    257.0      |
 
 #### *total_damage_dealt* note
 
@@ -1145,15 +1048,15 @@ Data Example:
 
 Event  | Event Data                                       |               Fired When                  | Notes     | Since GEP Ver. |
 -------| -------------------------------------------------| ----------------------------------------- | --------- | --------------|
-physical_damage_dealt_player       | Float | Damaging an opponent with physical damage. |See [notes](#physical_damage_dealt_player-note)|      139.0    |
-magic_damage_dealt_player          | Float | Damaging an opponent with magic damage. |See [notes](#magic_damage_dealt_player-note)|      139.0    |
-true_damage_dealt_player           | Float | Damaging an opponent with true damage. |See [notes](#true_damage_dealt_player-note)|      139.0    |
-physical_damage_dealt_to_champions | Float | Physical damage is inflicted on any opponent. |See [notes](#physical_damage_dealt_to_champions-note)|      139.0    |
-magic_damage_dealt_to_champions    | Float | Magic damage is inflicted on any opponent. |See [notes](#magic_damage_dealt_to_champions-note)|      139.0    |
-true_damage_dealt_to_champions     | Float | True damage is inflicted on any opponent. |See [notes](#true_damage_dealt_to_champions-note)|      139.0    |
-physical_damage_taken              | Float | Receiving physical damage from an opponent.  |See [notes](#physical_damage_taken-note)|      139.0    |
-magic_damage_taken                 | Float | Receiving magic damage from an opponent. |See [notes](#magic_damage_taken-note)|      139.0    |
-true_damage_taken                  | Float | Receiving true damage from an opponent. |See [notes](#true_damage_taken-note)|      139.0    |
+physical_damage_dealt_player       | Float | Damaging an opponent with physical damage. |See [notes](#physical_damage_dealt_player-note)|      257.0    |
+magic_damage_dealt_player          | Float | Damaging an opponent with magic damage. |See [notes](#magic_damage_dealt_player-note)|      257.0    |
+true_damage_dealt_player           | Float | Damaging an opponent with true damage. |See [notes](#true_damage_dealt_player-note)|      257.0    |
+physical_damage_dealt_to_champions | Float | Physical damage is inflicted on any opponent. |See [notes](#physical_damage_dealt_to_champions-note)|      257.0    |
+magic_damage_dealt_to_champions    | Float | Magic damage is inflicted on any opponent. |See [notes](#magic_damage_dealt_to_champions-note)|      257.0    |
+true_damage_dealt_to_champions     | Float | True damage is inflicted on any opponent. |See [notes](#true_damage_dealt_to_champions-note)|      257.0    |
+physical_damage_taken              | Float | Receiving physical damage from an opponent.  |See [notes](#physical_damage_taken-note)|      257.0    |
+magic_damage_taken                 | Float | Receiving magic damage from an opponent. |See [notes](#magic_damage_taken-note)|      257.0    |
+true_damage_taken                  | Float | Receiving true damage from an opponent. |See [notes](#true_damage_taken-note)|      257.0    |
 
 #### *physical_damage_dealt_player* note
 
@@ -1226,37 +1129,114 @@ Data Example:
 ```json
 {"events":[{"name":"true_damage_taken","data":"6.0"}]}
 ```
+## `death`
 
-## `heal`
+### Info Updates
+
+key          | Category    | Values                            | Notes                 | Since GEP Ver. |
+------------ | ------------| --------------------------------- | --------------------- | ------------- |
+deaths       | game_info   | Number of deaths for this session |See [notes](#deaths-note)|   257.0        |
+
+#### *deaths* note
+
+Data Example:
+
+```json
+{"info":{"game_info":{"deaths":"1"}},"feature":"death"}
+```
+
+### Events
+
+Event | Event Data                        | Fired When                  | Notes              | Since GEP Ver. |
+------| ----------------------------------| --------------------------- | ------------------ | --------------|
+death | Number of deaths for this session | The player’s champion died  | See [notes](#death-note) |     257.0      |
+
+#### *death* note
+
+Data Example:
+
+```json
+{"events":[{"name":"death","data":"{"count":"1"}"}]}
+```
+
+## `respawn`
+
+### Events
+
+Event      | Event Data  | Fired When          | Notes              | Since GEP Ver. |
+-----------| ------------| ------------------------------- | ------------------ | --------------|
+respawn    | null        | The player’s champion respawned | See [notes](#respawn-notes) |   257.0       |
+
+#### *respawn* note
+
+Data Example:
+
+```json
+{"events":[{"name":"respawn","data":"{}"}]}
+```
+
+## `counters`
 
 ### Info Updates
 
 key  | Category    | Values                                     | Notes  | Since GEP Ver. |
 -----| ------------| -------------------------------------------| ------ | ------------- |
-total_heal              | heal | Value of all healing done in the match (Float). |See [notes](#total_heal-note)|    139.0      |
-total_heal_on_teammates | heal | Value of all healing on teammates in the match (Float). |See [notes](#total_heal_on_teammates-note)|    139.0      |
-total_units_healed      | heal | Value of amount of units healed in the match (Float). |See [notes](#total_units_healed-note)|    139.0      |
+ping | performance | The change in latency values of the local player  |See [notes](#ping-note)|   257.0      |
 
-#### *total_heal* note
+### Events
+
+Event  | Event Data                                       |               Fired When                  | Notes     | Since GEP Ver. |
+-------| -------------------------------------------------| ----------------------------------------- | --------- | --------------|
+match_clock | The exact time in the match in seconds (Including augments selection). | Every second that the clock is ticking. |See [notes](#match_clock-note)|      257.0    |
+
+#### *ping* note
 
 Data Example:
 
 ```json
-{"info":{"heal":{"total_heal":"27.0"}},"feature":"heal"}
+{"info":{"performance":{"ping":"77"}},"feature":"counters"}
 ```
 
-#### *total_heal_on_teammates* note
+#### *match_clock* note
 
 Data Example:
 
 ```json
-{"info":{"heal":{"total_heal_on_teammates":"27.0"}},"feature":"heal"}
+{"events":[{"name":"match_clock","data":"1249"}]}
+```
+## `team_frames`
+
+### Info Updates
+
+key  | Category    | Values                                     | Notes  | Since GEP Ver. |
+-----| ------------| -------------------------------------------| ------ | ------------- |
+team_frames_x | game_info | Cooldown timer of the ultimate of the players in seconds. |See [notes](#team_frames)|    257.0      |
+
+#### *team_frames* note:
+
+This info update shows the cooldown timer of the ultimate ability of each player in seconds.<br></br>
+Value in "team_frames_0" is the player to the left until "team_frames_3" to the last player to the right.<br></br>
+The value in ult_cd stands for ultimate cooldown in seconds.
+
+```json
+{"info":{"game_info":{"team_frames_1":"{\"ult_cd\":47}"}},"feature":"team_frames"}
 ```
 
-#### *total_units_healed* note
+## `chat`
+
+<MatchOnly/>
+
+
+### Events
+
+Event  | Event Data                                       |               Fired When                  | Notes     | Since GEP Ver. |
+-------| -------------------------------------------------| ----------------------------------------- | --------- | --------------|
+chat | All the chat messages sent in a match | Every time there is a new message in the chat |See [notes](#chat-note)|      257.0    |
+
+#### *chat* note
 
 Data Example:
 
 ```json
-{"info":{"heal":{"total_units_healed":"1.0"}},"feature":"heal"}
+{"events":[{"name":"chat","data":"[Team] Jacksork (Lux): Hello "}]}
 ```
