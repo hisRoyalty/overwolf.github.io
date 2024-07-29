@@ -27,7 +27,6 @@ Please read the [overwolf.games.events](/api/live-game-data) documentation page 
 ## Available Features
 
 * [gep_internal](#gep_internal)
-* [game_info](#game_info)
 * [match_info](#match_info)
 
 ## Game event status
@@ -50,27 +49,6 @@ Data Example:
 
 ```json
 {"info":{"gep_internal":{"version_info":"{"local_version":"244.0.0","public_version":"244.0.0","is_updated":true}"}},"feature":"gep_internal"}
-```
-
-## `game_info`
-
-### Info Updates
-
-key          | Category    | Values                    | Notes                 | Since GEP Ver. |
------------- | ------------| ------------------------- | --------------------- | ------------- |
-scene | game_info | The current scene-state |See [notes](#scene-note)|   244.0       |
-
-#### *scene* note
-
-Possible Scene values:
-
-* lobby
-* ingame
-
-Data Example:
-
-```json
-{"feature": "game_info", "category": "game_info", "key": "scene", "data": "lobby"}
 ```
 
 ## `match_info`
