@@ -47,6 +47,8 @@ Note that you can also use the LOL game launcher events. Read more [here](/api/l
 * [minions](#minions)
 * [damage](#damage)
 * [death](#death) 
+* [respawn](#respawn)
+* [abilities](#abilities)
 * [counters](#counters)
 * [team_frames](#team_frames)
 * [chat](#chat)
@@ -1156,6 +1158,25 @@ Data Example:
 
 ```json
 {"events":[{"name":"death","data":"{"count":"1"}"}]}
+```
+
+## `abilities`
+
+### Events
+
+Event      | Event Data  | Fired When          | Notes              | Since GEP Ver. |
+-----------| ------------| ------------------------------- | ------------------ | --------------|
+usedAbility  | JSON containing: “type” with the ability number between 1-4. Example:<br></br> `{ type: "4" }` for ult        | player activated the ability	 |  “usedAbility” fired when the player activated the ability  |   0.31       |
+
+#### *usedAbility* note
+
+Data Example:
+
+```json
+{"events":[{"name":"usedAbility","data":"{  "type": "1"}"}]}
+{"events":[{"name":"usedAbility","data":"{  "type": "2"}"}]}
+{"events":[{"name":"usedAbility","data":"{  "type": "3"}"}]}
+{"events":[{"name":"usedAbility","data":"{  "type": "4"}"}]}
 ```
 
 ## `respawn`
