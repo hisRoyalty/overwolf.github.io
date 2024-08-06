@@ -284,7 +284,7 @@ Data examples:
 Data example:
 
 ```json
-{"info":{"match_info":{"round_outcome":"{"Duzalth":{"outcome":"victory"},"Sacrada":{"outcome":"defeat"},"Broxaskh":{"outcome":"defeat"},"PoSeiDonProX1":{"outcome":"victory"},"Lil Jafi":{"outcome":"victory"}}"}},"feature":"match_info"}
+{"feature":"match_info","category":"match_info","key":"round_outcome","value":"{\"Sigma\":{\"outcome\":\"victory\",\"tag_line\":\"00001\"},\"littlemelony\":{\"outcome\":\"defeat\",\"tag_line\":\"EUW\"},\"dADo\":{\"outcome\":\"victory\",\"tag_line\":\"TnT\"},\"rares\":{\"outcome\":\"victory\",\"tag_line\":\"rare\"},\"Sen\":{\"outcome\":\"victory\",\"tag_line\":\"5426\"},\"JacksAtWork\":{\"outcome\":\"victory\",\"tag_line\":\"1119\"},\"TABS Aurora\":{\"outcome\":\"victory\",\"tag_line\":\"Cute\"},\"koala \":{\"outcome\":\"victory\",\"tag_line\":\"king\"}}"}
 ```
 
 #### *opponent* notes
@@ -292,7 +292,7 @@ Data example:
 Data example:
 
 ```json
-{"info":{"match_info":{"opponent":"{"name":"Eksuspuroshion"}"}},"feature":"match_info"}
+{"feature":"match_info","category":"match_info","key":"opponent","value":"{\"name\":\"MrGEP\",\"tag_line\":\"EUW\"}"} 
 ```
 
 #### *game_mode* notes
@@ -383,6 +383,7 @@ Each player object includes the following data:
 * xp
 * localplayer
 * rank
+* tag_line
 
 Aside from the summoner name which is received during the loading screen, the rest of the data mentioned above will be delivered once the actual game has begun.
 
@@ -397,55 +398,70 @@ Data example:
   "info": {
     "roster": {
       "player_status": "{
-         "Zedester": {
+         "Sigma": {
             "index": 1,
             "health": 76,
             "xp": 5,
-            "localplayer": true,
-            "rank": 0
+            "localplayer": false,
+            "rank": 0,
+            "tag_line": 00001
          },
          "littlemelony": {
             "index": 2,
             "health": 94,
             "xp": 4,
             "localplayer": false,
-            "rank": 0
+            "rank": 0,
+            "tag_line": EUW
          },
-         "XKrosX": {
+         "dADo": {
             "index": 3,
             "health": 88,
             "xp": 6,
             "localplayer": false,
-            "rank": 0
+            "rank": 0,
+            "tag_line": TnT
          },
-         "UP GuyFromMiddle": {
+         "raresGUY": {
             "index": 4,
             "health": 62,
             "xp": 6,
             "localplayer": false,
-            "rank": 0
+            "rank": 0,
+            "rare"
          },
-         "Storas Tevas": {
+         "Sen": {
             "index": 5,
             "health": 90,
             "xp": 4,
             "localplayer": false,
-            "rank": 0
+            "rank": 0,
+            "tag_line": 5426
          },
-         "MAYAH MELISSA": {
+         "JacksAtWork": {
             "index": 6,
             "health": 100,
             "xp": 4,
-            "localplayer": false,
-            "rank": 0
+            "localplayer": true,
+            "rank": 0,
+            "tag_line": 1191
          },
-         "TabsWay": {
+         "TABS Aurora": {
             "index": 7,
             "health": 92,
             "xp": 5,
             "localplayer": false,
-            "rank": 0
+           "rank": 0,
+            "tag_line": Cute
          },
+         "koala": {
+            "index": 8,
+            "health": 0,
+            "xp": 5,
+            "localplayer": false,
+           "rank": 8,
+            "tag_line": king
+       },
       }"
     }
   },
