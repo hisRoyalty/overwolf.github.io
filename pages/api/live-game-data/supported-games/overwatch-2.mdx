@@ -256,6 +256,8 @@ match_start | null      | Match started. |See [notes](#match_start-note)|    229
 match_end   | null      | Match ended.   |See [notes](#match_end-note)|    229.0      |
 round_start | null      | Round started. |See [notes](#round_start-note)|    252.0      |
 round_end   | null      | Round ended.   |See [notes](#round_end-note)|    252.0      |
+respawn     | null      | The local player respawn.	   |See [notes](#respawn-note)|    258.0      |
+revive      | null      | The local player revive.     |See [notes](#revive-note)|    258.0      |
 
 #### *match_start* note
 
@@ -288,6 +290,23 @@ Data Example:
 ```json
 {"name":"round_end","data":""}
 ```
+
+#### *respawn* note
+
+Data Example:
+
+```json
+{"name":"respawn","data":null}
+```
+
+#### *revive* note
+
+Data Example:
+
+```json
+{"name":"revive","data":null}
+```
+
 
 ## `kill`
 
