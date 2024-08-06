@@ -167,6 +167,7 @@ key          | Category    | Values                    | Notes                 |
 pseudo_match_id | match_info | The current match’s ID code.<br></br><br></br>Example:<br></br><br></br> `0c0ea3df-97ea-4d3a-b1f6-f8e34042251f`  |  This is an Overwolf-generated code, unrelated to Riot.  |   159.0 |
 round_number | match_info  | Number of current round.  |See [notes](#round_number-note)|   149.0       |
 score        | match_info  | Amount of rounds won/lost.|See [notes](#score-note)|   149.0       |
+match_score        | match_info  | Match score by teams|See [notes](#match_score-note)|   258.0       |
 round_phase  | match_info  | Current state of the round.|See [notes](#round_phase-note)|   149.0       |
 team         | match_info  | Attack / Defense.      |See [notes](#team-note)|   149.0       |
 match_outcome| match_info  | victory/defeat/draw.      |See [notes](#match_outcome-note)|   149.0       |
@@ -195,6 +196,14 @@ Data example:
 
 ```json
 {"info":{"match_info":{"score":"{"won":9,"lost":2}"}},"feature":"match_info"}
+```
+
+#### *match_score* note
+
+Data example:
+
+```json
+{"feature":"match_info","category":"match_info","key":"match_score","value":"{\"team_0\":0,\"team_1\":2}"}
 ```
 
 #### *round_phase* note
