@@ -306,6 +306,11 @@ const metaData: GameMetaData[] = [
     name: 'Stormgate',
   },
   {
+    id: 24360,
+    path: 'the-first-descendant',
+    name: 'The First Descendant',
+  },
+  {
     id: 24000,
     path: 'helldivers-2',
     name: 'Helldivers 2',
