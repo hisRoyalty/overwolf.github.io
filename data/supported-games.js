@@ -559,6 +559,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/wuthering-waves.png",
     "iconLargeUrl": "/img/game-logos/large/wuthering-waves.png"
   },
+  "24360": {
+    "id": 24360,
+    "path": "/status/the-first-descendant",
+    "name": "The First Descendant",
+    "rawPath": "the-first-descendant",
+    "standardPath": "the-first-descendant",
+    "docs": "/api/live-game-data/supported-games/the-first-descendant",
+    "iconUrl": "/img/game-logos/the-first-descendant.png",
+    "iconLargeUrl": "/img/game-logos/large/the-first-descendant.png"
+  },
   "215561": {
     "id": 215561,
     "displayId": 22848,
