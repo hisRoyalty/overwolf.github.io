@@ -43,7 +43,8 @@ Check the current game event status [here](/status/). Alternatively, you can eas
     * 1.12.2 - support all events except chat, statistics, scene and player_x
     * 1.16 - 1.16.1 - support all events except chat and statistics
     * 1.16.2 - support all events except chat
-    * 1.17 - 1.21.0 - full support
+     * 1.17 - 1.18.2 - full support except biome
+    * 1.19 - 1.21.0 - full support
 
 * Supported mod-loaders:
     * Forge 36.0.0 - 36.2.39 
@@ -126,6 +127,8 @@ items_stats   | match_info  | All of the current item statistics. |See [notes](#
 mobs_stats   | match_info  | All of the current mob statistics. |See [notes](#mobs_stats-note)|   153.0       |
 location     | match_info  | Current player's location in the game. |See [notes](#location-note)|   157.0       |
 facing       | match_info  | The current direction the player is facing. |See [notes](#facing-note)|   157.0       |
+biome       | match_info  | Name of the biome the player is in currently. |See [notes](#biome-note)|   258.0       |
+
 
 
 ### Events
@@ -214,6 +217,14 @@ Data Example:
 
 ```json
 {"info":{"match_info":{"facing":"{"x":146.851,"y":1.34979}"}},"feature":"match_info"}
+```
+
+#### *biome* note
+
+Data Example:
+
+```json
+{"feature":"match_info","category":"match_info","key":"biome","value":"minecraft:forest"}
 ```
 
 #### *match_start* note
