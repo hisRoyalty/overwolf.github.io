@@ -1,0 +1,88 @@
+---
+id: ow-oidc-registration
+image: "/img/embed/api-docs.jpg"
+sidebar_label: Overwolf OIDC Registration
+title: Overwolf OIDC - Registration
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: true
+---
+
+## Registration
+To register a new client application with our OIDC service, you need to follow the steps below.
+> Ensure you have obtained the necessary **Authorization Token** from your Dev-Rel representative.
+
+## Create
+
+To create your new client, make a POST request to the registration endpoint below:
+
+```yaml
+Request Type: POST
+Hostname: https://id.overwolf.com
+Path: /oidc/reg
+Headers:
+    Authorization: 'Bearer ${token}' 
+// Contact your dev-rel to get the registration Authorization token.
+
+Body:
+  "redirect_uris": string[],
+  "client_name": string,
+  "logo_uri": string,
+  "policy_uri": string,
+  "tos_uri": string,
+
+Response:
+  client_id: string,
+  client_secret: string,
+  registration_client_uri: string, (this is the endpoint to get those details again or update)
+  registration_access_token: string (this is the bearer token to the endpoint above, must save it!)
+```
+
+:::danger Important
+- registration_client_uri is the endpoint to get your OIDC client details or to update them using the GET and PUT methods below.
+- registration_access_token is the bearer token for the endpoint above, you must save it!
+:::
+
+## Management
+The following endpoints allow you to retrieve or update your current configuration.
+
+### Get info
+
+To retrieve your client details, make a GET request to the registration_client_uri with the following details:
+
+```yaml
+Request Type: GET
+Hostname: https://id.overwolf.com
+Path: /oidc/reg/{client_id}
+Headers:
+    Authorization: 'Bearer ${registration_access_token}'
+    //The Authorization token is the registration_access_token from the creation method’s response.
+```
+:::info Response
+You will receive your client details, similar to the response from the creation method.
+:::
+
+## Update info
+
+To update your client configuration, make a PUT request to the to the registration_client_uri with the following details:
+
+```yaml
+Request Type: PUT
+Hostname: https://id.overwolf.com
+Path: /oidc/reg/{client_id}
+Headers:
+    Authorization: 'Bearer ${registration_access_token}'
+//The Authorization token is the registration_access_token from the creation method’s response.
+
+Body:
+  "redirect_uris": string[],
+  "client_id": string,
+  "client_name": string,
+  "logo_uri": string,
+  "policy_uri": string,
+  "tos_uri": string,
+```
+:::info Response
+You will receive your client details, similar to the response from the creation method, but with the updated configuration.
+:::
