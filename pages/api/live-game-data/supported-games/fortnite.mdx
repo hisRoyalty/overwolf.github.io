@@ -259,13 +259,14 @@ userID   | match_info  |The current user’s ID code. |   See [notes](#userID-no
 ticketID   | match_info  |The current ticket’s ID code. |  See [notes](#ticketID-note)|  132.0  |
 partyID   | match_info  |The current party’s ID code. |  See [notes](#partyID-note)|  132.0  |
 skirmish   | match_info  |The skirmish data is the enemy gunfire indicator on the compass |  See [notes](#skirmish-note)|  195.0  |
-roster   | match_info  |This feature provides the entire list of players |  See [notes](#roster-note)|  198.0  |
+match_stats   | match_info  |Statistics when the match is over |  See [notes](#match_stats-note)|  258.0  |
 
 ### Events
 
 Event       | Event Data   | Fired When    | Notes              | Since GEP Ver. |
 ------------| -------------| --------------| ------------------ | --------------|
 generic     | kill/death/knocked | Generic events are generated. | See [notes](#generic-note) |  153.0  |
+message_feed| Send the messages from the feed | Each time there is a new message in the feed | See [notes](#message_feed-note)|  258.0  |
 
 #### *pseudo_match_id* note
 
@@ -331,6 +332,14 @@ Data Example:
 {"feature":"match_info","category":"match_info","key":"skirmish","value":"{\"skirmish_data\":[{\"index\":1,\"time\":165,\"strength\":18,\"compass_angle\":96,\"red_dot_angle\":57},{\"index\":2,\"time\":166,\"strength\":99,\"compass_angle\":96,\"red_dot_angle\":113}]}"}
 ```
 
+#### *match_stats* note
+
+Data Example:
+
+```json
+{"feature":"match_info","category":"match_info","key":"match_stats","value":"{\"place\":42,\"elimination\":6,\"assist\":0,\"revive\":0,\"hits\":51}"}
+```
+
 #### *roster* note
 
 This feature provides the entire list of players
@@ -363,6 +372,15 @@ Data Example:
 ```json
 {"events":[{"name":"generic","data":"death"}]}
 {"events":[{"name":"generic","data":"kill"}]}
+```
+
+#### *message_feed* note
+
+Data Example:
+
+```json
+{"events":[{"name":"message_feed","data":"RoDnik92 (110) has thanked the bus driver"}]}
+{"events":[{"name":"message_feed","data":"Sashator7684 eliminated RoDnik92 (111) with a pistol (97 m)"}]}
 ```
 
 ## `rank`
