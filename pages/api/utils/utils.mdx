@@ -52,6 +52,7 @@ Common use cases:
 * [overwolf.utils.GetSystemInformationResult](#getsysteminformationresult-object) Object
 * [overwolf.utils.SystemInfo](#systeminfo-object)
 * [overwolf.utils.GetMonitorsListResult](#getmonitorslistresult-object) Object
+* [overwolf.utils.workingArea](#workingarea-object) Object
 * [overwolf.utils.GPUInfo](#gpuinfo-object) Object
 * [overwolf.utils.HardDiskInfo](#harddiskinfo-object) Object
 * [overwolf.utils.InputDeviceInfo](#inputdeviceinfo-object) Object
@@ -556,8 +557,8 @@ Parameter          | Type     | Description                                 |
 *error*            | string   | inherited from the "Result" Object          |
 status             | string   | deprecated. For backward compatibility only |
 Reason             | string   | deprecated. For backward compatibility only |   
-displays            | [Display[]](#display-object) | the monitors array      |   
-
+displays           | [Display[]](#display-object) | the monitors array      |   
+workingArea        | workingArea object   | The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars. |
 
 #### Example data: Success
 
@@ -595,6 +596,15 @@ displays            | [Display[]](#display-object) | the monitors array      |
     ]
 }
 ```
+## workingArea Object
+
+Parameter          | Type     | Description                                 |
+-------------------| ---------| ------------------------------------------- |
+width              | number   | Width of the display's working area         |
+height             | number   | Height of the display's working area        |
+top                | number   | The top position where the working area starts from |
+left               | number   | The left position where the working area starts from |
+
 
 ## GPUInfo Object
 
