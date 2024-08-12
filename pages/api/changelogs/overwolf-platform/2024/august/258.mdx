@@ -11,9 +11,9 @@ sidebar_custom_props:
 
 ### Bug Fixes
 
-- Fixed an issue where the [`.io.delete()`](/api/extensions/io#deletespace-path-callback) method - - returned **"Permission denied"** after switching the default video folder.
+- Fixed an issue where the [`.io.delete()`](/api/extensions/io#deletespace-path-callback) method - returned **"Permission denied"** after switching the default video folder.
 - Fixed an issue where the  [`.media.deleteVideo()`](/api/media/videos#deletevideovideourl-callback) method returned "Video not found" after switching the default video folder.
 - Fixed an issue where we failed to start capturing the desktop using the stream method while the replays service is turned on.
-- Fixed an issue where the replays service ignored the  [`use_app_display_name`](/api/media/replays#replayvideooptions-object) param.
-Restored the missing 'workingArea' param from the `.getMonitorList()` method.
+- Fixed an issue where the replays service ignored the [`use_app_display_name`](/api/media/replays#replayvideooptions-object) param.
+- Restored the missing `workingArea` param from the `.getMonitorList()` method.
 - Fixed an issue where the `onDisplayChanged` event spammed the `onScreenPropertyChanged` event.
