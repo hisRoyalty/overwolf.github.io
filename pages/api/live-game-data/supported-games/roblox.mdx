@@ -74,7 +74,8 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-game_id | game_info | The current played minigame ID. |See [notes](#game_id-note)|   257.0    |
+game_id | match_info | The current played minigame ID. |See [notes](#game_id-note)|   257.0    |
+universe_id | match_info | The current played universe ID. |See [notes](#universe_id-note)|   258.0    |
 
 #### *game_id* note
 
@@ -82,6 +83,14 @@ Data Example:
 
 ```json
 {"feature":"match_info","category":"match_info","key":"game_id","value":"15744137588"}
+```
+
+#### *universe_id* note
+
+Data Example:
+
+```json
+{"feature":"match_info","category":"match_info","key":"universe_id","value":"3164075108"}
 ```
 
 ### Events
