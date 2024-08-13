@@ -43,14 +43,14 @@ Check the current game event status [here](/status/). Alternatively, you can eas
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   252.0       |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   258.0       |
 
 #### *gep_internal* note
 
 Data Example:
 
 ```json
-{"info":{"gep_internal":{"version_info":"{"local_version":"244.0.0","public_version":"244.0.0","is_updated":true}"}},"feature":"gep_internal"}
+{"info":{"gep_internal":{"version_info":"{"local_version":"244.0.0","public_version":"258.0.0","is_updated":true}"}},"feature":"gep_internal"}
 ```
 
 ## `game_info`
@@ -59,7 +59,7 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-scene | game_info | The current scene-state |See [notes](#scene-note)|   252.0       |
+scene        | game_info   | The current scene-state   |See [notes](#scene-note) |   258.0       |
 
 #### *scene* note
 
@@ -67,6 +67,7 @@ Possible Scene values:
 
 * lobby
 * ingame
+* mission_failed
 
 Data Example:
 
@@ -80,8 +81,8 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
 ------------| -------------| --------------| -------------------------------------- | ---------------|
-match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |244.0|
-match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |244.0|
+match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |258.0|
+match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |258.0|
 
 #### *match_start* note
 
