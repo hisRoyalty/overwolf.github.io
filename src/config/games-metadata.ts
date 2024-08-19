@@ -311,6 +311,11 @@ const metaData: GameMetaData[] = [
     name: 'The First Descendant',
   },
   {
+    id: 23930,
+    path: 'once-human',
+    name: 'Once Human',
+  },
+  {
     id: 24000,
     path: 'helldivers-2',
     name: 'Helldivers 2',
