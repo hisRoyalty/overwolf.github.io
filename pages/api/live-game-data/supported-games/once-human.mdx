@@ -84,6 +84,7 @@ knockout |  nulll            | When the local player is knockout| See [notes](#k
 level_up |   nulll            | When the local player level up| See [notes](#level_up-note) |259.0|
 match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |259.0|
 match_end   |  nulll            | At the end of each match| See [notes](#match_end-note) |259.0|
+death   |  nulll            | When the local player dies| See [notes](#death-note) |259.0|
 
 #### *knockout* note
 
@@ -115,4 +116,12 @@ Data Example:
 
 ```json
 {"events":[{"name":"match_end","data":null}]}
+```
+
+#### *death* note
+
+Data Example:
+
+```json
+{"events":[{"name":"death","data":null}]}
 ```
