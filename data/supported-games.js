@@ -499,6 +499,16 @@ const GamesMetaData = {
     "iconUrl": "/img/game-logos/stormgate.png",
     "iconLargeUrl": "/img/game-logos/large/stormgate.png"
   },
+  "23930": {
+    "id": 23930,
+    "path": "/status/once-human",
+    "name": "Once Human",
+    "rawPath": "once-human",
+    "standardPath": "once-human",
+    "docs": "/api/live-game-data/supported-games/once-human",
+    "iconUrl": "/img/game-logos/once-human.png",
+    "iconLargeUrl": "/img/game-logos/large/once-human.png"
+  },
   "23944": {
     "id": 23944,
     "path": "/status/palworld",
