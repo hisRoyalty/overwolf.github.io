@@ -43,7 +43,7 @@ Check the current game event status [here](/status/). Alternatively, you can eas
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   258.0       |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   259.0       |
 
 #### *gep_internal* note
 
@@ -59,7 +59,7 @@ Data Example:
 
 key          | Category    | Values                    | Notes                 | Since GEP Ver. |
 ------------ | ------------| ------------------------- | --------------------- | ------------- |
-scene        | game_info   | The current scene-state   |See [notes](#scene-note) |   258.0       |
+scene        | game_info   | The current scene-state   |See [notes](#scene-note) |   259.0       |
 
 #### *scene* note
 
@@ -67,7 +67,7 @@ Possible Scene values:
 
 * lobby
 * ingame
-* mission_failed
+* death
 
 Data Example:
 
@@ -81,8 +81,26 @@ Data Example:
 
 Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
 ------------| -------------| --------------| -------------------------------------- | ---------------|
-match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |258.0|
-match_end   |    nulll          | At the end of each match| See [notes](#match_end-note) |258.0|
+knockout |  nulll            | When the local player is knockout| See [notes](#knockout-note) |259.0|
+levelUp |   nulll            | When the local player level up| See [notes](#levelUp-note) |259.0|
+match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |259.0|
+match_end   |  nulll            | At the end of each match| See [notes](#match_end-note) |259.0|
+
+#### *knockout* note
+
+Data Example:
+
+```json
+{"events":[{"name":"knockout","data":null}]}
+```
+
+#### *levelUp* note
+
+Data Example:
+
+```json
+{"events":[{"name":"levelUp","data":null}]}
+```
 
 #### *match_start* note
 
