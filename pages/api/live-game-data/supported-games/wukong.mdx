@@ -1,0 +1,128 @@
+---
+id: wukong
+image: "/img/embed/games/wukong.jpg"
+title: Black Myth: Wukong Game events
+hide_title: true
+draft: true
+sidebar_label: Black Myth: Wukong
+sidebar_position: 0
+sidebar_custom_props:
+  tags:
+    overwolf_platform: true
+    electron_platform: true
+---
+
+<!-- GENERATED USING /scripts/generate.js -->
+
+<head>
+  <meta name="keywords" content="API for Black Myth: Wukong, Black Myth: Wukong API, SDK for Black Myth: Wukong, Black Myth: Wukong SDK"/>
+</head>
+
+<GameInfo gameId={24504} page="docs" />
+
+Please read the [overwolf.games.events](/api/live-game-data) documentation page to learn how to use Overwolf game events.
+
+## Sample Apps
+* [Black Myth: Wukong game events sample app](https://github.com/overwolf/events-sample-app)
+
+## Available Features
+
+* [gep_internal](#gep_internal)
+* [game_info](#game_info)
+* [match_info](#match_info)
+
+## Game event status
+
+It is highly recommended to communicate errors and warnings to app users.
+
+Check the current game event status [here](/status/). Alternatively, you can easily check that status from your app itself, [using our API](/topics/using-events/how-to-check-events-status-from-app).
+
+## `gep_internal`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+gep_internal | gep_internal| Local + Public version number|See [notes](#gep_internal-note)|   259.0       |
+
+#### *gep_internal* note
+
+Data Example:
+
+```json
+{"info":{"gep_internal":{"version_info":"{"local_version":"244.0.0","public_version":"258.0.0","is_updated":true}"}},"feature":"gep_internal"}
+```
+
+## `game_info`
+
+### Info Updates
+
+key          | Category    | Values                    | Notes                 | Since GEP Ver. |
+------------ | ------------| ------------------------- | --------------------- | ------------- |
+scene        | game_info   | The current scene-state   |See [notes](#scene-note) |   259.0       |
+
+#### *scene* note
+
+Possible Scene values:
+
+* lobby
+* ingame
+* death
+
+Data Example:
+
+```json
+{"feature": "game_info", "category": "game_info", "key": "scene", "data": "lobby"}
+```
+
+## `match_info`
+
+### Events
+
+Event       | Event Data   | Fired When    | Notes                                  | Since GEP Ver. |
+------------| -------------| --------------| -------------------------------------- | ---------------|
+knockout |  nulll            | When the local player is knockout| See [notes](#knockout-note) |259.0|
+level_up |   nulll            | When the local player level up| See [notes](#level_up-note) |259.0|
+match_start |  nulll            | In the beginning of each match| See [notes](#match_start-note) |259.0|
+match_end   |  nulll            | At the end of each match| See [notes](#match_end-note) |259.0|
+death   |  nulll            | When the local player dies| See [notes](#death-note) |259.0|
+
+#### *knockout* note
+
+Data Example:
+
+```json
+{"events":[{"name":"knockout","data":null}]}
+```
+
+#### *level_up* note
+
+Data Example:
+
+```json
+{"events":[{"name":"level_up","data":null}]}
+```
+
+#### *match_start* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_start","data":null}]}
+```
+
+#### *match_end* note
+
+Data Example:
+
+```json
+{"events":[{"name":"match_end","data":null}]}
+```
+
+#### *death* note
+
+Data Example:
+
+```json
+{"events":[{"name":"death","data":null}]}
+```

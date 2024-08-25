@@ -316,6 +316,11 @@ const metaData: GameMetaData[] = [
     name: 'Once Human',
   },
   {
+    id: 24504,
+    path: 'wukong',
+    name: 'Black Myth: Wukong',
+  },
+  {
     id: 24000,
     path: 'helldivers-2',
     name: 'Helldivers 2',
